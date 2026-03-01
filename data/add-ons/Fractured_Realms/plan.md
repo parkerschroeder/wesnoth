@@ -115,17 +115,40 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Parasitic survivor. Drains life in melee to stay alive despite fragile stats, spreads plague at range. Benefits from grove terrain like all Mycelium units.
 - **Advances to**: Puppeteer (L2) → Hivemind (L3)
 
-## L2 Advancements (AoE unlocks)
+## L2 Advancements
 
-| L1 Unit | L2 Name | AoE Ability Gained |
-|---------|---------|-------------------|
-| Sporecap | **Sporeguard** | Spore Cloud: AoE slow to adjacent enemies (aura) |
+### Built
+
+#### Sporeguard (from Sporecap) — 32g ✅ BUILT
+- **HP**: 52 | **Mov**: 4 | **Align**: Chaotic
+- **Melee**: Club 9×3 (impact) — **plague**
+- **Ranged**: Spore Puff 6×2 (impact) — **slow**
+- **Ability**: Spore Cloud — when this unit hits with its ranged attack, all enemy units adjacent to the **target** are also **slowed** (via `attacker_hits` event + dummy ability filter)
+- **Role**: Crowd-control tank. Lands a ranged hit and the spore cloud billows out, slowing enemies clustered around the target. Forces a choice: plague one enemy in melee, or slow a group at range.
+
+#### Blightcap (from Sporecap) — 32g ✅ BUILT
+- **HP**: 52 | **Mov**: 4 | **Align**: Chaotic
+- **Melee**: Club 8×3 (impact) — **plague**
+- **Ranged**: Toxic Puff 5×3 (impact) — **poison**
+- **Ability**: Toxic Spores — attackers are **poisoned** after combat (retaliatory, via `attack_end` event + dummy ability filter)
+- **Role**: Offensive tank. Trades some bulk for poison pressure. Attackers take ongoing damage after engaging.
+
+### Planned
+
+| L1 Unit | L2 Name | Ability Gained |
+|---------|---------|---------------|
 | Deathcap | **Destroying Angel** | Death Cloud: AoE poison to adjacent enemies (aura) |
 | Lion's Mane | **Morel** | Heals +8, Cures poison (adjacent allies) |
-| Mycelium Runner | **Mycelium Weaver** | Entangle: Adjacent enemies lose movement (aura) |
+| Mycelium Runner | **Mycelium Weaver** | Fungal Network: AoE fungal spread (converts adjacent hexes each turn, not just the hex it stands on). Fast territory raider — dashes deep and leaves groves behind. |
 | Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies |
 | Glowcap | **Shaggy Mane** | Lightning Storm: AoE electric damage to adjacent enemies on attack |
-| Cordyceps | **Puppeteer** | AoE drain aura (adjacent enemies lose HP, heals Puppeteer) + Fungal Domination (adjacent enemies -10% damage) |
+| Cordyceps | **Puppeteer** | AoE drain aura + Fungal Domination (-10% damage) |
+
+#### Broodcap (from Cordyceps) — 34g ✅ BUILT
+- **HP**: 40 | **Mov**: 5 | **Align**: Chaotic
+- **Melee**: Parasitic Touch 6×3 (blade) — **drain**
+- **Ranged**: Domination Spore 5×4 (arcane) — **plague, magical**
+- **Role**: Glass cannon plague engine. Low HP for L2 but devastating magical ranged — ignores terrain defense and converts kills into Fungal Spores. Drain melee keeps it alive when cornered.
 
 ## L3 Advancements (enhanced AoE + combos)
 
