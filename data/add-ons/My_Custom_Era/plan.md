@@ -170,4 +170,8 @@ Three layers of terrain conversion, creating a cascading infection across the ba
 
 ## Future Phases (general ideas, not implemented yet)
 - **Phase 2**: L2 units with AoE abilities (death cloud, spore cloud, frost nova, enhanced healing)
-- **Phase 3**: L3 units with combo AoE effects + expanded fungal spread radius- **Phase 4**: Fungal Spread on forests — create custom "Mushroom Forest" overlay terrain types that combine forest visuals with fungus properties (e.g., `^Tfp` = mushroom pine forest, aliasof=Ft,Tt). Fungal Spread macro would replace forest overlays with their mushroom-forest equivalents. Requires custom terrain graphics.
+- **Phase 3**: L3 units with combo AoE effects + expanded fungal spread radius
+- **Phase 4**: ✅ DONE — Mushroom Forest overlay (`^Tff`, aliasof=_bas,Tt,Ft). Fungal Spread now converts forest overlays into Mushroom Forest instead of skipping them. Defined in `macros/mycelium-terrain.cfg`.
+
+## Backlog
+- [ ] Create custom sprite for Mushroom Forest (`^Tff`) — currently reuses `forest/mushrooms-tile` from Mushroom Grove. Needs a unique look that blends tree trunks with giant mushroom caps growing among/over branches.

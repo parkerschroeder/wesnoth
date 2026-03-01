@@ -35,7 +35,7 @@ These are skipped automatically because the `FUNGAL_SPREAD` macro uses `[store_l
 
 | Terrain | Codes | Notes |
 |---------|-------|-------|
-| Forests | `^Fp,^Fds,^Ft,...` | All forest overlays |
+| Forests | `^Fp,^Fds,^Ft,...` | Converted to Mushroom Forest (`^Tff`) instead of skipped |
 | Villages | `^Vh,^Ve,^Vo,...` | All village overlays |
 | Bridges | `^Bw,^Bs,^Bh,...` | All bridge overlays |
 | Doors/Gates | `^Pr,^Pw,...` | All door overlays |
@@ -52,15 +52,17 @@ These are skipped automatically because the `FUNGAL_SPREAD` macro uses `[store_l
 | `Tb` | fungus_floor | Mycelium | Base terrain (cave floor with mycelium) |
 | `^Tf` | fungus_grove | Mushroom Grove | Overlay — THIS IS WHAT WE USE for Fungal Spread |
 | `^Tfi` | fungus_beam | Mushroom Grove (Lit) | Lit variant of mushroom grove |
+| `^Tff` | mushroom_forest | Mushroom Forest | **CUSTOM** — forest absorbed by fungal spread, aliasof=_bas,Tt,Ft |
 | `^Uf` | fungus_grove_old | Mushroom Grove (deprecated) | Old non-mixed version, don't use |
 
 ## Implementation summary
 
 The `FUNGAL_SPREAD` macro in `macros/mycelium-events.cfg` uses a two-step check:
 
-1. **Overlay check** — `[store_locations]` stores the hex, then `[variable] contains=^` detects if the terrain string has an overlay (e.g. `Gg^Fp` contains `^`, bare `Gg` does not). If overlay exists, skip.
-2. **Exclusion list** — `[have_location]` with `[not] terrain={FUNGAL_SPREAD_EXCLUDED_TERRAINS}` blocks: water (`Ww*,Wo*`), desert (`Dd*,Ds*,Hd`), frozen (`Aa,Ai`), mountains (`Mm*,Md*,Ms*,Mv`), castle/keep (`C*,K*`), lava/chasm (`Ql*,Qx*`), impassable (`Xu*,Xo*,Xv`)
-3. If hex passes both checks, applies `^Tf` (Mushroom Grove) overlay via `[terrain] layer=overlay`
+1. **Overlay check** — `[store_locations]` stores the hex, then `[variable] contains=^` detects if the terrain string has an overlay (e.g. `Gg^Fp` contains `^`, bare `Gg` does not).
+2. **If overlay exists** — check if it's a forest (`terrain=*^F*`). If yes, replace with `^Tfp` (Mushroom Forest). Otherwise skip (villages, bridges, etc.).
+3. **If no overlay** — `[have_location]` with `[not] terrain={FUNGAL_SPREAD_EXCLUDED_TERRAINS}` blocks: water (`Ww*,Wo*`), desert (`Dd*,Ds*,Hd`), frozen (`Aa,Ai`), mountains (`Mm*,Md*,Ms*,Mv`), castle/keep (`C*,K*`), lava/chasm (`Ql*,Qx*`), impassable (`Xu*,Xo*,Xv`). If allowed, applies `^Tf` (Mushroom Grove) overlay.
+4. Forests are **absorbed** into Mushroom Forest (`^Tfp`) which blends base + fungus + forest stats.
 
 ### Why not terrain wildcards for overlay detection?
 
