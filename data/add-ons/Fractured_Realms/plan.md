@@ -29,17 +29,18 @@ Two core mechanics create a self-reinforcing territorial loop:
 ### 2. ~~Kill Spread~~ (removed)
 - Removed to simplify the faction and avoid timing conflicts with plague
 
-### 3. Fungal Plague (Sporecap, Cordyceps, Fungal Zombie)
-- Unconditional plague — when these units kill an enemy, it rises as a Fungal Zombie
+### 3. Fungal Plague (Sporecap, Cordyceps, Puffball, Fungal Spore)
+- Unconditional plague — when these units kill an enemy, it rises as a Fungal Spore
 - Uses the engine's built-in plague system (doesn't work on undead, mechanical, or villages)
-- Zombies are L0, fragile, and expendable — designed to die
+- Spores are L0, fragile, and expendable — designed to die
 
-### 4. Death Bloom (Fungal Zombie only)
-- When a Fungal Zombie dies, ALL adjacent hexes are converted to Mushroom Grove
+### 4. Death Bloom (Fungal Spore + Puffball)
+- When a unit with death bloom dies, ALL nearby hexes are converted to Mushroom Grove and adjacent enemies are slowed
 - This is the faction's primary territory expansion tool
-- Creates the core loop: plague spawns zombie → zombie dies → death bloom spreads groves → more favorable terrain
-- Strategic choice: protect the zombie for its plague attack, or sacrifice it to infect new ground
-- **Counterplay**: enemies can kill zombies in locations where grove spread is harmless, or avoid killing them entirely
+- Creates the core loop: plague spawns spore → spore dies → death bloom spreads groves → more favorable terrain
+- Fungal Spore (L0) advances to Puffball (L1) — same death bloom identity, upgraded body with skirmisher
+- Strategic choice: protect the spore for its plague attack, or sacrifice it to infect new ground
+- **Counterplay**: enemies can kill spores in locations where grove spread is harmless, or avoid killing them entirely
 
 ### Mushroom Grove Terrain Stats
 - High defense for Mycelium (60-70%), lower for others (~40%)
@@ -49,16 +50,16 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ### Strategic Tension
 - Spread out to claim territory vs. cluster for AoE synergy at L2+
-- Push forward aggressively with plague units to spawn zombies
-- Zombies are worth more dead than alive — sacrifice decisions
-- Enemies face a dilemma: kill the zombie and spread groves, or leave it alive and let it plague more units
+- Push forward aggressively with plague units to spawn spores
+- Spores are worth more dead than alive — sacrifice decisions
+- Enemies face a dilemma: kill the spore and spread groves, or leave it alive and let it plague more units
 
 ## L1 Recruits (single-target status effects)
 
 ### 1. Sporecap (Fighter) — 15g
 - **Mushroom**: Generic toadstool warrior
 - **HP**: 38 | **Mov**: 4 | **Align**: Chaotic
-- **Melee**: Club 6×2 (impact)
+- **Melee**: Club 6×2 (impact) — **plague**
 - **Ranged**: Spore Puff 3×2 (impact) — **slow**
 - **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies to match its pace.
 - **Advances to**: Sporeguard (L2) → Sporewarden (L3)
@@ -92,11 +93,10 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ### 5. Puffball (Skirmisher) — 14g
 - **Mushroom**: Puffball (releases spore cloud when disturbed)
-- **HP**: 22 | **Mov**: 5 | **Align**: Chaotic
-- **Melee**: Bump 3×3 (impact)
-- **Ranged**: Spore Burst 6×1 (impact) — **slow**
-- **Ability**: Skirmisher (ignores ZoC)
-- **Role**: Cheap harassment unit. Slips through lines, slows key targets.
+- **HP**: 22 | **Mov**: 6 | **Align**: Chaotic
+- **Melee**: Bump 3×3 (impact) — **plague**
+- **Ability**: Skirmisher (ignores ZoC), Death Bloom
+- **Role**: Cheap kamikaze flanker. Slips through lines via skirmisher, spreads plague on melee, detonates into grove spread on death. Advancement from Fungal Spore (L0).
 - **Advances to**: Giant Puffball (L2) → Earthstar (L3)
 
 ### 6. Glowcap (Mage) — 19g
@@ -132,7 +132,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 | L2 Unit | L3 Name | Enhanced Ability |
 |---------|---------|-----------------|
 | Sporeguard | **Sporewarden** | AoE slow + reduces enemy damage |
-| Destroying Angel | **Angel of Death** | AoE poison + kills on grove spawn 2 Fungal Zombies instead of 1 |
+| Destroying Angel | **Angel of Death** | AoE poison + kills on grove spawn 2 Fungal Spores instead of 1 |
 | Morel | **King Bolete** | AoE heal 8 + cures + self-regeneration |
 | Mycelium Weaver | **Mycelium Overmind** | Teleport between caves/forests + entangle aura |
 | Giant Puffball | **Earthstar** | Massive AoE burst: damage + slow within 2 hexes |
@@ -159,10 +159,10 @@ Two core mechanics create a self-reinforcing territorial loop:
 2. Define mushroom race in WML
 3a. Create passive Fungal Spread event (side turn event that converts hexes under Mycelium units)
 3b. Create kill-based Fungal Spread event ([die] event that converts death hex when Mycelium unit gets the kill)
-3c. Create Grove Reanimation event ([die] event: enemy killed on Mushroom Grove hex by Mycelium unit → spawns Fungal Zombie)
+3c. Create Grove Reanimation event ([die] event: enemy killed on Mushroom Grove hex by Mycelium unit → spawns Fungal Spore)
 4. Create L1 unit type .cfg files (7 units)
 5. Define L1 weapon specials/abilities in macros (slow, poison, drain, heals, ambush, skirmisher, magical)
-5b. Create Fungal Zombie unit type (spawned by grove reanimation)
+5b. Create Fungal Spore unit type (spawned by plague)
 6. Create faction [multiplayer_side] definition
 7. Add faction to Fractured_Realms era (replace Rebels clone placeholder)
 8. Test in-game for loading
