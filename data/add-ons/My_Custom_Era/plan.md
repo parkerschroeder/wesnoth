@@ -170,4 +170,4 @@ Three layers of terrain conversion, creating a cascading infection across the ba
 
 ## Future Phases (general ideas, not implemented yet)
 - **Phase 2**: L2 units with AoE abilities (death cloud, spore cloud, frost nova, enhanced healing)
-- **Phase 3**: L3 units with combo AoE effects + expanded fungal spread radius
+- **Phase 3**: L3 units with combo AoE effects + expanded fungal spread radius- **Phase 4**: Fungal Spread on forests — create custom "Mushroom Forest" overlay terrain types that combine forest visuals with fungus properties (e.g., `^Tfp` = mushroom pine forest, aliasof=Ft,Tt). Fungal Spread macro would replace forest overlays with their mushroom-forest equivalents. Requires custom terrain graphics.
