@@ -99,20 +99,20 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Cheap harassment unit. Slips through lines, slows key targets.
 - **Advances to**: Giant Puffball (L2) → Earthstar (L3)
 
-### 6. Ink Cap (Mage) — 19g
-- **Mushroom**: Inky Cap / Coprinus (dissolves into black ink)
+### 6. Glowcap (Mage) — 19g
+- **Mushroom**: Bioluminescent fungus (channels bioelectric energy)
 - **HP**: 22 | **Mov**: 5 | **Align**: Chaotic
-- **Melee**: Touch 3×1 (cold)
-- **Ranged**: Ink Bolt 7×2 (cold) — **magical**
-- **Role**: Ranged damage dealer. Expensive but hits hard with cold/arcane.
+- **Melee**: Shock Touch 3×1 (electric)
+- **Ranged**: Spark Bolt 7×2 (electric) — **magical**
+- **Role**: Ranged damage dealer. Expensive but hits hard with electric/magical.
 - **Advances to**: Shaggy Mane (L2) → Black Morel (L3)
 
-### 7. Cordyceps (Parasite) — 15g
+### 7. Cordyceps (Parasite) — 19g
 - **Mushroom**: Cordyceps (parasitic, mind-controlling fungus)
 - **HP**: 25 | **Mov**: 5 | **Align**: Chaotic
-- **Melee**: Parasitic Touch 5×2 (blade) — **drain**
-- **Ranged**: Mind Spore 3×2 (arcane) — **slow**
-- **Role**: Parasitic survivor. Drains life in melee to stay alive despite fragile stats, slows at range to set up engagements. Benefits from grove reanimation like all Mycelium units.
+- **Melee**: Parasitic Touch 4×3 (blade) — **drain**
+- **Ranged**: Mind Spore 3×3 (arcane) — **plague**
+- **Role**: Parasitic survivor. Drains life in melee to stay alive despite fragile stats, spreads plague at range. Benefits from grove terrain like all Mycelium units.
 - **Advances to**: Puppeteer (L2) → Hivemind (L3)
 
 ## L2 Advancements (AoE unlocks)
@@ -124,7 +124,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Lion's Mane | **Morel** | Heals +8, Cures poison (adjacent allies) |
 | Mycelium Runner | **Mycelium Weaver** | Entangle: Adjacent enemies lose movement (aura) |
 | Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies |
-| Ink Cap | **Shaggy Mane** | Frost Nova-style: AoE cold damage to adjacent enemies on attack |
+| Glowcap | **Shaggy Mane** | Lightning Storm: AoE electric damage to adjacent enemies on attack |
 | Cordyceps | **Puppeteer** | AoE drain aura (adjacent enemies lose HP, heals Puppeteer) + Fungal Domination (adjacent enemies -10% damage) |
 
 ## L3 Advancements (enhanced AoE + combos)
