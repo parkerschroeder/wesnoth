@@ -19,27 +19,27 @@ A mushroom-themed faction focused on status effects (single-target at L1) that u
 - **Racial immunities**: Poison, Plague (fungi produce toxins and decompose the dead — they can't be poisoned or reanimated)
 
 ## Fungal Spread Mechanic
-Three layers of terrain conversion, creating a cascading infection across the battlefield:
+Two core mechanics create a self-reinforcing territorial loop:
 
 ### 1. Passive Spread (turn start)
 - Every Mycelium unit converts its hex to Mushroom Grove at turn start (via `[terrain]` WML action in a side turn event)
 - Slow, defensive spread — rewards keeping units alive and positioned
 - L2+ units could convert adjacent hexes too (larger radius)
 
-### 2. Kill Spread (on enemy death)
-- When a Mycelium unit kills an enemy, the hex where the enemy died converts to Mushroom Grove
-- Implemented via a `[die]` event filtering for killing unit's race
-- Rewards aggression — faction must push forward to spread, but units are fragile
-- Enemies can counterplay by retreating wounded units to avoid dying on strategic hexes
+### 2. ~~Kill Spread~~ (removed)
+- Removed to simplify the faction and avoid timing conflicts with plague
 
-### 3. Grove Reanimation (any Mycelium unit)
-- When **any** enemy is killed on a Mushroom Grove hex by a Mycelium unit, a Fungal Zombie spawns on that hex
-- Implemented via a `[die]` event: if death hex is Mushroom Grove AND killer is Mycelium race → spawn Fungal Zombie
-- Every unit in the faction benefits, not just one specialist
-- Makes Fungal Spread strategically essential — grove isn't just a defense bonus, it's your reanimation engine
-- Enemies are terrified of fighting on your terrain — shapes the entire battle
-- **Cascade**: spread grove → fight on grove → kills spawn zombies → zombies spread more grove → more reanimation zones
-- **Counterplay**: enemies can retreat wounded units off grove hexes, or avoid fighting on grove entirely
+### 3. Fungal Plague (Sporecap, Cordyceps, Fungal Zombie)
+- Unconditional plague — when these units kill an enemy, it rises as a Fungal Zombie
+- Uses the engine's built-in plague system (doesn't work on undead, mechanical, or villages)
+- Zombies are L0, fragile, and expendable — designed to die
+
+### 4. Death Bloom (Fungal Zombie only)
+- When a Fungal Zombie dies, ALL adjacent hexes are converted to Mushroom Grove
+- This is the faction's primary territory expansion tool
+- Creates the core loop: plague spawns zombie → zombie dies → death bloom spreads groves → more favorable terrain
+- Strategic choice: protect the zombie for its plague attack, or sacrifice it to infect new ground
+- **Counterplay**: enemies can kill zombies in locations where grove spread is harmless, or avoid killing them entirely
 
 ### Mushroom Grove Terrain Stats
 - High defense for Mycelium (60-70%), lower for others (~40%)
@@ -49,9 +49,9 @@ Three layers of terrain conversion, creating a cascading infection across the ba
 
 ### Strategic Tension
 - Spread out to claim territory vs. cluster for AoE synergy at L2+
-- Push forward aggressively for kill-based spread vs. play safe with passive spread
-- Lure enemies onto grove hexes to trigger reanimation
-- Zombies from grove kills create forward outposts that spread even more grove
+- Push forward aggressively with plague units to spawn zombies
+- Zombies are worth more dead than alive — sacrifice decisions
+- Enemies face a dilemma: kill the zombie and spread groves, or leave it alive and let it plague more units
 
 ## L1 Recruits (single-target status effects)
 
@@ -175,3 +175,4 @@ Three layers of terrain conversion, creating a cascading infection across the ba
 
 ## Backlog
 - [ ] Create custom sprite for Mushroom Forest (`^Tff`) — currently reuses `forest/mushrooms-tile` from Mushroom Grove. Needs a unique look that blends tree trunks with giant mushroom caps growing among/over branches.
+- [x] Update unit internal naming convention — replaced `{HUMAN_NAMES}` with custom mushroom-themed name lists (mycological Latin-inspired names like Agarum, Boleth, Mycenae, etc.)
