@@ -35,7 +35,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - Spores are L0, fragile, and expendable — designed to die
 
 ### 4. Death Bloom (Fungal Spore + Puffball)
-- When a unit with death bloom dies, ALL nearby hexes are converted to Mushroom Grove and adjacent enemies are slowed
+- When a unit with death bloom dies, ALL nearby hexes are converted to Mushroom Grove and adjacent enemies are poisoned
 - This is the faction's primary territory expansion tool
 - Creates the core loop: plague spawns spore → spore dies → death bloom spreads groves → more favorable terrain
 - Fungal Spore (L0) advances to Puffball (L1) — same death bloom identity, upgraded body with skirmisher
@@ -59,9 +59,9 @@ Two core mechanics create a self-reinforcing territorial loop:
 ### 1. Sporecap (Fighter) — 15g
 - **Mushroom**: Generic toadstool warrior
 - **HP**: 38 | **Mov**: 4 | **Align**: Chaotic
-- **Melee**: Club 6×2 (impact) — **plague**
-- **Ranged**: Spore Puff 3×2 (impact) — **slow**
-- **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies to match its pace.
+- **Melee**: Club 6×2 (impact) — **slow**
+- **Ranged**: Spore Puff 3×2 (impact)
+- **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies in melee to match its pace.
 - **Advances to**: Sporeguard (L2) → Sporewarden (L3)
 
 ### 2. Deathcap (Poisoner) — 16g
