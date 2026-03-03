@@ -147,8 +147,9 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Race**: Dwarf
 - **HP**: 44 | **Mov**: 5 | **Align**: Chaotic
 - **Melee 1**: Mushroom Frenzy 7×4 (blade) — **berserk, grove bound**
-- **Melee 2**: Venomous Axe 6×3 (blade) — **poison**
-- **Role**: Enhanced berserker. Frenzy matches the Dwarvish Berserker's 7×4 pattern but remains grove-bound. Fallback axe now poisons — the mushroom toxins have saturated the dwarf's flesh. AMLA advancement.
+- **Melee 2**: Hand Axe 6×3 (blade)
+- **Ability**: Terror — adjacent enemies of lower level deal reduced damage (adapted from WoL Nightmares)
+- **Role**: Enhanced berserker. Frenzy matches the Dwarvish Berserker's 7×4 pattern but remains grove-bound. Radiates a terror aura from the fly agaric psychoactive toxins, debuffing nearby lower-level enemies. AMLA advancement.
 
 ### Planned
 
