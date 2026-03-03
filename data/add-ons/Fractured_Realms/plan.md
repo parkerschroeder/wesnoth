@@ -115,6 +115,16 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Parasitic survivor. Drains life in melee to stay alive despite fragile stats, spreads plague at range. Benefits from grove terrain like all Mycelium units.
 - **Advances to**: Puppeteer (L2) → Hivemind (L3)
 
+### 8. Madcap (Berserker) — 17g ✅ BUILT
+- **Concept**: A crazed dwarf hermit who discovered the rage-inducing fly agaric mushroom (*Amanita muscaria*) deep in the caves. Exiled by their clan, they now fight alongside the Mycelium — consuming grove mushrooms to fuel devastating berserk frenzies.
+- **Race**: Dwarf (not mushroom — uses dwarf names, traits, movetype)
+- **HP**: 32 | **Mov**: 5 | **Align**: Chaotic
+- **Melee 1**: Mushroom Frenzy 5×3 (blade) — **berserk, grove bound** (consumes the grove)
+- **Melee 2**: Hand Axe 4×3 (blade) — fallback when not on a grove
+- **Role**: Conditional berserker. Devastating on a mushroom grove, average without one. Creates faction synergy — mushroom units spread groves, the Madcap consumes them for explosive burst damage. Does NOT spread groves passively (dwarf, no fungal_growth trait).
+- **Advances to**: Dreadcap (L2)
+- **Unit ID**: Mycelium_Madcap
+
 ## L2 Advancements
 
 ### Built
@@ -132,6 +142,13 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Toxic Puff 5×3 (impact) — **poison**
 - **Ability**: Toxic Spores — attackers are **poisoned** after combat (retaliatory, via `attack_end` event + dummy ability filter)
 - **Role**: Offensive tank. Trades some bulk for poison pressure. Attackers take ongoing damage after engaging.
+
+#### Dreadcap (from Madcap) — 28g ✅ BUILT
+- **Race**: Dwarf
+- **HP**: 44 | **Mov**: 5 | **Align**: Chaotic
+- **Melee 1**: Mushroom Frenzy 7×4 (blade) — **berserk, grove bound**
+- **Melee 2**: Venomous Axe 6×3 (blade) — **poison**
+- **Role**: Enhanced berserker. Frenzy matches the Dwarvish Berserker's 7×4 pattern but remains grove-bound. Fallback axe now poisons — the mushroom toxins have saturated the dwarf's flesh. AMLA advancement.
 
 ### Planned
 
