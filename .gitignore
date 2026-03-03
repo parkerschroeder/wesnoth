@@ -2,6 +2,9 @@
 stderr*.txt
 stdout*.txt
 
+# user-specific prompt files
+.github/prompts/user-*
+
 # project files
 .*project
 Project.*
