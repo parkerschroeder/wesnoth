@@ -122,7 +122,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 1**: Mushroom Frenzy 5×3 (blade) — **berserk, grove bound** (consumes the grove)
 - **Melee 2**: Hand Axe 4×3 (blade) — fallback when not on a grove
 - **Role**: Conditional berserker. Devastating on a mushroom grove, average without one. Creates faction synergy — mushroom units spread groves, the Madcap consumes them for explosive burst damage. Does NOT spread groves passively (dwarf, no fungal_growth trait).
-- **Advances to**: Dreadcap (L2)
+- **Advances to**: Mad Prince (L2, chaotic, terror) → Mad Lord (L3) | Grove Warden (L2, neutral, leadership) → Old Growth (L3)
 - **Unit ID**: Mycelium_Madcap
 
 ## L2 Advancements
@@ -143,13 +143,38 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Toxic Spores — attackers are **poisoned** after combat (retaliatory, via `attack_end` event + dummy ability filter)
 - **Role**: Offensive tank. Trades some bulk for poison pressure. Attackers take ongoing damage after engaging.
 
-#### Dreadcap (from Madcap) — 28g ✅ BUILT
+#### Mad Prince (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
 - **HP**: 44 | **Mov**: 5 | **Align**: Chaotic
 - **Melee 1**: Mushroom Frenzy 7×4 (blade) — **berserk, grove bound**
 - **Melee 2**: Hand Axe 6×3 (blade)
 - **Ability**: Terror — adjacent enemies of lower level deal reduced damage (adapted from WoL Nightmares)
 - **Role**: Enhanced berserker. Frenzy matches the Dwarvish Berserker's 7×4 pattern but remains grove-bound. Radiates a terror aura from the fly agaric psychoactive toxins, debuffing nearby lower-level enemies. AMLA advancement.
+
+#### Mad Lord (from Mad Prince) — 46g ✅ BUILT
+- **Race**: Dwarf
+- **HP**: 56 | **Mov**: 5 | **Align**: Chaotic
+- **Melee 1**: Mushroom Frenzy 9×4 (blade) — **berserk, grove bound, fungal plague**
+- **Melee 2**: Hand Axe 9×4 (blade) — **fungal plague**
+- **Ability**: Terror
+- **Role**: Plague berserker lord. Kills raise Fungal Spores while terror aura suppresses nearby enemies. The culmination of the Madcap line — a tyrant of madness whose victims fuel the mycelium's spread.
+
+#### Grove Warden (from Madcap) — 28g ✅ BUILT
+- **Race**: Dwarf
+- **HP**: 44 | **Mov**: 5 | **Align**: Neutral
+- **Melee 1**: Mushroom Frenzy 7×4 (blade) — **berserk, grove bound**
+- **Melee 2**: Hand Axe 7×4 (blade)
+- **Ability**: Leadership — adjacent allies of lower level deal more damage
+- **Role**: Guardian path. Where the Mad Prince descends deeper into madness, the Grove Warden channels mushroom visions into fierce protectiveness of the groves. Neutral alignment and leadership make it a support berserker that boosts the Mycelium's L1 units.
+
+#### Old Growth (from Grove Warden) — 46g ✅ BUILT
+- **Race**: Dwarf
+- **HP**: 60 | **Mov**: 5 | **Align**: Neutral
+- **Melee 1**: Mushroom Frenzy 8×4 (blade) — **berserk, grove bound**
+- **Melee 2**: Hand Axe 8×4 (blade)
+- **Ranged**: Spore Toss 6×3 (impact)
+- **Abilities**: Leadership, Regeneration
+- **Role**: The living heart of the grove. Leadership rallies allies while regeneration keeps the Old Growth standing through prolonged engagements. The boundary between dwarf and fungus has blurred — mycelial threads wind through their veins, granting unnatural resilience.
 
 ### Planned
 
