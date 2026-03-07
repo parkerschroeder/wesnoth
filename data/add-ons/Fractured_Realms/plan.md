@@ -65,20 +65,20 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Heavy Infantryman (high HP tank, slow movement, impact damage)
 - **Advances to**: Sporeguard (L2) → Sporewarden (L3)
 
-### 2. Deathcap (Poisoner) — 16g
+### 2. Deathcap (Archer) — 15g
 - **Mushroom**: Amanita (deadly poisonous)
 - **HP**: 24 | **Mov**: 5 | **Align**: Chaotic
-- **Melee**: Toxic Touch 4×2 (blade) — **poison**
-- **Ranged**: Poison Dart 5×2 (pierce) — **poison**
-- **Role**: Glass cannon poisoner. Fragile but poisons everything it touches.
-- **Based on**: Thief (fragile, fast leveling, 24 HP / 24 XP)
-- **Advances to**: Nightcap (L2) / Double Truffle (L2) → Angel of Death (L3) / Phantomcap (L3)
+- **Melee**: Toxic Touch 3×2 (blade) — **poison**
+- **Ranged**: Poison Dart 5×3 (pierce) — **poison**
+- **Role**: Ranged poisoner/archer. Fragile but peppers enemies with venomous barbs from range. Poison is the real damage. Fast leveling at 24 XP.
+- **Based on**: Elvish Archer (ranged-focused, but with poison instead of raw damage)
+- **Advances to**: Nightcap (L2) / Double Truffle (L2) → Angel of Death (L3) / Trufflemaker (L3)
 
-### 3. Lion's Mane (Healer) — 16g ✅ BUILT
+### 3. Lion's Mane (Healer) — 14g ✅ BUILT
 - **Mushroom**: Lion's Mane (shaggy, cascading mushroom known for nerve regeneration)
 - **HP**: 26 | **Mov**: 5 | **Align**: Neutral
 - **Melee**: Staff 3×2 (impact)
-- **Ranged**: Restorative Spores 4×2 (impact)
+- **Ranged**: Restorative Spores 4×2 (impact) — **slow**
 - **Ability**: Heals +4 (adjacent allies)
 - **Role**: Faction healer. Restorative mushroom that mends wounded allies.
 - **Based on**: Elvish Shaman (L1 healer, similar HP/mov)
@@ -113,14 +113,14 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Dark Adept / Mage (fragile magical ranged, 19g)
 - **Advances to**: Shaggy Mane (L2) → Black Morel (L3)
 
-### 7. Cordyceps (Parasite) — 19g
+### 7. Cordyceps (Parasite) — 16g
 - **Mushroom**: Cordyceps (parasitic, mind-controlling fungus)
 - **HP**: 25 | **Mov**: 5 | **Align**: Chaotic
-- **Melee**: Parasitic Touch 4×3 (blade) — **drain**
-- **Ranged**: Mind Spore 3×3 (arcane) — **plague**
-- **Role**: Parasitic survivor. Drains life in melee to stay alive despite fragile stats, spreads plague at range. Benefits from grove terrain like all Mycelium units.
-- **Based on**: Ghoul (drain melee, plague, similar HP)
-- **Advances to**: Puppeteer (L2) → Hivemind (L3)
+- **Melee**: Parasitic Touch 5×3 (blade) — **drain**
+- **Ranged**: —
+- **Role**: Melee-only drain fighter. Cheap and self-sustaining through drain, the only drain unit in the faction. Specializes at L2 into plague support (Broodcap) or drain support (Puppeteer).
+- **Based on**: Ghost / Life Thief (melee drain, no ranged)
+- **Advances to**: Broodcap (L2), Puppeteer (L2)
 
 ### 8. Madcap (Berserker) — 17g ✅ BUILT
 - **Concept**: A crazed dwarf hermit who discovered the rage-inducing fly agaric mushroom (*Amanita muscaria*) deep in the caves. Exiled by their clan, they now fight alongside the Mycelium — consuming grove mushrooms to fuel devastating berserk frenzies.
@@ -194,19 +194,28 @@ Two core mechanics create a self-reinforcing territorial loop:
 |---------|---------|---------------|--------|
 | Deathcap | **Nightcap** | Poison Cloud: AoE poison attack (grove bound) | ✅ BUILT |
 | Deathcap | **Double Truffle** | Venom Strike: double damage vs poisoned (offense only) | ✅ BUILT |
-| Lion's Mane | **Morel** | Heals, Cures — pure healer path | ✅ BUILT |
+| Lion's Mane | **Morel** | Heals +8, Cures — pure healer path | ✅ BUILT |
 | Lion's Mane | **Ergot** | Blight (unhealable), AoE blight (grove bound) — offensive blight path | ✅ BUILT |
 | Mycelium Runner | **Mycelium Weaver** | Overgrowth (adjacent grove spread), Ambush, Entangle (slow) | ✅ BUILT |
 | Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies | |
 | Glowcap | **Shaggy Mane** | Lightning Storm: AoE electric damage to adjacent enemies on attack | |
-| Cordyceps | **Puppeteer** | AoE drain aura + Fungal Domination (-10% damage) | |
+| Cordyceps | **Puppeteer** | Parasitic Link: drain aura for adjacent allies | ✅ BUILT |
 
 #### Broodcap (from Cordyceps) — 34g ✅ BUILT
 - **HP**: 40 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 6×3 (blade) — **drain**
 - **Ranged**: Domination Spore 5×4 (arcane) — **plague, magical**
-- **Role**: Glass cannon plague engine. Low HP for L2 but devastating magical ranged — ignores terrain defense and converts kills into Fungal Spores. Drain melee keeps it alive when cornered.
+- **Ability**: Fungal Brood — adjacent allies' attacks spawn Fungal Spores from slain enemies (plague aura)
+- **Role**: Plague support. Turns every allied kill nearby into Fungal Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
 - **Based on**: Necromancer (fragile L2 with plague, magical ranged)
+
+#### Puppeteer (from Cordyceps) — 32g ✅ BUILT
+- **HP**: 38 | **Mov**: 5 | **Align**: Chaotic
+- **Melee**: Parasitic Touch 6×3 (blade) — **drain**
+- **Ranged**: Mind Spore 5×3 (arcane) — **slow**
+- **Ability**: Parasitic Link — adjacent allies drain health from their attacks
+- **Role**: Drain support. Nearby allies self-sustain through combat while the Puppeteer slows enemies at range. Complements the Broodcap's army-building with army-sustaining.
+- **Based on**: White Mage (support L2 with aura)
 
 #### Nightcap (from Deathcap) — 32g ✅ BUILT
 - **HP**: 36 | **Mov**: 5 | **Align**: Chaotic
@@ -218,10 +227,10 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 #### Double Truffle (from Deathcap) — 30g ✅ BUILT
 - **HP**: 40 | **Mov**: 6 | **Align**: Chaotic
-- **Melee**: Toxic Strike 6×3 (blade) — **poison, toxic strike** (double damage vs poisoned enemies, offense only)
-- **Ranged**: Poison Dart 4×2 (pierce) — **poison**
-- **Role**: Assassin. Poison dart lets it apply poison from safety, then it closes in for devastating venom strikes against poisoned targets — effectively 12×3 (36 damage). Where the Nightcap spreads poison wide, the Double Truffle exploits poison already applied.
-- **Based on**: Rogue (40 HP, 6 mov, 6×3 conditional damage, skirmisher at L3)
+- **Melee**: Toxic Touch 4×2 (blade) — **poison**
+- **Ranged**: Catalyst Spore 6×3 (pierce) — **toxic strike** (double damage vs poisoned enemies, offense only)
+- **Role**: Ranged assassin/sniper. Melee poisons the target, then catalyst spores finish from range at 12×3 (36 damage) vs poisoned enemies. Works best with Deathcap or Nightcap to pre-poison targets. The attack has no poison itself — it's a pure finisher.
+- **Based on**: Elvish Marksman (ranged-focused, conditional damage)
 
 ## L3 Advancements (enhanced AoE + combos)
 
@@ -231,18 +240,18 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Nightcap | **Angel of Death** | AoE poison + kills on grove spawn 2 Fungal Spores instead of 1 |
 | Morel | **King Bolete** | AoE heal 8 + cures + self-regeneration |
 | Ergot | **Blightcrown** | Enhanced AoE blight + stronger unhealable |
-| Double Truffle | **Trufflemaker** | Skirmisher + enhanced toxic strike (8×3, 16×3 vs poisoned) |
+| Double Truffle | **Trufflemaker** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) |
 | Mycelium Weaver | **Mycelium Overmind** | Teleport between caves/forests + entangle aura |
 | Giant Puffball | **Earthstar** | Massive AoE burst: damage + slow within 2 hexes |
 | Shaggy Mane | **Black Morel** | AoE cold + slow combo on attack |
-| Puppeteer | **Hivemind** | Enhanced AoE drain aura + Fungal Domination (adjacent enemies -20% damage + slow) |
+| Puppeteer | **Hivemind** | Enhanced drain aura + Leadership |
 
 ## Leaders (L2 units as starting leaders)
 
 - **Sporeguard** — Defensive leader, slows attackers around keep ✅
 - **Nightcap** — Aggressive leader, poisons everything nearby
 - **Morel** — Support leader (Lion's Mane L2), heals recruits immediately ✅
-- **Puppeteer** — Control leader, drains enemies and weakens them with Fungal Domination
+- **Puppeteer** — Control leader, grants adjacent allies drain via parasitic link
 
 ## Balance Notes
 - **Weakness**: Low raw damage. Loses straight 1v1 fights.
@@ -274,6 +283,6 @@ Two core mechanics create a self-reinforcing territorial loop:
 ## Backlog
 - [ ] Create custom sprite for Mushroom Forest (`^Tff`) — currently reuses `forest/mushrooms-tile` from Mushroom Grove. Needs a unique look that blends tree trunks with giant mushroom caps growing among/over branches.
 - [x] Update unit internal naming convention — replaced `{HUMAN_NAMES}` with custom mushroom-themed name lists (mycological Latin-inspired names like Agarum, Boleth, Mycenae, etc.)
-- [ ] Healer unit idea: a support unit that grants adjacent allies **drain** on their attacks. Could fit the Lion's Mane → Morel → King Bolete line (parasitic healing flavor) or be a new unit/advancement.
-- [ ] Aura unit idea: a support unit that grants adjacent allies **plague** on their attacks. Could synergize with the faction's fungal spore economy — any ally standing near this unit converts kills into Fungal Spores.
+- [x] Healer unit idea: a support unit that grants adjacent allies **drain** on their attacks. → Implemented as Puppeteer's Parasitic Link aura.
+- [x] Aura unit idea: a support unit that grants adjacent allies **plague** on their attacks. → Implemented as Broodcap's Fungal Brood aura.
 - [ ] AoE attacks should have a custom icon so the player can tell at a glance which attack has splash damage.
