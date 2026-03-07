@@ -62,6 +62,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee**: Club 6×2 (impact) — **slow**
 - **Ranged**: Spore Puff 3×2 (impact)
 - **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies in melee to match its pace.
+- **Based on**: Heavy Infantryman (high HP tank, slow movement, impact damage)
 - **Advances to**: Sporeguard (L2) → Sporewarden (L3)
 
 ### 2. Deathcap (Poisoner) — 16g
@@ -70,7 +71,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee**: Toxic Touch 4×2 (blade) — **poison**
 - **Ranged**: Poison Dart 5×2 (pierce) — **poison**
 - **Role**: Glass cannon poisoner. Fragile but poisons everything it touches.
-- **Advances to**: Destroying Angel (L2) → Angel of Death (L3)
+- **Based on**: Thief (fragile, fast leveling, 24 HP / 24 XP)
+- **Advances to**: Nightcap (L2) / Double Truffle (L2) → Angel of Death (L3) / Phantomcap (L3)
 
 ### 3. Lion's Mane (Healer) — 16g ✅ BUILT
 - **Mushroom**: Lion's Mane (shaggy, cascading mushroom known for nerve regeneration)
@@ -79,7 +81,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Restorative Spores 4×2 (impact)
 - **Ability**: Heals +4 (adjacent allies)
 - **Role**: Faction healer. Restorative mushroom that mends wounded allies.
-- **Advances to**: Morel (L2) → King Bolete (L3)
+- **Based on**: Elvish Shaman (L1 healer, similar HP/mov)
+- **Advances to**: Morel (L2, healer) / Ergot (L2, blight) → King Bolete (L3) / Blightcrown (L3)
 - **Unit ID**: Mycelium_Lions_Mane
 
 ### 4. Mycelium Runner (Scout) — 17g
@@ -89,6 +92,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: —
 - **Ability**: Ambush (hides in forest/cave)
 - **Role**: Fast scout. Represents the underground mycelium spreading.
+- **Based on**: Elvish Scout (high movement, melee-only, ambush)
 - **Advances to**: Mycelium Weaver (L2) → Mycelium Overmind (L3)
 
 ### 5. Puffball (Skirmisher) — 14g
@@ -97,6 +101,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee**: Bump 3×3 (impact) — **plague**
 - **Ability**: Skirmisher (ignores ZoC), Death Bloom
 - **Role**: Cheap kamikaze flanker. Slips through lines via skirmisher, spreads plague on melee, detonates into grove spread on death. Advancement from Fungal Spore (L0).
+- **Based on**: Footpad (cheap skirmisher, 14g, fragile)
 - **Advances to**: Giant Puffball (L2) → Earthstar (L3)
 
 ### 6. Glowcap (Mage) — 19g
@@ -105,6 +110,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee**: Shock Touch 3×1 (electric)
 - **Ranged**: Spark Bolt 7×2 (electric) — **magical**
 - **Role**: Ranged damage dealer. Expensive but hits hard with electric/magical.
+- **Based on**: Dark Adept / Mage (fragile magical ranged, 19g)
 - **Advances to**: Shaggy Mane (L2) → Black Morel (L3)
 
 ### 7. Cordyceps (Parasite) — 19g
@@ -113,6 +119,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee**: Parasitic Touch 4×3 (blade) — **drain**
 - **Ranged**: Mind Spore 3×3 (arcane) — **plague**
 - **Role**: Parasitic survivor. Drains life in melee to stay alive despite fragile stats, spreads plague at range. Benefits from grove terrain like all Mycelium units.
+- **Based on**: Ghoul (drain melee, plague, similar HP)
 - **Advances to**: Puppeteer (L2) → Hivemind (L3)
 
 ### 8. Madcap (Berserker) — 17g ✅ BUILT
@@ -122,6 +129,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 1**: Mushroom Frenzy 5×3 (blade) — **berserk, grove bound** (consumes the grove)
 - **Melee 2**: Hand Axe 4×3 (blade) — fallback when not on a grove
 - **Role**: Conditional berserker. Devastating on a mushroom grove, average without one. Creates faction synergy — mushroom units spread groves, the Madcap consumes them for explosive burst damage. Does NOT spread groves passively (dwarf, no fungal_growth trait).
+- **Based on**: Dwarvish Guardsman / Berserker (dwarf chassis, berserk mechanic)
 - **Advances to**: Mad Prince (L2, chaotic, terror) → Mad Lord (L3) | Grove Warden (L2, neutral, leadership) → Old Growth (L3)
 - **Unit ID**: Mycelium_Madcap
 
@@ -135,6 +143,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Spore Puff 6×2 (impact) — **slow**
 - **Ability**: Spore Cloud — when this unit hits with its ranged attack, all enemy units adjacent to the **target** are also **slowed** (via `attacker_hits` event + dummy ability filter)
 - **Role**: Crowd-control tank. Lands a ranged hit and the spore cloud billows out, slowing enemies clustered around the target. Forces a choice: plague one enemy in melee, or slow a group at range.
+- **Based on**: Iron Mauler (heavy L2 tank with CC)
 
 #### Blightcap (from Sporecap) — 32g ✅ BUILT
 - **HP**: 52 | **Mov**: 4 | **Align**: Chaotic
@@ -142,6 +151,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Toxic Puff 5×3 (impact) — **poison**
 - **Ability**: Toxic Spores — attackers are **poisoned** after combat (retaliatory, via `attack_end` event + dummy ability filter)
 - **Role**: Offensive tank. Trades some bulk for poison pressure. Attackers take ongoing damage after engaging.
+- **Based on**: Shock Trooper (aggressive L2 tank)
 
 #### Mad Prince (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
@@ -150,6 +160,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 2**: Hand Axe 6×3 (blade)
 - **Ability**: Terror — adjacent enemies of lower level deal reduced damage (adapted from WoL Nightmares)
 - **Role**: Enhanced berserker. Frenzy matches the Dwarvish Berserker's 7×4 pattern but remains grove-bound. Radiates a terror aura from the fly agaric psychoactive toxins, debuffing nearby lower-level enemies. AMLA advancement.
+- **Based on**: Dwarvish Berserker (7×4 berserk, similar HP)
 
 #### Mad Lord (from Mad Prince) — 46g ✅ BUILT
 - **Race**: Dwarf
@@ -166,6 +177,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 2**: Hand Axe 7×4 (blade)
 - **Ability**: Leadership — adjacent allies of lower level deal more damage
 - **Role**: Guardian path. Where the Mad Prince descends deeper into madness, the Grove Warden channels mushroom visions into fierce protectiveness of the groves. Neutral alignment and leadership make it a support berserker that boosts the Mycelium's L1 units.
+- **Based on**: Dwarvish Steelclad (sturdy L2 dwarf, support role)
 
 #### Old Growth (from Grove Warden) — 46g ✅ BUILT
 - **Race**: Dwarf
@@ -178,28 +190,48 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ### Planned
 
-| L1 Unit | L2 Name | Ability Gained |
-|---------|---------|---------------|
-| Deathcap | **Destroying Angel** | Death Cloud: AoE poison to adjacent enemies (aura) |
-| Lion's Mane | **Morel** | Heals +8, Cures poison (adjacent allies) |
-| Mycelium Runner | **Mycelium Weaver** | Fungal Network: AoE fungal spread (converts adjacent hexes each turn, not just the hex it stands on). Fast territory raider — dashes deep and leaves groves behind. |
-| Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies |
-| Glowcap | **Shaggy Mane** | Lightning Storm: AoE electric damage to adjacent enemies on attack |
-| Cordyceps | **Puppeteer** | AoE drain aura + Fungal Domination (-10% damage) |
+| L1 Unit | L2 Name | Ability Gained | Status |
+|---------|---------|---------------|--------|
+| Deathcap | **Nightcap** | Poison Cloud: AoE poison attack (grove bound) | ✅ BUILT |
+| Deathcap | **Double Truffle** | Venom Strike: double damage vs poisoned (offense only) | ✅ BUILT |
+| Lion's Mane | **Morel** | Heals, Cures — pure healer path | ✅ BUILT |
+| Lion's Mane | **Ergot** | Blight (unhealable), AoE blight (grove bound) — offensive blight path | ✅ BUILT |
+| Mycelium Runner | **Mycelium Weaver** | Overgrowth (adjacent grove spread), Ambush, Entangle (slow) | ✅ BUILT |
+| Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies | |
+| Glowcap | **Shaggy Mane** | Lightning Storm: AoE electric damage to adjacent enemies on attack | |
+| Cordyceps | **Puppeteer** | AoE drain aura + Fungal Domination (-10% damage) | |
 
 #### Broodcap (from Cordyceps) — 34g ✅ BUILT
 - **HP**: 40 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 6×3 (blade) — **drain**
 - **Ranged**: Domination Spore 5×4 (arcane) — **plague, magical**
 - **Role**: Glass cannon plague engine. Low HP for L2 but devastating magical ranged — ignores terrain defense and converts kills into Fungal Spores. Drain melee keeps it alive when cornered.
+- **Based on**: Necromancer (fragile L2 with plague, magical ranged)
+
+#### Nightcap (from Deathcap) — 32g ✅ BUILT
+- **HP**: 36 | **Mov**: 5 | **Align**: Chaotic
+- **Melee**: Toxic Touch 6×2 (blade) — **poison**
+- **Ranged 1**: Poison Dart 7×2 (pierce) — **poison**
+- **Ranged 2**: Poison Cloud 5×3 (impact) — **poison, AoE poison (poison_cloud), grove bound**
+- **Role**: Glass cannon AoE poisoner. Still fragile for L2 but now poisons clusters of enemies by channeling the grove network. Three attack options: safe ranged poison, melee poison, or devastating grove-powered poison cloud that poisons both the target and all adjacent enemies.
+- **Based on**: Lich (fragile AoE caster, status effects)
+
+#### Double Truffle (from Deathcap) — 30g ✅ BUILT
+- **HP**: 40 | **Mov**: 6 | **Align**: Chaotic
+- **Melee**: Toxic Strike 6×3 (blade) — **poison, toxic strike** (double damage vs poisoned enemies, offense only)
+- **Ranged**: Poison Dart 4×2 (pierce) — **poison**
+- **Role**: Assassin. Poison dart lets it apply poison from safety, then it closes in for devastating venom strikes against poisoned targets — effectively 12×3 (36 damage). Where the Nightcap spreads poison wide, the Double Truffle exploits poison already applied.
+- **Based on**: Rogue (40 HP, 6 mov, 6×3 conditional damage, skirmisher at L3)
 
 ## L3 Advancements (enhanced AoE + combos)
 
 | L2 Unit | L3 Name | Enhanced Ability |
 |---------|---------|-----------------|
 | Sporeguard | **Sporewarden** | AoE slow + reduces enemy damage |
-| Destroying Angel | **Angel of Death** | AoE poison + kills on grove spawn 2 Fungal Spores instead of 1 |
+| Nightcap | **Angel of Death** | AoE poison + kills on grove spawn 2 Fungal Spores instead of 1 |
 | Morel | **King Bolete** | AoE heal 8 + cures + self-regeneration |
+| Ergot | **Blightcrown** | Enhanced AoE blight + stronger unhealable |
+| Double Truffle | **Trufflemaker** | Skirmisher + enhanced toxic strike (8×3, 16×3 vs poisoned) |
 | Mycelium Weaver | **Mycelium Overmind** | Teleport between caves/forests + entangle aura |
 | Giant Puffball | **Earthstar** | Massive AoE burst: damage + slow within 2 hexes |
 | Shaggy Mane | **Black Morel** | AoE cold + slow combo on attack |
@@ -207,9 +239,9 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ## Leaders (L2 units as starting leaders)
 
-- **Sporeguard** — Defensive leader, slows attackers around keep
-- **Destroying Angel** — Aggressive leader, poisons everything nearby
-- **Morel** — Support leader (Lion's Mane L2), heals recruits immediately
+- **Sporeguard** — Defensive leader, slows attackers around keep ✅
+- **Nightcap** — Aggressive leader, poisons everything nearby
+- **Morel** — Support leader (Lion's Mane L2), heals recruits immediately ✅
 - **Puppeteer** — Control leader, drains enemies and weakens them with Fungal Domination
 
 ## Balance Notes
@@ -221,18 +253,18 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Chaotic alignment** means they fight best at night.
 
 ## Implementation Todos (Phase 1 — L1 units only)
-1. Define custom Mushroom Grove terrain type (terrain graphics, movement/defense tables)
-2. Define mushroom race in WML
-3a. Create passive Fungal Spread event (side turn event that converts hexes under Mycelium units)
-3b. Create kill-based Fungal Spread event ([die] event that converts death hex when Mycelium unit gets the kill)
-3c. Create Grove Reanimation event ([die] event: enemy killed on Mushroom Grove hex by Mycelium unit → spawns Fungal Spore)
-4. Create L1 unit type .cfg files (7 units)
-5. Define L1 weapon specials/abilities in macros (slow, poison, drain, heals, ambush, skirmisher, magical)
-5b. Create Fungal Spore unit type (spawned by plague)
-6. Create faction [multiplayer_side] definition
-7. Add faction to Fractured_Realms era (replace Rebels clone placeholder)
-8. Test in-game for loading
-9. Add placeholder art (reuse existing sprites)
+1. [x] Define custom Mushroom Grove terrain type (terrain graphics, movement/defense tables)
+2. [x] Define mushroom race in WML
+3a. [x] Create passive Fungal Spread event (side turn event that converts hexes under Mycelium units)
+3b. [x] Create kill-based Fungal Spread event (removed — replaced by plague system)
+3c. [x] Create Grove Reanimation event (removed — replaced by plague system)
+4. [x] Create L1 unit type .cfg files (8 units: Sporecap, Deathcap, Lion's Mane, Runner, Puffball, Glowcap, Cordyceps, Madcap)
+5. [x] Define L1 weapon specials/abilities in macros (slow, poison, drain, heals, ambush, skirmisher, magical)
+5b. [x] Create Fungal Spore unit type (spawned by plague)
+6. [x] Create faction [multiplayer_side] definition
+7. [x] Add faction to Fractured_Realms era (replace Rebels clone placeholder)
+8. [ ] Test in-game for loading
+9. [x] Add placeholder art (reuse existing sprites)
 
 ## Future Phases (general ideas, not implemented yet)
 - **Phase 2**: L2 units with AoE abilities (death cloud, spore cloud, frost nova, enhanced healing)
