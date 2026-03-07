@@ -139,19 +139,19 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 #### Sporeguard (from Sporecap) — 32g ✅ BUILT
 - **HP**: 52 | **Mov**: 4 | **Align**: Chaotic
-- **Melee**: Club 9×3 (impact) — **plague**
+- **Melee**: Club 9×3 (impact) — **slow**
 - **Ranged**: Spore Puff 6×2 (impact) — **slow**
 - **Ability**: Spore Cloud — when this unit hits with its ranged attack, all enemy units adjacent to the **target** are also **slowed** (via `attacker_hits` event + dummy ability filter)
-- **Role**: Crowd-control tank. Lands a ranged hit and the spore cloud billows out, slowing enemies clustered around the target. Forces a choice: plague one enemy in melee, or slow a group at range.
+- **Role**: Crowd-control tank. Slows enemies in melee and at range. Can unleash AoE slow eruptions from groves.
 - **Based on**: Iron Mauler (heavy L2 tank with CC)
 
-#### Blightcap (from Sporecap) — 32g ✅ BUILT
-- **HP**: 52 | **Mov**: 4 | **Align**: Chaotic
-- **Melee**: Club 8×3 (impact) — **plague**
-- **Ranged**: Toxic Puff 5×3 (impact) — **poison**
-- **Ability**: Toxic Spores — attackers are **poisoned** after combat (retaliatory, via `attack_end` event + dummy ability filter)
-- **Role**: Offensive tank. Trades some bulk for poison pressure. Attackers take ongoing damage after engaging.
-- **Based on**: Shock Trooper (aggressive L2 tank)
+#### Chaga (from Sporecap) — 32g ✅ BUILT
+- **HP**: 56 | **Mov**: 4 | **Align**: Chaotic
+- **Melee**: Club 8×3 (impact) — **slow**
+- **Ranged**: —
+- **Ability**: Steadfast — halves damage when not moving, 70% blade/pierce/80% impact resistance
+- **Role**: Pure wall. Dense, rock-hard fungus that absorbs punishment. Melee-only with slow to pin enemies in front of it. The faction's anchor.
+- **Based on**: Dwarvish Sentinel (steadfast tank, high resistances)
 
 #### Mad Prince (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
