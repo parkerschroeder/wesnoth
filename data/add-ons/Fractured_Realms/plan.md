@@ -276,3 +276,4 @@ Two core mechanics create a self-reinforcing territorial loop:
 - [x] Update unit internal naming convention — replaced `{HUMAN_NAMES}` with custom mushroom-themed name lists (mycological Latin-inspired names like Agarum, Boleth, Mycenae, etc.)
 - [ ] Healer unit idea: a support unit that grants adjacent allies **drain** on their attacks. Could fit the Lion's Mane → Morel → King Bolete line (parasitic healing flavor) or be a new unit/advancement.
 - [ ] Aura unit idea: a support unit that grants adjacent allies **plague** on their attacks. Could synergize with the faction's fungal spore economy — any ally standing near this unit converts kills into Fungal Spores.
+- [ ] AoE attacks should have a custom icon so the player can tell at a glance which attack has splash damage.
