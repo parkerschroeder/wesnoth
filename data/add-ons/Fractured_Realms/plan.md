@@ -85,15 +85,15 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Advances to**: Morel (L2, healer) / Ergot (L2, blight) → King Bolete (L3) / Blightcrown (L3)
 - **Unit ID**: Mycelium_Lions_Mane
 
-### 4. Mycelium Runner (Scout) — 17g
+### 4. Mycelium Runner (Scout) — 14g
 - **Mushroom**: Mycelium network (underground fungal threads)
-- **HP**: 28 | **Mov**: 8 | **Align**: Chaotic
+- **HP**: 26 | **Mov**: 8 | **Align**: Chaotic
 - **Melee**: Tendril Lash 5×3 (blade)
 - **Ranged**: —
 - **Ability**: Ambush (hides in forest/cave)
 - **Role**: Fast scout. Represents the underground mycelium spreading.
-- **Based on**: Elvish Scout (high movement, melee-only, ambush)
-- **Advances to**: Mycelium Weaver (L2) → Mycelium Overmind (L3)
+- **Based on**: Saurian Skirmisher (15g, 26 HP, 6 mov, chaotic, skirmisher; spear 4×4 pierce, spear 4×2 pierce ranged). Runner matches HP/XP exactly, trades skirmisher + ranged for ambush + 2 extra movement at -1g.
+- **Advances to**: Mycelium Weaver (L2, overgrowth) / Mycelium Tunneler (L2, teleport)
 
 ### 5. Puffball (Skirmisher) — 14g
 - **Mushroom**: Puffball (releases spore cloud when disturbed)
@@ -197,7 +197,18 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Lion's Mane | **Morel** | Heals +8, Cures — pure healer path | ✅ BUILT |
 | Lion's Mane | **Ergot** | Blight (unhealable), AoE blight (grove bound) — offensive blight path | ✅ BUILT |
 | Mycelium Runner | **Mycelium Weaver** | Overgrowth (adjacent grove spread), Ambush, Entangle (slow) | ✅ BUILT |
+| Mycelium Runner | **Mycelium Tunneler** | Fungal Tunnel (personal teleport between grove/forest tiles), Disengage | ✅ BUILT |
 | Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies | |
+
+#### Tunneler (from Runner) — 30g ✅ BUILT
+- **HP**: 38 | **Mov**: 8 | **Align**: Chaotic
+- **Melee 1**: Tendril Lash 7×3 (blade)
+- **Melee 2**: Entangle 5×2 (impact) — **slow**
+- **Ability**: Disengage (1 move after attacking) + Fungal Tunnel (personal teleport between `*^Tf,*^Tff`)
+- **XP**: 55
+- **Role**: Mobile flanker that introduces the fungal teleport mechanic. Teaches the player to use mushroom groves as a teleport network before the L3 Threadmaster upgrades it into an aura for allies. Disengage + teleport combo: attack, then use the 1 remaining move to teleport to a distant grove.
+- **Based on**: Saurian Ambusher (22g, 38 HP, 7 mov, chaotic, skirmisher; spear 6×4 pierce, spear 5×2 pierce ranged). Tunneler matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport at +8g.
+- **Advances to**: Threadmaster (L3 — teleport aura)
 | Glowcap | **Shaggy Mane** | Lightning Storm: AoE electric damage to adjacent enemies on attack | |
 | Cordyceps | **Puppeteer** | Parasitic Link: drain aura for adjacent allies | ✅ BUILT |
 
@@ -243,7 +254,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Morel | **King Bolete** | AoE heal 8 + cures + self-regeneration |
 | Ergot | **Blightcrown** | Enhanced AoE blight + stronger unhealable |
 | Double Truffle | **Trufflemaker** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) |
-| Mycelium Weaver | **Threadmaster** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff` — Mushroom Grove and Mushroom Forest). The Threadmaster itself can also teleport. Uses native `[teleport]` ability with `[affect_adjacent]` and `[tunnel]` source/target filtered to fungal terrains (same pattern as grove_bound's terrain filter). As the faction spreads more groves, the teleport network grows. Untested in mainline but schema + C++ infrastructure should support it. |
+| Mycelium Weaver | **TBD** | Enhanced overgrowth / territory control L3 (TBD) |
+| Mycelium Tunneler | **Threadmaster** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Tunneler's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Threadmaster matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
 | Giant Puffball | **Earthstar** | Massive AoE burst: damage + slow within 2 hexes |
 | Shaggy Mane | **Black Morel** | AoE cold + slow combo on attack |
 | Puppeteer | **Hivemind** | Enhanced drain aura + Leadership | ✅ BUILT |
