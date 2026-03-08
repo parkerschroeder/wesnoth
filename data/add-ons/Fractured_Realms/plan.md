@@ -299,10 +299,13 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ## Leaders (L2 units as starting leaders)
 
-- **Sporeguard** — Defensive leader, slows attackers around keep ✅
-- **Nightcap** — Aggressive leader, poisons everything nearby
-- **Morel** — Support leader (Lion's Mane L2), heals recruits immediately ✅
-- **Puppeteer** — Control leader, grants adjacent allies drain via parasitic link
+Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5, Northerners default with 5):
+
+- **Sporeguard** — Defensive tank leader, slows attackers around keep. Sprite: Iron Mauler.
+- **Chaga** — Steadfast wall leader, anchors the frontline. Sprite: Dwarvish Stalwart.
+- **Broodcap** — Plague leader, kills near keep spawn Fungal Spores. Sprite: Dune Explorer.
+- **Grove Warden** — Leadership leader, buffs adjacent recruits. Sprite: Dwarvish Berserker.
+- **Morel** — Support/healer leader, keeps recruits alive. Sprite: Elvish Druid.
 
 ## Balance Notes
 - **Weakness**: Low raw damage. Loses straight 1v1 fights.
