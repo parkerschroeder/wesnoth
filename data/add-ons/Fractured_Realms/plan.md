@@ -243,7 +243,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Morel | **King Bolete** | AoE heal 8 + cures + self-regeneration |
 | Ergot | **Blightcrown** | Enhanced AoE blight + stronger unhealable |
 | Double Truffle | **Trufflemaker** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) |
-| Mycelium Weaver | **Mycelium Overmind** | Teleport between caves/forests + entangle aura |
+| Mycelium Weaver | **Threadmaster** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff` — Mushroom Grove and Mushroom Forest). The Threadmaster itself can also teleport. Uses native `[teleport]` ability with `[affect_adjacent]` and `[tunnel]` source/target filtered to fungal terrains (same pattern as grove_bound's terrain filter). As the faction spreads more groves, the teleport network grows. Untested in mainline but schema + C++ infrastructure should support it. |
 | Giant Puffball | **Earthstar** | Massive AoE burst: damage + slow within 2 hexes |
 | Shaggy Mane | **Black Morel** | AoE cold + slow combo on attack |
 | Puppeteer | **Hivemind** | Enhanced drain aura + Leadership | ✅ BUILT |
