@@ -63,6 +63,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Spore Puff 3×2 (impact)
 - **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies in melee to match its pace.
 - **Based on**: Heavy Infantryman (high HP tank, slow movement, impact damage)
+- **Sprite**: Dwarvish Guardsman
 - **Advances to**: Sporeguard (L2) → Sporewarden (L3)
 
 ### 2. Deathcap (Archer) — 15g
@@ -71,7 +72,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee**: Toxic Touch 3×2 (blade) — **poison**
 - **Ranged**: Poison Dart 5×3 (pierce) — **poison**
 - **Role**: Ranged poisoner/archer. Fragile but peppers enemies with venomous barbs from range. Poison is the real damage. Fast leveling at 24 XP.
-- **Based on**: Elvish Archer (ranged-focused, but with poison instead of raw damage)
+- **Based on**: WoL Legion Archer (chaotic archer, poison variant)
+- **Sprite**: Legion Archer
 - **Advances to**: Nightcap (L2) / Double Truffle (L2) → Angel of Death (L3) / Trufflemaker (L3)
 
 ### 3. Lion's Mane (Healer) — 14g ✅ BUILT
@@ -82,6 +84,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Heals +4 (adjacent allies)
 - **Role**: Faction healer. Restorative mushroom that mends wounded allies.
 - **Based on**: Elvish Shaman (L1 healer, similar HP/mov)
+- **Sprite**: Elvish Shaman
 - **Advances to**: Morel (L2, healer) / Ergot (L2, blight) → King Bolete (L3) / Blightcrown (L3)
 - **Unit ID**: Mycelium_Lions_Mane
 
@@ -102,6 +105,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Skirmisher (ignores ZoC), Death Bloom
 - **Role**: Cheap kamikaze flanker. Slips through lines via skirmisher, spreads plague on melee, detonates into grove spread on death. Advancement from Fungal Spore (L0).
 - **Based on**: Footpad (cheap skirmisher, 14g, fragile)
+- **Sprite**: WoL Greater Wisp (scaled-up wisp)
 - **Advances to**: Giant Puffball (L2) → Earthstar (L3)
 
 ### 6. Glowcap (Mage) — 19g
@@ -111,6 +115,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Spark Bolt 7×2 (electric) — **magical**
 - **Role**: Ranged damage dealer. Expensive but hits hard with electric/magical.
 - **Based on**: Dark Adept / Mage (fragile magical ranged, 19g)
+- **Sprite**: Dark Adept
 - **Advances to**: Shaggy Mane (L2) → Black Morel (L3)
 
 ### 7. Cordyceps (Parasite) — 16g
@@ -120,6 +125,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: —
 - **Role**: Melee-only drain fighter. Cheap and self-sustaining through drain, the only drain unit in the faction. Specializes at L2 into plague support (Broodcap) or drain support (Puppeteer).
 - **Based on**: Dune Rover (14g, 32 HP, 5 mov, liminal; axe 4×3 blade, bow 5×3 pierce). Cordyceps trades ranged and 2 HP for drain sustain at +2g.
+- **Sprite**: Dune Rover
 
 ### 8. Madcap (Berserker) — 17g ✅ BUILT
 - **Concept**: A crazed dwarf hermit who discovered the rage-inducing fly agaric mushroom (*Amanita muscaria*) deep in the caves. Exiled by their clan, they now fight alongside the Mycelium — consuming grove mushrooms to fuel devastating berserk frenzies.
@@ -128,7 +134,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 1**: Mushroom Frenzy 5×3 (blade) — **berserk, grove bound** (consumes the grove)
 - **Melee 2**: Hand Axe 4×3 (blade) — fallback when not on a grove
 - **Role**: Conditional berserker. Devastating on a mushroom grove, average without one. Creates faction synergy — mushroom units spread groves, the Madcap consumes them for explosive burst damage. Does NOT spread groves passively (dwarf, no fungal_growth trait).
-- **Based on**: Dwarvish Guardsman / Berserker (dwarf chassis, berserk mechanic)
+- **Based on**: Dwarvish Ulfserker (15g, 32 HP, 5 mov, neutral, berserk; hammer 9×3 impact; 30% blade/pierce, 10% impact/fire/cold/arcane). Madcap matches chassis, trades neutral for chaotic and adds grove-bound condition.
+- **Sprite**: Dwarvish Ulfserker
 - **Advances to**: Mad Prince (L2, chaotic, terror) → Mad Lord (L3) | Grove Warden (L2, neutral, leadership) → Old Growth (L3)
 - **Unit ID**: Mycelium_Madcap
 
@@ -143,6 +150,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Spore Cloud — when this unit hits with its ranged attack, all enemy units adjacent to the **target** are also **slowed** (via `attacker_hits` event + dummy ability filter)
 - **Role**: Crowd-control tank. Slows enemies in melee and at range. Can unleash AoE slow eruptions from groves.
 - **Based on**: Iron Mauler (heavy L2 tank with CC)
+- **Sprite**: Iron Mauler (siegetrooper)
 
 #### Chaga (from Sporecap) — 32g ✅ BUILT
 - **HP**: 59 | **Mov**: 4 | **Align**: Neutral
@@ -151,6 +159,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Steadfast — halves damage when not moving, 70% blade/pierce, 80% impact, 100% fire/arcane resistance
 - **Role**: Pure wall. Dense, rock-hard fungus that absorbs punishment. The faction's anchor against both physical and elemental threats.
 - **Based on**: Dwarvish Stalwart (30g, 59 HP, 4 mov, neutral, steadfast; spear 8×3 pierce, javelin 9×1 pierce; blade/pierce 20%, impact 20%, fire/cold/arcane 10%). Chaga matches HP and ranged exactly, trades pierce for impact damage, has +10% blade/pierce resist but 0% fire/arcane (vs Stalwart's 10%).
+- **Sprite**: Dwarvish Stalwart
 - **Advances to**: Heartwood (L3)
 
 #### Mad Prince (from Madcap) — 28g ✅ BUILT
@@ -160,7 +169,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 2**: Hand Axe 6×3 (blade)
 - **Ability**: Terror — adjacent enemies of lower level deal reduced damage (adapted from WoL Nightmares)
 - **Role**: Enhanced berserker. Frenzy matches the Dwarvish Berserker's 7×4 pattern but remains grove-bound. Radiates a terror aura from the fly agaric psychoactive toxins, debuffing nearby lower-level enemies. AMLA advancement.
-- **Based on**: Dwarvish Berserker (7×4 berserk, similar HP)
+- **Based on**: Dwarvish Berserker (30g, 52 HP, 5 mov, neutral, berserk; hammer 7×4 impact). Mad Prince matches attack pattern exactly, trades neutral for chaotic and adds terror aura + grove-bound condition.
+- **Sprite**: Dwarvish Berserker
 
 #### Mad Lord (from Mad Prince) — 46g ✅ BUILT
 - **Race**: Dwarf
@@ -169,6 +179,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 2**: Hand Axe 9×4 (blade) — **fungal plague**
 - **Ability**: Terror
 - **Role**: Plague berserker lord. Kills raise Fungal Spores while terror aura suppresses nearby enemies. The culmination of the Madcap line — a tyrant of madness whose victims fuel the mycelium's spread.
+- **Based on**: Dwarvish Lord (40g, 73 HP, 5 mov, neutral; hammer 15×2 impact). Mad Lord trades raw HP/damage for plague + terror aura + grove-bound berserk.
+- **Sprite**: Dwarvish Lord
 
 #### Grove Warden (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
@@ -177,7 +189,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 2**: Hand Axe 7×4 (blade)
 - **Ability**: Leadership — adjacent allies of lower level deal more damage
 - **Role**: Guardian path. Where the Mad Prince descends deeper into madness, the Grove Warden channels mushroom visions into fierce protectiveness of the groves. Neutral alignment and leadership make it a support berserker that boosts the Mycelium's L1 units.
-- **Based on**: Dwarvish Steelclad (sturdy L2 dwarf, support role)
+- **Based on**: Dwarvish Berserker (30g, 52 HP, 5 mov, neutral, berserk; hammer 7×4 impact). Grove Warden matches attack pattern, swaps terror for leadership and chaos for neutral.
+- **Sprite**: Dwarvish Berserker
 
 #### Old Growth (from Grove Warden) — 46g ✅ BUILT
 - **Race**: Dwarf
@@ -187,6 +200,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Spore Toss 6×3 (impact)
 - **Abilities**: Leadership, Regeneration
 - **Role**: The living heart of the grove. Leadership rallies allies while regeneration keeps the Old Growth standing through prolonged engagements. The boundary between dwarf and fungus has blurred — mycelial threads wind through their veins, granting unnatural resilience.
+- **Based on**: Dwarvish Lord (40g, 73 HP, 5 mov, neutral; hammer 15×2 impact). Old Growth trades raw damage for leadership + regeneration + grove synergy.
+- **Sprite**: Dwarvish Lord
 
 ### Planned
 
@@ -220,6 +235,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **XP**: 75
 - **Role**: Plague support. Turns every allied kill nearby into Fungal Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
 - **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Broodcap trades 1 HP, 1 movement and raw damage for drain + plague aura at +3g.
+- **Sprite**: Dune Explorer
 
 #### Puppeteer (from Cordyceps) — 32g ✅ BUILT
 - **HP**: 43 | **Mov**: 5 | **Align**: Chaotic
@@ -229,6 +245,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **XP**: 75
 - **Role**: Drain support. Nearby allies self-sustain through combat. Complements the Broodcap's army-building with army-sustaining.
 - **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Puppeteer trades 3 HP, 1 movement and raw damage for drain + drain aura at +1g.
+- **Sprite**: Dune Explorer
 
 #### Nightcap (from Deathcap) — 32g ✅ BUILT
 - **HP**: 36 | **Mov**: 5 | **Align**: Chaotic
@@ -237,6 +254,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged 2**: Poison Cloud 5×3 (impact) — **poison, AoE poison (poison_cloud), grove bound**
 - **Role**: Glass cannon AoE poisoner. Still fragile for L2 but now poisons clusters of enemies by channeling the grove network. Three attack options: safe ranged poison, melee poison, or devastating grove-powered poison cloud that poisons both the target and all adjacent enemies.
 - **Based on**: Lich (fragile AoE caster, status effects)
+- **Sprite**: Legion Longbowman
 
 #### Double Truffle (from Deathcap) — 30g ✅ BUILT
 - **HP**: 40 | **Mov**: 6 | **Align**: Chaotic
@@ -244,6 +262,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Catalyst Spore 6×3 (pierce) — **toxic strike** (double damage vs poisoned enemies, offense only)
 - **Role**: Ranged assassin/sniper. Melee poisons the target, then catalyst spores finish from range at 12×3 (36 damage) vs poisoned enemies. Works best with Deathcap or Nightcap to pre-poison targets. The attack has no poison itself — it's a pure finisher.
 - **Based on**: Elvish Marksman (ranged-focused, conditional damage)
+- **Sprite**: Legion Crossbowman
 
 ## L3 Advancements (enhanced AoE + combos)
 
@@ -267,6 +286,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Steadfast — 70% blade/pierce, 80% impact, 90% fire/arcane resistance
 - **Role**: Ultimate wall. Matches the Sentinel in every stat, with earned fire/arcane resistance.
 - **Based on**: Dwarvish Sentinel (63g, 68 HP, 4 mov, neutral, steadfast; spear 10×3 pierce, javelin 11×2 pierce; blade/pierce 30%, impact 20%, fire/cold/arcane 10%). Heartwood matches cost/HP/resists exactly, trades pierce for impact and 11×2 ranged for 12×1.
+- **Sprite**: Dwarvish Sentinel
 
 #### Hivemind (from Puppeteer) — 50g ✅ BUILT
 - **HP**: 55 | **Mov**: 5 | **Align**: Chaotic
@@ -275,6 +295,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Abilities**: Leadership + Parasitic Link (drain aura for adjacent allies)
 - **Role**: Force multiplier. Adjacent allies deal +25% damage AND drain health. Glass cannon support — needs a tank in front.
 - **Based on**: Dune Wayfarer (58g, 62 HP, 6 mov, liminal; axe 8×4 blade, bow 8×4 pierce). Hivemind trades 7 HP, 1 movement and raw damage for leadership + drain aura at -8g.
+- **Sprite**: Dune Wayfarer
 
 ## Leaders (L2 units as starting leaders)
 
