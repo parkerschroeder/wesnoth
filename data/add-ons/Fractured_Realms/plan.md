@@ -29,16 +29,16 @@ Two core mechanics create a self-reinforcing territorial loop:
 ### 2. ~~Kill Spread~~ (removed)
 - Removed to simplify the faction and avoid timing conflicts with plague
 
-### 3. Fungal Plague (Sporecap, Cordyceps, Puffball, Fungal Spore)
-- Unconditional plague — when these units kill an enemy, it rises as a Fungal Spore
+### 3. Fungal Plague (Oyster Squire, Morel, Puffball, Spore)
+- Unconditional plague — when these units kill an enemy, it rises as a Spore
 - Uses the engine's built-in plague system (doesn't work on undead, mechanical, or villages)
 - Spores are L0, fragile, and expendable — designed to die
 
-### 4. Death Bloom (Fungal Spore + Puffball)
+### 4. Death Bloom (Spore + Puffball)
 - When a unit with death bloom dies, ALL nearby hexes are converted to Mushroom Grove and adjacent enemies are poisoned
 - This is the faction's primary territory expansion tool
 - Creates the core loop: plague spawns spore → spore dies → death bloom spreads groves → more favorable terrain
-- Fungal Spore (L0) advances to Puffball (L1) — same death bloom identity, upgraded body with skirmisher
+- Spore (L0) advances to Puffball (L1) — same death bloom identity, upgraded body with skirmisher
 - Strategic choice: protect the spore for its plague attack, or sacrifice it to infect new ground
 - **Counterplay**: enemies can kill spores in locations where grove spread is harmless, or avoid killing them entirely
 
@@ -56,7 +56,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ## L1 Recruits (single-target status effects)
 
-### 1. Sporecap (Fighter) — 15g
+### 1. Oyster Squire (Fighter) — 15g
 - **Mushroom**: Generic toadstool warrior
 - **HP**: 38 | **Mov**: 4 | **Align**: Chaotic
 - **Melee**: Club 6×2 (impact) — **slow**
@@ -64,7 +64,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies in melee to match its pace.
 - **Based on**: Heavy Infantryman (high HP tank, slow movement, impact damage)
 - **Sprite**: Dwarvish Guardsman
-- **Advances to**: Sporeguard (L2) → Sporewarden (L3)
+- **Advances to**: Oyster Vizier (L2), Oyster Knight (L2)
 
 ### 2. Deathcap (Archer) — 15g
 - **Mushroom**: Amanita (deadly poisonous)
@@ -74,39 +74,39 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Ranged poisoner/archer. Fragile but peppers enemies with venomous barbs from range. Poison is the real damage. Fast leveling at 24 XP.
 - **Based on**: WoL Legion Archer (chaotic archer, poison variant)
 - **Sprite**: Legion Archer
-- **Advances to**: Nightcap (L2) / Double Truffle (L2) → Angel of Death (L3) / Trufflemaker (L3)
+- **Advances to**: Stinking Dapperling (L2) / Inkcap (L2)
 
 ### 3. Lion's Mane (Healer) — 14g ✅ BUILT
 - **Mushroom**: Lion's Mane (shaggy, cascading mushroom known for nerve regeneration)
 - **HP**: 26 | **Mov**: 5 | **Align**: Neutral
 - **Melee**: Staff 3×2 (impact)
-- **Ranged**: Restorative Spores 4×2 (impact) — **slow**
+- **Ranged**: Spore Puff 4×2 (impact) — **slow**
 - **Ability**: Heals +4 (adjacent allies)
 - **Role**: Faction healer. Restorative mushroom that mends wounded allies.
 - **Based on**: Elvish Shaman (L1 healer, similar HP/mov)
 - **Sprite**: Elvish Shaman
-- **Advances to**: Morel (L2, healer) / Ergot (L2, blight) → King Bolete (L3) / Blightcrown (L3)
+- **Advances to**: Shaggy Mane (L2, healer) / Bear's Head (L2, blight)
 - **Unit ID**: Mycelium_Lions_Mane
 
-### 4. Mycelium Runner (Scout) — 14g
+### 4. Truffle (Scout) — 14g
 - **Mushroom**: Mycelium network (underground fungal threads)
 - **HP**: 26 | **Mov**: 8 | **Align**: Chaotic
 - **Melee**: Tendril Lash 5×3 (blade)
 - **Ranged**: —
 - **Ability**: Ambush (hides in forest/cave)
 - **Role**: Fast scout. Represents the underground mycelium spreading.
-- **Based on**: Saurian Skirmisher (15g, 26 HP, 6 mov, chaotic, skirmisher; spear 4×4 pierce, spear 4×2 pierce ranged). Runner matches HP/XP exactly, trades skirmisher + ranged for ambush + 2 extra movement at -1g.
-- **Advances to**: Mycelium Weaver (L2, overgrowth) / Mycelium Tunneler (L2, teleport)
+- **Based on**: Saurian Skirmisher (15g, 26 HP, 6 mov, chaotic, skirmisher; spear 4×4 pierce, spear 4×2 pierce ranged). Truffle matches HP/XP exactly, trades skirmisher + ranged for ambush + 2 extra movement at -1g.
+- **Advances to**: Double Truffle (L2, overgrowth) / Portalbello (L2, teleport)
 
 ### 5. Puffball (Skirmisher) — 14g
 - **Mushroom**: Puffball (releases spore cloud when disturbed)
 - **HP**: 22 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Bump 3×3 (impact) — **plague**
 - **Ability**: Skirmisher (ignores ZoC), Death Bloom
-- **Role**: Cheap kamikaze flanker. Slips through lines via skirmisher, spreads plague on melee, detonates into grove spread on death. Advancement from Fungal Spore (L0).
+- **Role**: Cheap kamikaze flanker. Slips through lines via skirmisher, spreads plague on melee, detonates into grove spread on death. Advancement from Spore (L0).
 - **Based on**: Footpad (cheap skirmisher, 14g, fragile)
 - **Sprite**: WoL Greater Wisp (scaled-up wisp)
-- **Advances to**: Giant Puffball (L2) → Earthstar (L3)
+- **Advances to**: (dead-end L1)
 
 ### 6. Glowcap (Mage) — 19g
 - **Mushroom**: Bioluminescent fungus (channels bioelectric energy)
@@ -116,15 +116,15 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Ranged damage dealer. Expensive but hits hard with electric/magical.
 - **Based on**: Dark Adept / Mage (fragile magical ranged, 19g)
 - **Sprite**: Dark Adept
-- **Advances to**: Shaggy Mane (L2) → Black Morel (L3)
+- **Advances to**: Earth Star (L2)
 
-### 7. Cordyceps (Parasite) — 16g
+### 7. Morel (Parasite) — 16g
 - **Mushroom**: Cordyceps (parasitic, mind-controlling fungus)
 - **HP**: 30 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 5×3 (blade) — **drain**
 - **Ranged**: —
-- **Role**: Melee-only drain fighter. Cheap and self-sustaining through drain, the only drain unit in the faction. Specializes at L2 into plague support (Broodcap) or drain support (Puppeteer).
-- **Based on**: Dune Rover (14g, 32 HP, 5 mov, liminal; axe 4×3 blade, bow 5×3 pierce). Cordyceps trades ranged and 2 HP for drain sustain at +2g.
+- **Role**: Melee-only drain fighter. Cheap and self-sustaining through drain, the only drain unit in the faction. Specializes at L2 into plague support (Morel Dilemma) or drain support (Morel Support).
+- **Based on**: Dune Rover (14g, 32 HP, 5 mov, liminal; axe 4×3 blade, bow 5×3 pierce). Morel trades ranged and 2 HP for drain sustain at +2g.
 - **Sprite**: Dune Rover
 
 ### 8. Madcap (Berserker) — 17g ✅ BUILT
@@ -136,14 +136,14 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Conditional berserker. Devastating on a mushroom grove, average without one. Creates faction synergy — mushroom units spread groves, the Madcap consumes them for explosive burst damage. Does NOT spread groves passively (dwarf, no fungal_growth trait).
 - **Based on**: Dwarvish Ulfserker (15g, 32 HP, 5 mov, neutral, berserk; hammer 9×3 impact; 30% blade/pierce, 10% impact/fire/cold/arcane). Madcap matches chassis, trades neutral for chaotic and adds grove-bound condition.
 - **Sprite**: Dwarvish Ulfserker
-- **Advances to**: Mad Prince (L2, chaotic, terror) → Mad Lord (L3) | Grove Warden (L2, neutral, leadership) → Old Growth (L3)
+- **Advances to**: Mad Prince (L2, chaotic, terror) → Mad Lord (L3) | Fungi (L2, neutral, leadership) → Fun Grandpa (L3)
 - **Unit ID**: Mycelium_Madcap
 
 ## L2 Advancements
 
 ### Built
 
-#### Sporeguard (from Sporecap) — 32g ✅ BUILT
+#### Oyster Vizier (from Oyster Squire) — 32g ✅ BUILT
 - **HP**: 52 | **Mov**: 4 | **Align**: Chaotic
 - **Melee**: Club 9×3 (impact) — **slow**
 - **Ranged**: Spore Puff 6×2 (impact) — **slow**
@@ -152,15 +152,15 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Iron Mauler (heavy L2 tank with CC)
 - **Sprite**: Iron Mauler (siegetrooper)
 
-#### Chaga (from Sporecap) — 32g ✅ BUILT
+#### Oyster Knight (from Oyster Squire) — 32g ✅ BUILT
 - **HP**: 59 | **Mov**: 4 | **Align**: Neutral
 - **Melee**: Club 8×3 (impact)
 - **Ranged**: Spore Puff 9×1 (impact)
 - **Ability**: Steadfast — halves damage when not moving, 70% blade/pierce, 80% impact, 100% fire/arcane resistance
 - **Role**: Pure wall. Dense, rock-hard fungus that absorbs punishment. The faction's anchor against both physical and elemental threats.
-- **Based on**: Dwarvish Stalwart (30g, 59 HP, 4 mov, neutral, steadfast; spear 8×3 pierce, javelin 9×1 pierce; blade/pierce 20%, impact 20%, fire/cold/arcane 10%). Chaga matches HP and ranged exactly, trades pierce for impact damage, has +10% blade/pierce resist but 0% fire/arcane (vs Stalwart's 10%).
+- **Based on**: Dwarvish Stalwart (30g, 59 HP, 4 mov, neutral, steadfast; spear 8×3 pierce, javelin 9×1 pierce; blade/pierce 20%, impact 20%, fire/cold/arcane 10%). Oyster Knight matches HP and ranged exactly, trades pierce for impact damage, has +10% blade/pierce resist but 0% fire/arcane (vs Stalwart's 10%).
 - **Sprite**: Dwarvish Stalwart
-- **Advances to**: Heartwood (L3)
+- **Advances to**: King Oyster (L3)
 
 #### Mad Prince (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
@@ -178,76 +178,78 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Melee 1**: Mushroom Frenzy 9×4 (blade) — **berserk, grove bound, fungal plague**
 - **Melee 2**: Hand Axe 9×4 (blade) — **fungal plague**
 - **Ability**: Terror
-- **Role**: Plague berserker lord. Kills raise Fungal Spores while terror aura suppresses nearby enemies. The culmination of the Madcap line — a tyrant of madness whose victims fuel the mycelium's spread.
+- **Role**: Plague berserker lord. Kills raise Spores while terror aura suppresses nearby enemies. The culmination of the Madcap line — a tyrant of madness whose victims fuel the mycelium's spread.
 - **Based on**: Dwarvish Lord (40g, 73 HP, 5 mov, neutral; hammer 15×2 impact). Mad Lord trades raw HP/damage for plague + terror aura + grove-bound berserk.
 - **Sprite**: Dwarvish Lord
 
-#### Grove Warden (from Madcap) — 28g ✅ BUILT
+#### Fungi (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
 - **HP**: 44 | **Mov**: 5 | **Align**: Neutral
 - **Melee 1**: Mushroom Frenzy 7×4 (blade) — **berserk, grove bound**
 - **Melee 2**: Hand Axe 7×4 (blade)
 - **Ability**: Leadership — adjacent allies of lower level deal more damage
-- **Role**: Guardian path. Where the Mad Prince descends deeper into madness, the Grove Warden channels mushroom visions into fierce protectiveness of the groves. Neutral alignment and leadership make it a support berserker that boosts the Mycelium's L1 units.
-- **Based on**: Dwarvish Berserker (30g, 52 HP, 5 mov, neutral, berserk; hammer 7×4 impact). Grove Warden matches attack pattern, swaps terror for leadership and chaos for neutral.
+- **Role**: Guardian path. Where the Mad Prince descends deeper into madness, the Fungi channels mushroom visions into fierce protectiveness of the groves. Neutral alignment and leadership make it a support berserker that boosts the Mycelium's L1 units.
+- **Based on**: Dwarvish Berserker (30g, 52 HP, 5 mov, neutral, berserk; hammer 7×4 impact). Fungi matches attack pattern, swaps terror for leadership and chaos for neutral.
 - **Sprite**: Dwarvish Berserker
 
-#### Old Growth (from Grove Warden) — 46g ✅ BUILT
+#### Fun Grandpa (from Fungi) — 46g ✅ BUILT
 - **Race**: Dwarf
 - **HP**: 60 | **Mov**: 5 | **Align**: Neutral
 - **Melee 1**: Mushroom Frenzy 8×4 (blade) — **berserk, grove bound**
 - **Melee 2**: Hand Axe 8×4 (blade)
 - **Ranged**: Spore Toss 6×3 (impact)
 - **Abilities**: Leadership, Regeneration
-- **Role**: The living heart of the grove. Leadership rallies allies while regeneration keeps the Old Growth standing through prolonged engagements. The boundary between dwarf and fungus has blurred — mycelial threads wind through their veins, granting unnatural resilience.
-- **Based on**: Dwarvish Lord (40g, 73 HP, 5 mov, neutral; hammer 15×2 impact). Old Growth trades raw damage for leadership + regeneration + grove synergy.
+- **Role**: The living heart of the grove. Leadership rallies allies while regeneration keeps the Fun Grandpa standing through prolonged engagements. The boundary between dwarf and fungus has blurred — mycelial threads wind through their veins, granting unnatural resilience.
+- **Based on**: Dwarvish Lord (40g, 73 HP, 5 mov, neutral; hammer 15×2 impact). Fun Grandpa trades raw damage for leadership + regeneration + grove synergy.
 - **Sprite**: Dwarvish Lord
 
 ### Planned
 
 | L1 Unit | L2 Name | Ability Gained | Status |
 |---------|---------|---------------|--------|
-| Deathcap | **Nightcap** | Poison Cloud: AoE poison attack (grove bound) | ✅ BUILT |
-| Deathcap | **Double Truffle** | Venom Strike: double damage vs poisoned (offense only) | ✅ BUILT |
-| Lion's Mane | **Morel** | Heals +8, Cures — pure healer path | ✅ BUILT |
-| Lion's Mane | **Ergot** | Blight (unhealable), AoE blight (grove bound) — offensive blight path | ✅ BUILT |
-| Mycelium Runner | **Mycelium Weaver** | Overgrowth (adjacent grove spread), Ambush, Entangle (slow) | ✅ BUILT |
-| Mycelium Runner | **Mycelium Tunneler** | Fungal Tunnel (personal teleport between grove/forest tiles), Disengage | ✅ BUILT |
+| Deathcap | **Stinking Dapperling** | Poison Cloud: AoE poison attack (grove bound) | ✅ BUILT |
+| Deathcap | **Inkcap** | Venom Strike: double damage vs poisoned (offense only) | ✅ BUILT |
+| Lion's Mane | **Shaggy Mane** | Heals +8, Cures — pure healer path | ✅ BUILT |
+| Lion's Mane | **Bear's Head** | Blight (unhealable), AoE blight (grove bound) — offensive blight path | ✅ BUILT |
+| Truffle | **Double Truffle** | Overgrowth (adjacent grove spread), Ambush, Entangle (slow) | ✅ BUILT |
+| Truffle | **Portalbello** | Fungal Tunnel (personal teleport between grove/forest tiles), Disengage | ✅ BUILT |
 | Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies | |
 
-#### Tunneler (from Runner) — 30g ✅ BUILT
+#### Portalbello (from Truffle) — 30g ✅ BUILT
 - **HP**: 38 | **Mov**: 8 | **Align**: Chaotic
 - **Melee 1**: Tendril Lash 7×3 (blade)
 - **Melee 2**: Entangle 5×2 (impact) — **slow**
 - **Ability**: Disengage (1 move after attacking) + Fungal Tunnel (personal teleport between `*^Tf,*^Tff`)
 - **XP**: 55
-- **Role**: Mobile flanker that introduces the fungal teleport mechanic. Teaches the player to use mushroom groves as a teleport network before the L3 Threadmaster upgrades it into an aura for allies. Disengage + teleport combo: attack, then use the 1 remaining move to teleport to a distant grove.
-- **Based on**: Saurian Ambusher (22g, 38 HP, 7 mov, chaotic, skirmisher; spear 6×4 pierce, spear 5×2 pierce ranged). Tunneler matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport at +8g.
-- **Advances to**: Threadmaster (L3 — teleport aura)
-| Glowcap | **Shaggy Mane** | Lightning Storm: AoE electric damage to adjacent enemies on attack | |
-| Cordyceps | **Puppeteer** | Parasitic Link: drain aura for adjacent allies | ✅ BUILT |
+- **Role**: Mobile flanker that introduces the fungal teleport mechanic. Teaches the player to use mushroom groves as a teleport network before the L3 Fairy Ring upgrades it into an aura for allies. Disengage + teleport combo: attack, then use the 1 remaining move to teleport to a distant grove.
+- **Based on**: Saurian Ambusher (22g, 38 HP, 7 mov, chaotic, skirmisher; spear 6×4 pierce, spear 5×2 pierce ranged). Portalbello matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport at +8g.
+- **Advances to**: Fairy Ring (L3 — teleport aura)
+| Glowcap | **Earth Star** | Lightning Storm: AoE electric damage to adjacent enemies on attack | ✅ BUILT |
+| Morel | **Morel Support** | Parasitic Link: drain aura for adjacent allies | ✅ BUILT |
 
-#### Broodcap (from Cordyceps) — 34g ✅ BUILT
+#### Morel Dilemma (from Morel) — 34g ✅ BUILT
 - **HP**: 45 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 6×3 (blade) — **drain**
 - **Ranged**: Domination Spore 5×4 (arcane) — **plague, magical**
-- **Ability**: Fungal Brood — adjacent allies' attacks spawn Fungal Spores from slain enemies (plague aura)
+- **Ability**: Fungal Brood — adjacent allies' attacks spawn Spores from slain enemies (plague aura)
 - **XP**: 75
-- **Role**: Plague support. Turns every allied kill nearby into Fungal Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
-- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Broodcap trades 1 HP, 1 movement and raw damage for drain + plague aura at +3g.
+- **Role**: Plague support. Turns every allied kill nearby into Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
+- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Morel Dilemma trades 1 HP, 1 movement and raw damage for drain + plague aura at +3g.
 - **Sprite**: Dune Explorer
+- **Advances to**: False Morel (L3)
 
-#### Puppeteer (from Cordyceps) — 32g ✅ BUILT
+#### Morel Support (from Morel) — 32g ✅ BUILT
 - **HP**: 43 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 6×3 (blade) — **drain**
 - **Ranged**: Mind Spore 5×3 (arcane)
 - **Ability**: Parasitic Link — adjacent allies drain health from their attacks
 - **XP**: 75
-- **Role**: Drain support. Nearby allies self-sustain through combat. Complements the Broodcap's army-building with army-sustaining.
-- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Puppeteer trades 3 HP, 1 movement and raw damage for drain + drain aura at +1g.
+- **Role**: Drain support. Nearby allies self-sustain through combat. Complements the Morel Dilemma's army-building with army-sustaining.
+- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Morel Support trades 3 HP, 1 movement and raw damage for drain + drain aura at +1g.
 - **Sprite**: Dune Explorer
+- **Advances to**: Morel Authority (L3)
 
-#### Nightcap (from Deathcap) — 32g ✅ BUILT
+#### Stinking Dapperling (from Deathcap) — 32g ✅ BUILT
 - **HP**: 36 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Toxic Touch 6×2 (blade) — **poison**
 - **Ranged 1**: Poison Dart 7×2 (pierce) — **poison**
@@ -256,56 +258,56 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Lich (fragile AoE caster, status effects)
 - **Sprite**: Legion Longbowman
 
-#### Double Truffle (from Deathcap) — 30g ✅ BUILT
+#### Inkcap (from Deathcap) — 30g ✅ BUILT
 - **HP**: 40 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Toxic Touch 4×2 (blade) — **poison**
 - **Ranged**: Catalyst Spore 6×3 (pierce) — **toxic strike** (double damage vs poisoned enemies, offense only)
-- **Role**: Ranged assassin/sniper. Melee poisons the target, then catalyst spores finish from range at 12×3 (36 damage) vs poisoned enemies. Works best with Deathcap or Nightcap to pre-poison targets. The attack has no poison itself — it's a pure finisher.
+- **Role**: Ranged assassin/sniper. Melee poisons the target, then catalyst spores finish from range at 12×3 (36 damage) vs poisoned enemies. Works best with Deathcap or Stinking Dapperling to pre-poison targets. The attack has no poison itself — it's a pure finisher.
 - **Based on**: Elvish Marksman (ranged-focused, conditional damage)
 - **Sprite**: Legion Crossbowman
 
 ## L3 Advancements (enhanced AoE + combos)
 
-| L2 Unit | L3 Name | Enhanced Ability |
-|---------|---------|-----------------|
-| Sporeguard | **Sporewarden** | AoE slow + reduces enemy damage |
-| Nightcap | **Angel of Death** | AoE poison + kills on grove spawn 2 Fungal Spores instead of 1 |
-| Morel | **King Bolete** | AoE heal 8 + cures + self-regeneration |
-| Ergot | **Blightcrown** | Enhanced AoE blight + stronger unhealable |
-| Double Truffle | **Trufflemaker** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) |
-| Mycelium Weaver | **TBD** | Enhanced overgrowth / territory control L3 (TBD) |
-| Mycelium Tunneler | **Threadmaster** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Tunneler's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Threadmaster matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
-| Giant Puffball | **Earthstar** | Massive AoE burst: damage + slow within 2 hexes |
-| Shaggy Mane | **Black Morel** | AoE cold + slow combo on attack |
-| Puppeteer | **Hivemind** | Enhanced drain aura + Leadership | ✅ BUILT |
+| L2 Unit | L3 Name | Enhanced Ability | Status |
+|---------|---------|-----------------|--------|
+| Oyster Vizier | **TBD** | AoE slow + reduces enemy damage | |
+| Stinking Dapperling | **TBD** | AoE poison + kills on grove spawn 2 Spores instead of 1 | |
+| Shaggy Mane | **TBD** | AoE heal 8 + cures + self-regeneration | |
+| Bear's Head | **TBD** | Enhanced AoE blight + stronger unhealable | |
+| Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
+| Double Truffle | **TBD** | Enhanced overgrowth / territory control L3 | |
+| Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
+| Earth Star | **TBD** | AoE lightning L3 | |
+| Morel Dilemma | **False Morel** | Enhanced plague aura — spawns Puffballs instead of Spores | ✅ BUILT |
+| Morel Support | **Morel Authority** | Enhanced drain aura + Leadership | ✅ BUILT |
 
-#### Heartwood (from Chaga) — 63g ✅ BUILT
+#### King Oyster (from Oyster Knight) — 63g ✅ BUILT
 - **HP**: 68 | **Mov**: 4 | **Align**: Neutral
 - **Melee**: Club 10×3 (impact)
 - **Ranged**: Spore Puff 12×1 (impact)
 - **Ability**: Steadfast — 70% blade/pierce, 80% impact, 90% fire/arcane resistance
 - **Role**: Ultimate wall. Matches the Sentinel in every stat, with earned fire/arcane resistance.
-- **Based on**: Dwarvish Sentinel (63g, 68 HP, 4 mov, neutral, steadfast; spear 10×3 pierce, javelin 11×2 pierce; blade/pierce 30%, impact 20%, fire/cold/arcane 10%). Heartwood matches cost/HP/resists exactly, trades pierce for impact and 11×2 ranged for 12×1.
+- **Based on**: Dwarvish Sentinel (63g, 68 HP, 4 mov, neutral, steadfast; spear 10×3 pierce, javelin 11×2 pierce; blade/pierce 30%, impact 20%, fire/cold/arcane 10%). King Oyster matches cost/HP/resists exactly, trades pierce for impact and 11×2 ranged for 12×1.
 - **Sprite**: Dwarvish Sentinel
 
-#### Hivemind (from Puppeteer) — 50g ✅ BUILT
+#### Morel Authority (from Morel Support) — 50g ✅ BUILT
 - **HP**: 55 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 7×3 (blade) — **drain**
 - **Ranged**: Mind Spore 7×3 (arcane)
 - **Abilities**: Leadership + Parasitic Link (drain aura for adjacent allies)
 - **Role**: Force multiplier. Adjacent allies deal +25% damage AND drain health. Glass cannon support — needs a tank in front.
-- **Based on**: Dune Wayfarer (58g, 62 HP, 6 mov, liminal; axe 8×4 blade, bow 8×4 pierce). Hivemind trades 7 HP, 1 movement and raw damage for leadership + drain aura at -8g.
+- **Based on**: Dune Wayfarer (58g, 62 HP, 6 mov, liminal; axe 8×4 blade, bow 8×4 pierce). Morel Authority trades 7 HP, 1 movement and raw damage for leadership + drain aura at -8g.
 - **Sprite**: Dune Wayfarer
 
 ## Leaders (L2 units as starting leaders)
 
 Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5, Northerners default with 5):
 
-- **Sporeguard** — Defensive tank leader, slows attackers around keep. Sprite: Iron Mauler.
-- **Chaga** — Steadfast wall leader, anchors the frontline. Sprite: Dwarvish Stalwart.
-- **Broodcap** — Plague leader, kills near keep spawn Fungal Spores. Sprite: Dune Explorer.
-- **Grove Warden** — Leadership leader, buffs adjacent recruits. Sprite: Dwarvish Berserker.
-- **Morel** — Support/healer leader, keeps recruits alive. Sprite: Elvish Druid.
+- **Oyster Vizier** — Defensive tank leader, slows attackers around keep. Sprite: Iron Mauler.
+- **Oyster Knight** — Steadfast wall leader, anchors the frontline. Sprite: Dwarvish Stalwart.
+- **Morel Support** — Drain support leader, allies self-sustain near the keep. Sprite: Dune Explorer.
+- **Fungi** — Leadership leader, buffs adjacent recruits. Sprite: Dwarvish Berserker.
+- **Shaggy Mane** — Support/healer leader, keeps recruits alive. Sprite: Elvish Druid.
 
 ## Balance Notes
 - **Weakness**: Low raw damage. Loses straight 1v1 fights.
@@ -321,9 +323,9 @@ Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5,
 3a. [x] Create passive Fungal Spread event (side turn event that converts hexes under Mycelium units)
 3b. [x] Create kill-based Fungal Spread event (removed — replaced by plague system)
 3c. [x] Create Grove Reanimation event (removed — replaced by plague system)
-4. [x] Create L1 unit type .cfg files (8 units: Sporecap, Deathcap, Lion's Mane, Runner, Puffball, Glowcap, Cordyceps, Madcap)
+4. [x] Create L1 unit type .cfg files (8 units: Oyster Squire, Deathcap, Lion's Mane, Truffle, Puffball, Glowcap, Morel, Madcap)
 5. [x] Define L1 weapon specials/abilities in macros (slow, poison, drain, heals, ambush, skirmisher, magical)
-5b. [x] Create Fungal Spore unit type (spawned by plague)
+5b. [x] Create Spore unit type (spawned by plague)
 6. [x] Create faction [multiplayer_side] definition
 7. [x] Add faction to Fractured_Realms era (replace Rebels clone placeholder)
 8. [ ] Test in-game for loading
@@ -337,6 +339,47 @@ Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5,
 ## Backlog
 - [ ] Create custom sprite for Mushroom Forest (`^Tff`) — currently reuses `forest/mushrooms-tile` from Mushroom Grove. Needs a unique look that blends tree trunks with giant mushroom caps growing among/over branches.
 - [x] Update unit internal naming convention — replaced `{HUMAN_NAMES}` with custom mushroom-themed name lists (mycological Latin-inspired names like Agarum, Boleth, Mycenae, etc.)
-- [x] Healer unit idea: a support unit that grants adjacent allies **drain** on their attacks. → Implemented as Puppeteer's Parasitic Link aura.
-- [x] Aura unit idea: a support unit that grants adjacent allies **plague** on their attacks. → Implemented as Broodcap's Fungal Brood aura.
+- [x] Healer unit idea: a support unit that grants adjacent allies **drain** on their attacks. → Implemented as Morel Support's Parasitic Link aura.
+- [x] Aura unit idea: a support unit that grants adjacent allies **plague** on their attacks. → Implemented as Morel Dilemma's Fungal Brood aura.
 - [ ] AoE attacks should have a custom icon so the player can tell at a glance which attack has splash damage.
+
+## Full Advancement Tree
+
+```
+Spore (L0 flying plague token)
+└─ Puffball (L1 flying skirmisher, death bloom) — dead-end
+
+Oyster Squire (L1 slow frontline)
+├─ Oyster Vizier (L2 AoE slow eruption) — dead-end L2
+└─ Oyster Knight (L2 steadfast tank)
+   └─ King Oyster (L3 ultimate wall)
+
+Morel (L1 parasitic drain fighter)
+├─ Morel Dilemma (L2 plague aura — allies spawn Spores from kills)
+│  └─ False Morel (L3 enhanced plague — allies spawn Puffballs)
+└─ Morel Support (L2 drain aura — allies drain)
+   └─ Morel Authority (L3 drain aura + leadership)
+
+Deathcap (L1 ranged poisoner)
+├─ Stinking Dapperling (L2 AoE poison, grove bound) — dead-end L2
+└─ Inkcap (L2 toxic strike, double vs poisoned)
+   └─ Nightcap (L3 marksman sniper)
+
+Lion's Mane (L1 healer)
+├─ Shaggy Mane (L2 cures healer) — dead-end L2
+└─ Bear's Head (L2 anti-heal blight) — dead-end L2
+
+Glowcap (L1 electric mage)
+└─ Earth Star (L2 AoE lightning) — dead-end L2
+
+Truffle (L1 fast ambush scout)
+├─ Double Truffle (L2 overgrowth raider) — dead-end L2
+└─ Portalbello (L2 teleport + disengage)
+   └─ Fairy Ring (L3 teleport aura)
+
+Madcap (L1 dwarf berserker)
+├─ Mad Prince (L2 terror berserker)
+│  └─ Mad Lord (L3 plague berserker lord)
+└─ Fungi (L2 leadership berserker)
+   └─ Fun Grandpa (L3 leadership + regen)
+```
