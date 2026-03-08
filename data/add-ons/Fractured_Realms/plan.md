@@ -115,12 +115,11 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ### 7. Cordyceps (Parasite) — 16g
 - **Mushroom**: Cordyceps (parasitic, mind-controlling fungus)
-- **HP**: 25 | **Mov**: 5 | **Align**: Chaotic
+- **HP**: 30 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 5×3 (blade) — **drain**
 - **Ranged**: —
 - **Role**: Melee-only drain fighter. Cheap and self-sustaining through drain, the only drain unit in the faction. Specializes at L2 into plague support (Broodcap) or drain support (Puppeteer).
-- **Based on**: Ghost / Life Thief (melee drain, no ranged)
-- **Advances to**: Broodcap (L2), Puppeteer (L2)
+- **Based on**: Dune Rover (14g, 32 HP, 5 mov, liminal; axe 4×3 blade, bow 5×3 pierce). Cordyceps trades ranged and 2 HP for drain sustain at +2g.
 
 ### 8. Madcap (Berserker) — 17g ✅ BUILT
 - **Concept**: A crazed dwarf hermit who discovered the rage-inducing fly agaric mushroom (*Amanita muscaria*) deep in the caves. Exiled by their clan, they now fight alongside the Mycelium — consuming grove mushrooms to fuel devastating berserk frenzies.
@@ -146,12 +145,13 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Iron Mauler (heavy L2 tank with CC)
 
 #### Chaga (from Sporecap) — 32g ✅ BUILT
-- **HP**: 56 | **Mov**: 4 | **Align**: Chaotic
-- **Melee**: Club 8×3 (impact) — **slow**
-- **Ranged**: —
-- **Ability**: Steadfast — halves damage when not moving, 70% blade/pierce/80% impact resistance
-- **Role**: Pure wall. Dense, rock-hard fungus that absorbs punishment. Melee-only with slow to pin enemies in front of it. The faction's anchor.
-- **Based on**: Dwarvish Sentinel (steadfast tank, high resistances)
+- **HP**: 59 | **Mov**: 4 | **Align**: Neutral
+- **Melee**: Club 8×3 (impact)
+- **Ranged**: Spore Puff 9×1 (impact)
+- **Ability**: Steadfast — halves damage when not moving, 70% blade/pierce, 80% impact, 100% fire/arcane resistance
+- **Role**: Pure wall. Dense, rock-hard fungus that absorbs punishment. The faction's anchor against both physical and elemental threats.
+- **Based on**: Dwarvish Stalwart (30g, 59 HP, 4 mov, neutral, steadfast; spear 8×3 pierce, javelin 9×1 pierce; blade/pierce 20%, impact 20%, fire/cold/arcane 10%). Chaga matches HP and ranged exactly, trades pierce for impact damage, has +10% blade/pierce resist but 0% fire/arcane (vs Stalwart's 10%).
+- **Advances to**: Heartwood (L3)
 
 #### Mad Prince (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
@@ -202,20 +202,22 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Cordyceps | **Puppeteer** | Parasitic Link: drain aura for adjacent allies | ✅ BUILT |
 
 #### Broodcap (from Cordyceps) — 34g ✅ BUILT
-- **HP**: 40 | **Mov**: 5 | **Align**: Chaotic
+- **HP**: 45 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 6×3 (blade) — **drain**
 - **Ranged**: Domination Spore 5×4 (arcane) — **plague, magical**
 - **Ability**: Fungal Brood — adjacent allies' attacks spawn Fungal Spores from slain enemies (plague aura)
+- **XP**: 75
 - **Role**: Plague support. Turns every allied kill nearby into Fungal Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
-- **Based on**: Necromancer (fragile L2 with plague, magical ranged)
+- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Broodcap trades 1 HP, 1 movement and raw damage for drain + plague aura at +3g.
 
 #### Puppeteer (from Cordyceps) — 32g ✅ BUILT
-- **HP**: 38 | **Mov**: 5 | **Align**: Chaotic
+- **HP**: 43 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 6×3 (blade) — **drain**
-- **Ranged**: Mind Spore 5×3 (arcane) — **slow**
+- **Ranged**: Mind Spore 5×3 (arcane)
 - **Ability**: Parasitic Link — adjacent allies drain health from their attacks
-- **Role**: Drain support. Nearby allies self-sustain through combat while the Puppeteer slows enemies at range. Complements the Broodcap's army-building with army-sustaining.
-- **Based on**: White Mage (support L2 with aura)
+- **XP**: 75
+- **Role**: Drain support. Nearby allies self-sustain through combat. Complements the Broodcap's army-building with army-sustaining.
+- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Puppeteer trades 3 HP, 1 movement and raw damage for drain + drain aura at +1g.
 
 #### Nightcap (from Deathcap) — 32g ✅ BUILT
 - **HP**: 36 | **Mov**: 5 | **Align**: Chaotic
@@ -244,7 +246,23 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Mycelium Weaver | **Mycelium Overmind** | Teleport between caves/forests + entangle aura |
 | Giant Puffball | **Earthstar** | Massive AoE burst: damage + slow within 2 hexes |
 | Shaggy Mane | **Black Morel** | AoE cold + slow combo on attack |
-| Puppeteer | **Hivemind** | Enhanced drain aura + Leadership |
+| Puppeteer | **Hivemind** | Enhanced drain aura + Leadership | ✅ BUILT |
+
+#### Heartwood (from Chaga) — 63g ✅ BUILT
+- **HP**: 68 | **Mov**: 4 | **Align**: Neutral
+- **Melee**: Club 10×3 (impact)
+- **Ranged**: Spore Puff 12×1 (impact)
+- **Ability**: Steadfast — 70% blade/pierce, 80% impact, 90% fire/arcane resistance
+- **Role**: Ultimate wall. Matches the Sentinel in every stat, with earned fire/arcane resistance.
+- **Based on**: Dwarvish Sentinel (63g, 68 HP, 4 mov, neutral, steadfast; spear 10×3 pierce, javelin 11×2 pierce; blade/pierce 30%, impact 20%, fire/cold/arcane 10%). Heartwood matches cost/HP/resists exactly, trades pierce for impact and 11×2 ranged for 12×1.
+
+#### Hivemind (from Puppeteer) — 50g ✅ BUILT
+- **HP**: 55 | **Mov**: 5 | **Align**: Chaotic
+- **Melee**: Parasitic Touch 7×3 (blade) — **drain**
+- **Ranged**: Mind Spore 7×3 (arcane)
+- **Abilities**: Leadership + Parasitic Link (drain aura for adjacent allies)
+- **Role**: Force multiplier. Adjacent allies deal +25% damage AND drain health. Glass cannon support — needs a tank in front.
+- **Based on**: Dune Wayfarer (58g, 62 HP, 6 mov, liminal; axe 8×4 blade, bow 8×4 pierce). Hivemind trades 7 HP, 1 movement and raw damage for leadership + drain aura at -8g.
 
 ## Leaders (L2 units as starting leaders)
 
