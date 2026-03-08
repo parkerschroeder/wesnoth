@@ -270,14 +270,14 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 | L2 Unit | L3 Name | Enhanced Ability | Status |
 |---------|---------|-----------------|--------|
-| Oyster Vizier | **TBD** | AoE slow + reduces enemy damage | |
+| Oyster Vizier | **Oyster Chamberlain** | AoE slow + reduces enemy damage | |
 | Stinking Dapperling | **TBD** | AoE poison + kills on grove spawn 2 Spores instead of 1 | |
 | Shaggy Mane | **TBD** | AoE heal 8 + cures + self-regeneration | |
 | Bear's Head | **TBD** | Enhanced AoE blight + stronger unhealable | |
 | Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
-| Double Truffle | **TBD** | Enhanced overgrowth / territory control L3 | |
+| Double Truffle | **Trufflemaker** | Enhanced overgrowth / territory control L3 | |
 | Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
-| Earth Star | **TBD** | AoE lightning L3 | |
+| Earth Star | **Milky Way** | AoE lightning L3 | |
 | Morel Dilemma | **False Morel** | Enhanced plague aura — spawns Puffballs instead of Spores | ✅ BUILT |
 | Morel Support | **Morel Authority** | Enhanced drain aura + Leadership | ✅ BUILT |
 
@@ -347,10 +347,12 @@ Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5,
 
 ```
 Spore (L0 flying plague token)
-└─ Puffball (L1 flying skirmisher, death bloom) — dead-end
+└─ Puffball (L1 flying skirmisher, death bloom)
+   └─ Giant Puffball (L2 AoE burst) — not yet built
 
 Oyster Squire (L1 slow frontline)
-├─ Oyster Vizier (L2 AoE slow eruption) — dead-end L2
+├─ Oyster Vizier (L2 AoE slow eruption)
+│  └─ Oyster Chamberlain (L3 AoE slow + damage reduction) — not yet built
 └─ Oyster Knight (L2 steadfast tank)
    └─ King Oyster (L3 ultimate wall)
 
@@ -370,10 +372,12 @@ Lion's Mane (L1 healer)
 └─ Bear's Head (L2 anti-heal blight) — dead-end L2
 
 Glowcap (L1 electric mage)
-└─ Earth Star (L2 AoE lightning) — dead-end L2
+└─ Earth Star (L2 AoE lightning)
+   └─ Milky Way (L3 AoE lightning) — not yet built
 
 Truffle (L1 fast ambush scout)
-├─ Double Truffle (L2 overgrowth raider) — dead-end L2
+├─ Double Truffle (L2 overgrowth raider)
+│  └─ Trufflemaker (L3 enhanced overgrowth) — not yet built
 └─ Portalbello (L2 teleport + disengage)
    └─ Fairy Ring (L3 teleport aura)
 
