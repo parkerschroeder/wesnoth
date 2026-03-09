@@ -5,6 +5,9 @@ stdout*.txt
 # user-specific prompt files
 .github/prompts/user-*
 
+# local generation scripts (API tokens)
+scripts/
+
 # project files
 .*project
 Project.*
