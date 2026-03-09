@@ -63,7 +63,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Spore Puff 3×2 (impact)
 - **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies in melee to match its pace.
 - **Based on**: Heavy Infantryman (high HP tank, slow movement, impact damage)
-- **Sprite**: Dwarvish Guardsman
+- **Sprite**: Custom (oystersquire.png)
 - **Advances to**: Oyster Vizier (L2), Oyster Knight (L2)
 
 ### 2. Deathcap (Archer) — 15g
@@ -115,7 +115,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Spark Bolt 7×2 (electric) — **magical**
 - **Role**: Ranged damage dealer. Expensive but hits hard with electric/magical.
 - **Based on**: Dark Adept / Mage (fragile magical ranged, 19g)
-- **Sprite**: Dark Adept
+- **Sprite**: Custom (glowcap.png)
 - **Advances to**: Earth Star (L2)
 
 ### 7. Morel (Parasite) — 16g
@@ -125,7 +125,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: —
 - **Role**: Melee-only drain fighter. Cheap and self-sustaining through drain, the only drain unit in the faction. Specializes at L2 into plague support (Morel Dilemma) or drain support (Morel Support).
 - **Based on**: Dune Rover (14g, 32 HP, 5 mov, liminal; axe 4×3 blade, bow 5×3 pierce). Morel trades ranged and 2 HP for drain sustain at +2g.
-- **Sprite**: Dune Rover
+- **Sprite**: Custom (morel.png)
 
 ### 8. Madcap (Berserker) — 17g ✅ BUILT
 - **Concept**: A crazed dwarf hermit who discovered the rage-inducing fly agaric mushroom (*Amanita muscaria*) deep in the caves. Exiled by their clan, they now fight alongside the Mycelium — consuming grove mushrooms to fuel devastating berserk frenzies.
@@ -150,7 +150,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Spore Cloud — when this unit hits with its ranged attack, all enemy units adjacent to the **target** are also **slowed** (via `attacker_hits` event + dummy ability filter)
 - **Role**: Crowd-control tank. Slows enemies in melee and at range. Can unleash AoE slow eruptions from groves.
 - **Based on**: Iron Mauler (heavy L2 tank with CC)
-- **Sprite**: Iron Mauler (siegetrooper)
+- **Sprite**: Custom (oystervizier.png)
 
 #### Oyster Knight (from Oyster Squire) — 32g ✅ BUILT
 - **HP**: 59 | **Mov**: 4 | **Align**: Neutral
@@ -159,7 +159,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Steadfast — halves damage when not moving, 70% blade/pierce, 80% impact, 100% fire/arcane resistance
 - **Role**: Pure wall. Dense, rock-hard fungus that absorbs punishment. The faction's anchor against both physical and elemental threats.
 - **Based on**: Dwarvish Stalwart (30g, 59 HP, 4 mov, neutral, steadfast; spear 8×3 pierce, javelin 9×1 pierce; blade/pierce 20%, impact 20%, fire/cold/arcane 10%). Oyster Knight matches HP and ranged exactly, trades pierce for impact damage, has +10% blade/pierce resist but 0% fire/arcane (vs Stalwart's 10%).
-- **Sprite**: Dwarvish Stalwart
+- **Sprite**: Custom (oysterknight.png)
 - **Advances to**: King Oyster (L3)
 
 #### Mad Prince (from Madcap) — 28g ✅ BUILT
@@ -235,7 +235,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **XP**: 75
 - **Role**: Plague support. Turns every allied kill nearby into Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
 - **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Morel Dilemma trades 1 HP, 1 movement and raw damage for drain + plague aura at +3g.
-- **Sprite**: Dune Explorer
+- **Sprite**: Custom (moreldilemma.png)
 - **Advances to**: False Morel (L3)
 
 #### Morel Support (from Morel) — 32g ✅ BUILT
@@ -246,7 +246,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **XP**: 75
 - **Role**: Drain support. Nearby allies self-sustain through combat. Complements the Morel Dilemma's army-building with army-sustaining.
 - **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Morel Support trades 3 HP, 1 movement and raw damage for drain + drain aura at +1g.
-- **Sprite**: Dune Explorer
+- **Sprite**: Custom (morelsupport.png)
 - **Advances to**: Morel Authority (L3)
 
 #### Stinking Dapperling (from Deathcap) — 32g ✅ BUILT
@@ -256,7 +256,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged 2**: Poison Cloud 5×3 (impact) — **poison, AoE poison (poison_cloud), grove bound**
 - **Role**: Glass cannon AoE poisoner. Still fragile for L2 but now poisons clusters of enemies by channeling the grove network. Three attack options: safe ranged poison, melee poison, or devastating grove-powered poison cloud that poisons both the target and all adjacent enemies.
 - **Based on**: Lich (fragile AoE caster, status effects)
-- **Sprite**: Legion Longbowman
+- **Sprite**: Custom (stinkingdapperling.png)
 
 #### Inkcap (from Deathcap) — 30g ✅ BUILT
 - **HP**: 40 | **Mov**: 6 | **Align**: Chaotic
@@ -264,7 +264,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ranged**: Catalyst Spore 6×3 (pierce) — **toxic strike** (double damage vs poisoned enemies, offense only)
 - **Role**: Ranged assassin/sniper. Melee poisons the target, then catalyst spores finish from range at 12×3 (36 damage) vs poisoned enemies. Works best with Deathcap or Stinking Dapperling to pre-poison targets. The attack has no poison itself — it's a pure finisher.
 - **Based on**: Elvish Marksman (ranged-focused, conditional damage)
-- **Sprite**: Legion Crossbowman
+- **Sprite**: Custom (inkcap.png)
 
 ## L3 Advancements (enhanced AoE + combos)
 
@@ -288,7 +288,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Ability**: Steadfast — 70% blade/pierce, 80% impact, 90% fire/arcane resistance
 - **Role**: Ultimate wall. Matches the Sentinel in every stat, with earned fire/arcane resistance.
 - **Based on**: Dwarvish Sentinel (63g, 68 HP, 4 mov, neutral, steadfast; spear 10×3 pierce, javelin 11×2 pierce; blade/pierce 30%, impact 20%, fire/cold/arcane 10%). King Oyster matches cost/HP/resists exactly, trades pierce for impact and 11×2 ranged for 12×1.
-- **Sprite**: Dwarvish Sentinel
+- **Sprite**: Custom (kingoyster.png)
 
 #### Morel Authority (from Morel Support) — 50g ✅ BUILT
 - **HP**: 55 | **Mov**: 5 | **Align**: Chaotic
@@ -297,17 +297,17 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Abilities**: Leadership + Parasitic Link (drain aura for adjacent allies)
 - **Role**: Force multiplier. Adjacent allies deal +25% damage AND drain health. Glass cannon support — needs a tank in front.
 - **Based on**: Dune Wayfarer (58g, 62 HP, 6 mov, liminal; axe 8×4 blade, bow 8×4 pierce). Morel Authority trades 7 HP, 1 movement and raw damage for leadership + drain aura at -8g.
-- **Sprite**: Dune Wayfarer
+- **Sprite**: Custom (morelauthority.png)
 
 ## Leaders (L2 units as starting leaders)
 
 Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5, Northerners default with 5):
 
-- **Oyster Vizier** — Defensive tank leader, slows attackers around keep. Sprite: Iron Mauler.
-- **Oyster Knight** — Steadfast wall leader, anchors the frontline. Sprite: Dwarvish Stalwart.
-- **Morel Support** — Drain support leader, allies self-sustain near the keep. Sprite: Dune Explorer.
+- **Oyster Vizier** — Defensive tank leader, slows attackers around keep. Sprite: Custom (oystervizier.png).
+- **Oyster Knight** — Steadfast wall leader, anchors the frontline. Sprite: Custom (oysterknight.png).
+- **Morel Support** — Drain support leader, allies self-sustain near the keep. Sprite: Custom (morelsupport.png).
 - **Fungi** — Leadership leader, buffs adjacent recruits. Sprite: Dwarvish Berserker.
-- **Shaggy Mane** — Support/healer leader, keeps recruits alive. Sprite: Elvish Druid.
+- **Shaggy Mane** — Support/healer leader, keeps recruits alive. Sprite: Custom (shaggymane.png).
 
 ## Balance Notes
 - **Weakness**: Low raw damage. Loses straight 1v1 fights.
@@ -358,14 +358,14 @@ Oyster Squire (L1 slow frontline)
 
 Morel (L1 parasitic drain fighter)
 ├─ Morel Dilemma (L2 plague aura — allies spawn Spores from kills)
-│  └─ False Morel (L3 enhanced plague — allies spawn Puffballs)
+│  └─ False Morel (L3 enhanced plague — allies spawn Puffballs) — ✅ BUILT
 └─ Morel Support (L2 drain aura — allies drain)
-   └─ Morel Authority (L3 drain aura + leadership)
+   └─ Morel Authority (L3 drain aura + leadership) — ✅ BUILT
 
 Deathcap (L1 ranged poisoner)
 ├─ Stinking Dapperling (L2 AoE poison, grove bound) — dead-end L2
 └─ Inkcap (L2 toxic strike, double vs poisoned)
-   └─ Nightcap (L3 marksman sniper)
+   └─ Nightcap (L3 marksman sniper) — ✅ BUILT
 
 Lion's Mane (L1 healer)
 ├─ Shaggy Mane (L2 cures healer) — dead-end L2
@@ -379,7 +379,7 @@ Truffle (L1 fast ambush scout)
 ├─ Double Truffle (L2 overgrowth raider)
 │  └─ Trufflemaker (L3 overgrowth + regen) — ✅ BUILT
 └─ Portalbello (L2 teleport + disengage)
-   └─ Fairy Ring (L3 teleport aura)
+   └─ Fairy Ring (L3 teleport aura) — ✅ BUILT
 
 Madcap (L1 dwarf berserker)
 ├─ Mad Prince (L2 terror berserker)
