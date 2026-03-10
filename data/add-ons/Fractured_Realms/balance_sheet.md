@@ -98,7 +98,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | **Level** | 2 |
 | **HP** | 59 |
 | **Cost** | 32 |
-| **XP** | 100 |
+| **XP** | 88 |
 | **Alignment** | Neutral |
 | **Usage** | Fighter |
 | **Advances To** | [King Oyster](#king-oyster) |
@@ -139,7 +139,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | **Level** | 2 |
 | **HP** | 52 |
 | **Cost** | 32 |
-| **XP** | 100 |
+| **XP** | 88 |
 | **Alignment** | Chaotic |
 | **Usage** | Fighter |
 | **Advances To** | [Oyster Chamberlain](#oyster-chamberlain) |
