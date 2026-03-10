@@ -270,7 +270,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 | L2 Unit | L3 Name | Enhanced Ability | Status |
 |---------|---------|-----------------|--------|
 | Oyster Vizier | **Oyster Chamberlain** | AoE slow (no grove required) | ✅ BUILT |
-| Stinking Dapperling | **TBD** | AoE poison + kills on grove spawn 2 Spores instead of 1 | |
+| Stinking Dapperling | **Deadly Dapperling** | AoE poison + marksman, grove kills spawn 2 Spores | ✅ BUILT |
 | Shaggy Mane | **TBD** | AoE heal 8 + cures + self-regeneration | |
 | Bear's Head | **TBD** | Enhanced AoE blight + stronger unhealable | |
 | Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
