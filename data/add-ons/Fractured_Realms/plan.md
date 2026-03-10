@@ -329,6 +329,8 @@ Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5,
 7. [x] Add faction to Fractured_Realms era (replace Rebels clone placeholder)
 8. [ ] Test in-game for loading
 9. [x] Add placeholder art (reuse existing sprites)
+10. [x] Create custom sprites for all mushroom units (28 units via gen_sprite.py)
+11. [x] Add unit animations via WML macros (`macros/mycelium-animations.cfg`)
 
 ## Future Phases (general ideas, not implemented yet)
 - **Phase 2**: L2 units with AoE abilities (death cloud, spore cloud, frost nova, enhanced healing)
@@ -341,6 +343,39 @@ Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5,
 - [x] Healer unit idea: a support unit that grants adjacent allies **drain** on their attacks. → Implemented as Morel Support's Parasitic Link aura.
 - [x] Aura unit idea: a support unit that grants adjacent allies **plague** on their attacks. → Implemented as Morel Dilemma's Fungal Brood aura.
 - [ ] AoE attacks should have a custom icon so the player can tell at a glance which attack has splash damage.
+- [ ] Add animations to Madcap line (Madcap, Mad Prince, Mad Lord, Fungi, Fun Grandpa) — currently uses dwarf sprites with existing dwarf animations
+- [ ] Add animations to wisp units (Spore, Puffball) — currently uses elvish wisp sprites
+
+## Unit Animations
+
+All 28 mushroom-sprite units have single-image animations defined via macros in `macros/mycelium-animations.cfg`. No extra sprite frames are needed — animations use WML offset, alpha, and submerge attributes.
+
+### Available Macros
+
+| Macro | Effect | Used by |
+|-------|--------|---------|
+| `MUSHROOM_DEFEND` | Recoil backward on hit/miss | Truffle line, Morel line, Poison line, Healer/Blight line |
+| `MUSHROOM_DEFEND_BLINK` | Recoil + alpha fade | Glowcap line (ethereal/glowing units) |
+| `MUSHROOM_DEATH` | Fade to transparent | Most units |
+| `MUSHROOM_DEATH_SINK` | Fade + sink into ground | Oyster line (heavy/rooted) |
+| `MUSHROOM_ATTACK_MELEE` | Lunge forward + return | All melee attacks |
+| `MUSHROOM_ATTACK_MELEE_BERSERK` | Aggressive lunge | (available, unused — Madcap line uses dwarf sprites) |
+| `MUSHROOM_ATTACK_RANGED` | Rock back + projectile | (available, unused — no mushroom units have visible projectiles) |
+| `MUSHROOM_ATTACK_RANGED_MAGIC` | Rock back, no projectile | All ranged attacks (spores, lightning, etc.) |
+| `MUSHROOM_IDLE_GLOW` | Alpha breathing pulse | Glowcap, Earth Star, Milky Way |
+| `MUSHROOM_IDLE_SWAY` | Side-to-side drift | (available, unused) |
+
+### Animation Assignments
+
+- **Truffle line** (Truffle, Double Truffle, Trufflemaker, Portalbello, Fairy Ring): DEFEND + DEATH + MELEE lunge
+- **Oyster line** (Oyster Squire/Vizier/Chamberlain, Oyster Knight, King Oyster): DEFEND + DEATH_SINK + MELEE club + RANGED_MAGIC spore
+- **Glowcap line** (Glowcap, Earth Star, Milky Way): DEFEND_BLINK + DEATH + MELEE shock + RANGED_MAGIC lightning + IDLE_GLOW
+- **Morel line** (Morel, Morel Dilemma/Support, Morel Authority, False Morel): DEFEND + DEATH + MELEE drain + RANGED_MAGIC spore
+- **Poison line** (Deathcap, Stinking/Deadly Dapperling, Inkcap, Nightcap): DEFEND + DEATH + MELEE toxic + RANGED_MAGIC dart/cloud
+- **Healer line** (Lion's Mane, Shaggy Mane, Lawyer's Wig): DEFEND + DEATH + MELEE staff + RANGED_MAGIC spore
+- **Blight line** (Bear's Head, Bleeding Tooth): DEFEND + DEATH + MELEE staff + RANGED_MAGIC blight
+- **Madcap line** (5 dwarf units): no custom animations (uses existing dwarf sprites)
+- **Wisps** (Spore, Puffball): no custom animations (uses existing wisp sprites)
 
 ## Full Advancement Tree
 
