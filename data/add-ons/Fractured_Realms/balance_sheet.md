@@ -15,7 +15,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
   Deathcap ─────────┤
                     └─ Inkcap (L2, toxic strike) ─────────────── Nightcap (L3, assassin)
 
-                    ┌─ Shaggy Mane (L2, cures) ── Lawyer's Wig (L3, AOE heal + regen)
+                    ┌─ Shaggy Mane (L2, cures) ── Lawyer's Wig (L3, healer + regen)
   Lion's Mane ──────┤
                     └─ Bear's Head (L2, blight) ── Bleeding Tooth (L3, blight AOE)
 
@@ -461,7 +461,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | **Usage** | Healer |
 | **Advances To** | — |
 | **Advances From** | [Shaggy Mane](#shaggy-mane) |
-| **Abilities** | Cures, Regenerates, AOE Heal (+8) |
+| **Abilities** | Cures, Regenerates |
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
@@ -1138,7 +1138,6 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 |---------|-------|--------|
 | **Heals** | Lion's Mane | Heals adjacent allies +4 HP/turn |
 | **Cures** | Shaggy Mane, Lawyer's Wig | Heals adjacent allies +8 HP/turn, cures poison |
-| **AOE Heal** | Lawyer's Wig | Heals adjacent allies +8 HP/turn, cures poison (area) |
 | **Regenerates** | Lawyer's Wig, Fun Grandpa | Recovers 8 HP/turn |
 | **Steadfast** | Oyster Knight, King Oyster | Halves excess damage when not moving |
 | **Leadership** | Fungi, Fun Grandpa, Morel Authority | +25% damage to adjacent lower-level allies |
@@ -1153,7 +1152,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | **Parasitic Link** | Morel Support, Morel Authority | Adjacent allies' attacks drain HP |
 | **Fungal Brood** | Morel Dilemma | Adjacent allies' kills spawn Spores |
 | **Enhanced Fungal Brood** | False Morel | Adjacent allies' kills spawn Puffballs |
-| **Obscure** | Black Hole, Cosmic Shroom | Adjacent enemies' ranged accuracy reduced |
+| **Obscure** | Black Hole, Cosmic Shroom | Adjacent units fight as if time of day is one step darker (chaotic better, lawful worse) |
 | **Feeding** | Black Hole, Cosmic Shroom | Gains +1 max HP per kill (capped) |
 
 ## Attack Special Glossary

@@ -262,9 +262,9 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **HP**: 36 | **Mov**: 5 | **Align**: Chaotic | **Usage**: Archer
 - **Melee**: Void Touch 5×2 (arcane_focus)
 - **Ranged**: Void Bolt 9×3 (arcane_focus) — **magical**
-- **Abilities**: Obscure (darkens adjacent hexes), Feeding (heals on kill)
+- **Abilities**: Obscure (adjacent units fight as if time of day is one step darker), Feeding (+1 max HP per kill)
 - **XP**: 100
-- **Role**: Dark mage path. Where Earth Star channels electric energy outward, Black Hole collapses inward — absorbing light and life. Obscure darkens the battlefield for chaotic allies, while feeding sustains it through kills. Uses WoL's arcane_focus damage type (inverted arcane resistance — hits hardest against arcane-resistant units).
+- **Role**: Dark mage path. Where Earth Star channels electric energy outward, Black Hole collapses inward — absorbing light and life. Obscure shifts nearby combat one time-of-day step darker (helping chaotic units, hindering lawful units), while feeding makes it progressively tougher through kills. Uses WoL's arcane_focus damage type (inverted arcane resistance — hits hardest against arcane-resistant units).
 - **Based on**: Dark Adept → Dark Sorcerer path (fragile chaotic mage with sustain). Black Hole trades raw damage for obscure + feeding utility.
 - **Sprite**: Custom (blackhole.png)
 - **Advances to**: Cosmic Shroom (L3)
@@ -283,7 +283,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 |---------|---------|-----------------|--------|
 | Oyster Vizier | **Oyster Chamberlain** | AoE slow (no grove required) | ✅ BUILT |
 | Stinking Dapperling | **Deadly Dapperling** | AoE poison + marksman, grove kills spawn 2 Spores | ✅ BUILT |
-| Shaggy Mane | **Lawyer's Wig** | AoE heal 8 + cures + self-regeneration | ✅ BUILT |
+| Shaggy Mane | **Lawyer's Wig** | Heals +8 + cures + self-regeneration | ✅ BUILT |
 | Bear's Head | **Bleeding Tooth** | Enhanced AoE blight + melee blight | ✅ BUILT |
 | Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
 | Double Truffle | **Trufflemaker** | Enhanced overgrowth + strong melee | ✅ BUILT |
@@ -306,7 +306,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **HP**: 44 | **Mov**: 5 | **Align**: Chaotic | **Usage**: Archer
 - **Melee**: Void Touch 7×3 (arcane_focus)
 - **Ranged**: Void Bolt 12×3 (arcane_focus) — **magical**
-- **Abilities**: Obscure (darkens adjacent hexes), Feeding (heals on kill)
+- **Abilities**: Obscure (adjacent units fight as if time of day is one step darker), Feeding (+1 max HP per kill)
 - **Role**: The culmination of the void path. A walking singularity of pure arcane force that devours everything in its path. Reality bends around this alien horror, darkness pooling in its wake. Void blasts shred through defenses that would stop conventional arcane damage — arcane_focus hits hardest against units that resist arcane.
 - **Based on**: Lich / Necromancer (L3 dark caster with sustain). Cosmic Shroom trades AoE for consistent high damage + obscure + feeding.
 - **Sprite**: Custom (cosmicshroom.png)
@@ -427,7 +427,7 @@ Deathcap (L1 ranged poisoner)
 
 Lion's Mane (L1 healer)
 ├─ Shaggy Mane (L2 cures healer)
-│  └─ Lawyer's Wig (L3 AoE heal + regen)
+│  └─ Lawyer's Wig (L3 healer + regen)
 └─ Bear's Head (L2 anti-heal blight)
    └─ Bleeding Tooth (L3 enhanced blight)
 
@@ -435,7 +435,7 @@ Glowcap (L1 electric mage)
 ├─ Earth Star (L2 AoE lightning)
 │  └─ Milky Way (L3 AoE lightning)
 └─ Black Hole (L2 arcane void mage)
-   └─ Cosmic Shroom (L3 AoE arcane void)
+   └─ Cosmic Shroom (L3 arcane void apex)
 
 Truffle (L1 fast ambush scout)
 ├─ Double Truffle (L2 overgrowth raider)
