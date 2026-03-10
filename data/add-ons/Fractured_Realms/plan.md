@@ -116,7 +116,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Ranged damage dealer. Expensive but hits hard with electric/magical.
 - **Based on**: Dark Adept / Mage (fragile magical ranged, 19g)
 - **Sprite**: Custom (glowcap.png)
-- **Advances to**: Earth Star (L2)
+- **Advances to**: Earth Star (L2), Black Hole (L2)
 
 ### 7. Morel (Parasite) — 16g
 - **Mushroom**: Cordyceps (parasitic, mind-controlling fungus)
@@ -266,7 +266,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **XP**: 100
 - **Role**: Dark mage path. Where Earth Star channels electric energy outward, Black Hole collapses inward — absorbing light and life. Obscure darkens the battlefield for chaotic allies, while feeding sustains it through kills. Uses WoL's arcane_focus damage type (inverted arcane resistance — hits hardest against arcane-resistant units).
 - **Based on**: Dark Adept → Dark Sorcerer path (fragile chaotic mage with sustain). Black Hole trades raw damage for obscure + feeding utility.
-- **Sprite**: Placeholder (glowcap.png)
+- **Sprite**: Custom (blackhole.png)
 - **Advances to**: Cosmic Shroom (L3)
 
 #### Inkcap (from Deathcap) — 30g ✅ BUILT
@@ -309,7 +309,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Abilities**: Obscure (darkens adjacent hexes), Feeding (heals on kill)
 - **Role**: The culmination of the void path. A walking singularity of pure arcane force that devours everything in its path. Reality bends around this alien horror, darkness pooling in its wake. Void blasts shred through defenses that would stop conventional arcane damage — arcane_focus hits hardest against units that resist arcane.
 - **Based on**: Lich / Necromancer (L3 dark caster with sustain). Cosmic Shroom trades AoE for consistent high damage + obscure + feeding.
-- **Sprite**: Placeholder (glowcap.png)
+- **Sprite**: Custom (cosmicshroom.png)
 
 #### Morel Authority (from Morel Support) — 50g ✅ BUILT
 - **HP**: 55 | **Mov**: 5 | **Align**: Chaotic
@@ -324,11 +324,13 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5, Northerners default with 5):
 
-- **Oyster Vizier** — Defensive tank leader, slows attackers around keep. Sprite: Custom (oystervizier.png).
+- **Earth Star** — Electric mage leader, AoE lightning from the keep. Sprite: Custom (earthstar.png).
 - **Oyster Knight** — Steadfast wall leader, anchors the frontline. Sprite: Custom (oysterknight.png).
 - **Morel Support** — Drain support leader, allies self-sustain near the keep. Sprite: Custom (morelsupport.png).
 - **Fungi** — Leadership leader, buffs adjacent recruits. Sprite: Dwarvish Berserker.
 - **Shaggy Mane** — Support/healer leader, keeps recruits alive. Sprite: Custom (shaggymane.png).
+
+**Faction icon**: Oyster Knight (oysterknight.png)
 
 ## Balance Notes
 - **Weakness**: Low raw damage. Loses straight 1v1 fights.
@@ -384,14 +386,14 @@ All 28 mushroom-sprite units have single-image animations defined via macros in 
 | `MUSHROOM_ATTACK_MELEE_BERSERK` | Aggressive lunge | (available, unused — Madcap line uses dwarf sprites) |
 | `MUSHROOM_ATTACK_RANGED` | Rock back + projectile | (available, unused — no mushroom units have visible projectiles) |
 | `MUSHROOM_ATTACK_RANGED_MAGIC` | Rock back, no projectile | All ranged attacks (spores, lightning, etc.) |
-| `MUSHROOM_IDLE_GLOW` | Alpha breathing pulse | Glowcap, Earth Star, Milky Way |
+| `MUSHROOM_IDLE_GLOW` | Alpha breathing pulse | (available, unused — removed from all units) |
 | `MUSHROOM_IDLE_SWAY` | Side-to-side drift | (available, unused) |
 
 ### Animation Assignments
 
 - **Truffle line** (Truffle, Double Truffle, Trufflemaker, Portalbello, Fairy Ring): DEFEND + DEATH + MELEE lunge
 - **Oyster line** (Oyster Squire/Vizier/Chamberlain, Oyster Knight, King Oyster): DEFEND + DEATH_SINK + MELEE club + RANGED_MAGIC spore
-- **Glowcap line** (Glowcap, Earth Star, Milky Way, Black Hole, Cosmic Shroom): DEFEND_BLINK + DEATH + MELEE shock + RANGED_MAGIC lightning + IDLE_GLOW
+- **Glowcap line** (Glowcap, Earth Star, Milky Way, Black Hole, Cosmic Shroom): DEFEND_BLINK + DEATH + MELEE shock + RANGED_MAGIC lightning
 - **Morel line** (Morel, Morel Dilemma/Support, Morel Authority, False Morel): DEFEND + DEATH + MELEE drain + RANGED_MAGIC spore
 - **Poison line** (Deathcap, Stinking/Deadly Dapperling, Inkcap, Nightcap): DEFEND + DEATH + MELEE toxic + RANGED_MAGIC dart/cloud
 - **Healer line** (Lion's Mane, Shaggy Mane, Lawyer's Wig): DEFEND + DEATH + MELEE staff + RANGED_MAGIC spore
