@@ -271,8 +271,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 |---------|---------|-----------------|--------|
 | Oyster Vizier | **Oyster Chamberlain** | AoE slow (no grove required) | ✅ BUILT |
 | Stinking Dapperling | **Deadly Dapperling** | AoE poison + marksman, grove kills spawn 2 Spores | ✅ BUILT |
-| Shaggy Mane | **TBD** | AoE heal 8 + cures + self-regeneration | |
-| Bear's Head | **TBD** | Enhanced AoE blight + stronger unhealable | |
+| Shaggy Mane | **Lawyer's Wig** | AoE heal 8 + cures + self-regeneration | ✅ BUILT |
+| Bear's Head | **Bleeding Tooth** | Enhanced AoE blight + melee blight | ✅ BUILT |
 | Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
 | Double Truffle | **Trufflemaker** | Enhanced overgrowth + strong melee | ✅ BUILT |
 | Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
