@@ -277,7 +277,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
 | Double Truffle | **Trufflemaker** | Enhanced overgrowth + strong melee | ✅ BUILT |
 | Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
-| Earth Star | **Milky Way** | AoE lightning L3 | |
+| Earth Star | **Milky Way** | AoE lightning L3 | ✅ BUILT |
 | Morel Dilemma | **False Morel** | Enhanced plague aura — spawns Puffballs instead of Spores | ✅ BUILT |
 | Morel Support | **Morel Authority** | Enhanced drain aura + Leadership | ✅ BUILT |
 
@@ -373,7 +373,7 @@ Lion's Mane (L1 healer)
 
 Glowcap (L1 electric mage)
 └─ Earth Star (L2 AoE lightning)
-   └─ Milky Way (L3 AoE lightning) — not yet built
+   └─ Milky Way (L3 AoE lightning)
 
 Truffle (L1 fast ambush scout)
 ├─ Double Truffle (L2 overgrowth raider)
