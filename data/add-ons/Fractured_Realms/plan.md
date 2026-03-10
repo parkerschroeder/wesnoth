@@ -224,6 +224,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Saurian Ambusher (22g, 38 HP, 7 mov, chaotic, skirmisher; spear 6×4 pierce, spear 5×2 pierce ranged). Portalbello matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport at +8g.
 - **Advances to**: Fairy Ring (L3 — teleport aura)
 | Glowcap | **Earth Star** | Lightning Storm: AoE electric damage to adjacent enemies on attack | ✅ BUILT |
+| Glowcap | **Black Hole** | Obscure + Feeding, arcane_focus void damage | ✅ BUILT |
 | Morel | **Morel Support** | Parasitic Link: drain aura for adjacent allies | ✅ BUILT |
 
 #### Morel Dilemma (from Morel) — 34g ✅ BUILT
@@ -257,6 +258,17 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Lich (fragile AoE caster, status effects)
 - **Sprite**: Custom (stinkingdapperling.png)
 
+#### Black Hole (from Glowcap) — 34g ✅ BUILT
+- **HP**: 36 | **Mov**: 5 | **Align**: Chaotic | **Usage**: Archer
+- **Melee**: Void Touch 5×2 (arcane_focus)
+- **Ranged**: Void Bolt 9×3 (arcane_focus) — **magical**
+- **Abilities**: Obscure (darkens adjacent hexes), Feeding (heals on kill)
+- **XP**: 100
+- **Role**: Dark mage path. Where Earth Star channels electric energy outward, Black Hole collapses inward — absorbing light and life. Obscure darkens the battlefield for chaotic allies, while feeding sustains it through kills. Uses WoL's arcane_focus damage type (inverted arcane resistance — hits hardest against arcane-resistant units).
+- **Based on**: Dark Adept → Dark Sorcerer path (fragile chaotic mage with sustain). Black Hole trades raw damage for obscure + feeding utility.
+- **Sprite**: Placeholder (glowcap.png)
+- **Advances to**: Cosmic Shroom (L3)
+
 #### Inkcap (from Deathcap) — 30g ✅ BUILT
 - **HP**: 40 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Toxic Touch 4×2 (blade) — **poison**
@@ -277,6 +289,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Double Truffle | **Trufflemaker** | Enhanced overgrowth + strong melee | ✅ BUILT |
 | Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
 | Earth Star | **Milky Way** | AoE lightning L3 | ✅ BUILT |
+| Black Hole | **Cosmic Shroom** | Enhanced arcane_focus void + obscure + feeding | ✅ BUILT |
 | Morel Dilemma | **False Morel** | Enhanced plague aura — spawns Puffballs instead of Spores | ✅ BUILT |
 | Morel Support | **Morel Authority** | Enhanced drain aura + Leadership | ✅ BUILT |
 
@@ -288,6 +301,15 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Role**: Ultimate wall. Matches the Sentinel in every stat, with earned fire/arcane resistance.
 - **Based on**: Dwarvish Sentinel (63g, 68 HP, 4 mov, neutral, steadfast; spear 10×3 pierce, javelin 11×2 pierce; blade/pierce 30%, impact 20%, fire/cold/arcane 10%). King Oyster matches cost/HP/resists exactly, trades pierce for impact and 11×2 ranged for 12×1.
 - **Sprite**: Custom (kingoyster.png)
+
+#### Cosmic Shroom (from Black Hole) — 50g ✅ BUILT
+- **HP**: 44 | **Mov**: 5 | **Align**: Chaotic | **Usage**: Archer
+- **Melee**: Void Touch 7×3 (arcane_focus)
+- **Ranged**: Void Bolt 12×3 (arcane_focus) — **magical**
+- **Abilities**: Obscure (darkens adjacent hexes), Feeding (heals on kill)
+- **Role**: The culmination of the void path. A walking singularity of pure arcane force that devours everything in its path. Reality bends around this alien horror, darkness pooling in its wake. Void blasts shred through defenses that would stop conventional arcane damage — arcane_focus hits hardest against units that resist arcane.
+- **Based on**: Lich / Necromancer (L3 dark caster with sustain). Cosmic Shroom trades AoE for consistent high damage + obscure + feeding.
+- **Sprite**: Placeholder (glowcap.png)
 
 #### Morel Authority (from Morel Support) — 50g ✅ BUILT
 - **HP**: 55 | **Mov**: 5 | **Align**: Chaotic
@@ -343,8 +365,8 @@ Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5,
 - [x] Healer unit idea: a support unit that grants adjacent allies **drain** on their attacks. → Implemented as Morel Support's Parasitic Link aura.
 - [x] Aura unit idea: a support unit that grants adjacent allies **plague** on their attacks. → Implemented as Morel Dilemma's Fungal Brood aura.
 - [ ] AoE attacks should have a custom icon so the player can tell at a glance which attack has splash damage.
-- [ ] Add animations to Madcap line (Madcap, Mad Prince, Mad Lord, Fungi, Fun Grandpa) — currently uses dwarf sprites with existing dwarf animations
-- [ ] Add animations to wisp units (Spore, Puffball) — currently uses elvish wisp sprites
+- Madcap line (Madcap, Mad Prince, Mad Lord, Fungi, Fun Grandpa) intentionally uses stock dwarf sprites — no custom sprites or animations planned
+- Wisp units (Spore, Puffball) intentionally use stock elvish wisp sprites — no custom sprites or animations planned
 
 ## Unit Animations
 
@@ -369,7 +391,7 @@ All 28 mushroom-sprite units have single-image animations defined via macros in 
 
 - **Truffle line** (Truffle, Double Truffle, Trufflemaker, Portalbello, Fairy Ring): DEFEND + DEATH + MELEE lunge
 - **Oyster line** (Oyster Squire/Vizier/Chamberlain, Oyster Knight, King Oyster): DEFEND + DEATH_SINK + MELEE club + RANGED_MAGIC spore
-- **Glowcap line** (Glowcap, Earth Star, Milky Way): DEFEND_BLINK + DEATH + MELEE shock + RANGED_MAGIC lightning + IDLE_GLOW
+- **Glowcap line** (Glowcap, Earth Star, Milky Way, Black Hole, Cosmic Shroom): DEFEND_BLINK + DEATH + MELEE shock + RANGED_MAGIC lightning + IDLE_GLOW
 - **Morel line** (Morel, Morel Dilemma/Support, Morel Authority, False Morel): DEFEND + DEATH + MELEE drain + RANGED_MAGIC spore
 - **Poison line** (Deathcap, Stinking/Deadly Dapperling, Inkcap, Nightcap): DEFEND + DEATH + MELEE toxic + RANGED_MAGIC dart/cloud
 - **Healer line** (Lion's Mane, Shaggy Mane, Lawyer's Wig): DEFEND + DEATH + MELEE staff + RANGED_MAGIC spore
@@ -396,17 +418,22 @@ Morel (L1 parasitic drain fighter)
    └─ Morel Authority (L3 drain aura + leadership) — ✅ BUILT
 
 Deathcap (L1 ranged poisoner)
-├─ Stinking Dapperling (L2 AoE poison, grove bound) — dead-end L2
+├─ Stinking Dapperling (L2 AoE poison, grove bound)
+│  └─ Deadly Dapperling (L3 AoE poison marksman)
 └─ Inkcap (L2 toxic strike, double vs poisoned)
    └─ Nightcap (L3 marksman sniper) — ✅ BUILT
 
 Lion's Mane (L1 healer)
-├─ Shaggy Mane (L2 cures healer) — dead-end L2
-└─ Bear's Head (L2 anti-heal blight) — dead-end L2
+├─ Shaggy Mane (L2 cures healer)
+│  └─ Lawyer's Wig (L3 AoE heal + regen)
+└─ Bear's Head (L2 anti-heal blight)
+   └─ Bleeding Tooth (L3 enhanced blight)
 
 Glowcap (L1 electric mage)
-└─ Earth Star (L2 AoE lightning)
-   └─ Milky Way (L3 AoE lightning)
+├─ Earth Star (L2 AoE lightning)
+│  └─ Milky Way (L3 AoE lightning)
+└─ Black Hole (L2 arcane void mage)
+   └─ Cosmic Shroom (L3 AoE arcane void)
 
 Truffle (L1 fast ambush scout)
 ├─ Double Truffle (L2 overgrowth raider)
