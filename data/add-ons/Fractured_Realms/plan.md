@@ -213,7 +213,6 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Lion's Mane | **Bear's Head** | Blight (unhealable), AoE blight (grove bound) — offensive blight path | ✅ BUILT |
 | Truffle | **Double Truffle** | Overgrowth (adjacent grove spread), Ambush, Entangle (slow) | ✅ BUILT |
 | Truffle | **Portalbello** | Fungal Tunnel (personal teleport between grove/forest tiles), Disengage | ✅ BUILT |
-| Puffball | **Giant Puffball** | Spore Explosion: AoE impact damage to adjacent enemies | |
 
 #### Portalbello (from Truffle) — 30g ✅ BUILT
 - **HP**: 38 | **Mov**: 8 | **Align**: Chaotic
@@ -347,8 +346,7 @@ Current faction config uses 5 L2 leaders (comparable to Knalgans default with 5,
 
 ```
 Spore (L0 flying plague token)
-└─ Puffball (L1 flying skirmisher, death bloom)
-   └─ Giant Puffball (L2 AoE burst) — not yet built
+└─ Puffball (L1 flying skirmisher, death bloom, AMLA only)
 
 Oyster Squire (L1 slow frontline)
 ├─ Oyster Vizier (L2 AoE slow eruption)
