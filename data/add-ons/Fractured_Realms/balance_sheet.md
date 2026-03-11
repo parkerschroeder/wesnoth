@@ -25,7 +25,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
                     ┌─ Earth Star (L2, electric AOE) ── Milky Way (L3, electric apex)
   Glowcap ──────────┤
-                    └─ Black Hole (L2, arcane) ──────────── Cosmic Shroom (L3, arcane apex)
+                    └─ Black Hole (L2, arcane_focus) ─────── Cosmic Shroom (L3, arcane_focus apex)
 
                     ┌─ Morel Dilemma (L2, plague aura) ── False Morel (L3, puffball plague)
   Morel ────────────┤
@@ -58,9 +58,9 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | | |
 |---|---|
 | **Level** | 1 |
-| **HP** | 38 |
+| **HP** | 32 |
 | **Cost** | 15 |
-| **XP** | 40 |
+| **XP** | 34 |
 | **Alignment** | Chaotic |
 | **Usage** | Fighter |
 | **Advances To** | [Oyster Vizier](#oyster-vizier), [Oyster Knight](#oyster-knight) |
@@ -96,9 +96,9 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | | |
 |---|---|
 | **Level** | 2 |
-| **HP** | 59 |
+| **HP** | 53 |
 | **Cost** | 32 |
-| **XP** | 88 |
+| **XP** | 82 |
 | **Alignment** | Neutral |
 | **Usage** | Fighter |
 | **Advances To** | [King Oyster](#king-oyster) |
@@ -137,9 +137,9 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | | |
 |---|---|
 | **Level** | 2 |
-| **HP** | 52 |
+| **HP** | 46 |
 | **Cost** | 32 |
-| **XP** | 88 |
+| **XP** | 82 |
 | **Alignment** | Chaotic |
 | **Usage** | Fighter |
 | **Advances To** | [Oyster Chamberlain](#oyster-chamberlain) |
@@ -176,7 +176,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | | |
 |---|---|
 | **Level** | 3 |
-| **HP** | 68 |
+| **HP** | 62 |
 | **Cost** | 63 |
 | **Alignment** | Neutral |
 | **Usage** | Fighter |
@@ -216,7 +216,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | | |
 |---|---|
 | **Level** | 3 |
-| **HP** | 62 |
+| **HP** | 56 |
 | **Cost** | 52 |
 | **Alignment** | Chaotic |
 | **Usage** | Fighter |
@@ -684,8 +684,8 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Void Touch | arcane | melee | 5×2 | 10 | — |
-| Void Bolt | arcane | ranged | 9×3 | 27 | Magical |
+| Void Touch | arcane_focus | melee | 5×2 | 10 | — |
+| Void Bolt | arcane_focus | ranged | 9×3 | 27 | Magical |
 
 ---
 
@@ -731,8 +731,8 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Void Touch | arcane | melee | 7×3 | 21 | — |
-| Void Bolt | arcane | ranged | 12×3 | 36 | Magical |
+| Void Touch | arcane_focus | melee | 7×3 | 21 | — |
+| Void Bolt | arcane_focus | ranged | 12×3 | 36 | Magical |
 
 ---
 
@@ -747,19 +747,18 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | | |
 |---|---|
 | **Level** | 1 |
-| **HP** | 28 |
-| **Cost** | 14 |
+| **HP** | 30 |
+| **Cost** | 16 |
 | **XP** | 32 |
 | **Alignment** | Chaotic |
-| **Usage** | Mixed Fighter |
+| **Usage** | Fighter |
 | **Advances To** | [Morel Dilemma](#morel-dilemma), [Morel Support](#morel-support) |
 | **Advances From** | — |
 | **Abilities** | — |
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Parasitic Touch | blade | melee | 5×2 | 10 | Drain |
-| Mind Spore | arcane | ranged | 4×2 | 8 | — |
+| Parasitic Touch | blade | melee | 5×3 | 15 | Drain |
 
 ---
 

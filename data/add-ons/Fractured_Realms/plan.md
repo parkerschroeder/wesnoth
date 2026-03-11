@@ -58,7 +58,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 ### 1. Oyster Squire (Fighter) — 15g
 - **Mushroom**: Generic toadstool warrior
-- **HP**: 38 | **Mov**: 4 | **Align**: Chaotic
+- **HP**: 32 | **Mov**: 4 | **Align**: Chaotic
 - **Melee**: Club 6×2 (impact) — **slow**
 - **Ranged**: Spore Puff 3×2 (impact)
 - **Role**: Faction tank. Tough and slow, holds the line while grove spreads. Slows enemies in melee to match its pace.
@@ -108,11 +108,10 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Sprite**: WoL Greater Wisp (scaled-up wisp)
 - **Advances to**: (dead-end L1)
 
-### 6. Glowcap (Mage) — 19g
+### 6. Glowcap (Mage) — 16g
 - **Mushroom**: Bioluminescent fungus (channels bioelectric energy)
-- **HP**: 22 | **Mov**: 5 | **Align**: Chaotic
-- **Melee**: Shock Touch 3×1 (electric)
-- **Ranged**: Spark Bolt 7×2 (electric) — **magical**
+- **HP**: 26 | **Mov**: 5 | **Align**: Neutral
+- **Ranged**: Spark Bolt 9×2 (electric) — **magical**
 - **Role**: Ranged damage dealer. Expensive but hits hard with electric/magical.
 - **Based on**: Dark Adept / Mage (fragile magical ranged, 19g)
 - **Sprite**: Custom (glowcap.png)
@@ -127,12 +126,12 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Based on**: Dune Rover (14g, 32 HP, 5 mov, liminal; axe 4×3 blade, bow 5×3 pierce). Morel trades ranged and 2 HP for drain sustain at +2g.
 - **Sprite**: Custom (morel.png)
 
-### 8. Madcap (Berserker) — 17g ✅ BUILT
+### 8. Madcap (Berserker) — 19g ✅ BUILT
 - **Concept**: A crazed dwarf hermit who discovered the rage-inducing fly agaric mushroom (*Amanita muscaria*) deep in the caves. Exiled by their clan, they now fight alongside the Mycelium — consuming grove mushrooms to fuel devastating berserk frenzies.
 - **Race**: Dwarf (not mushroom — uses dwarf names, traits, movetype)
-- **HP**: 32 | **Mov**: 5 | **Align**: Chaotic
-- **Melee 1**: Mushroom Frenzy 5×3 (blade) — **berserk, grove bound** (consumes the grove)
-- **Melee 2**: Hand Axe 4×3 (blade) — fallback when not on a grove
+- **HP**: 34 | **Mov**: 5 | **Align**: Chaotic
+- **Melee 1**: Mushroom Frenzy 4×4 (blade) — **berserk, grove bound** (consumes the grove)
+- **Melee 2**: Hand Axe 4×4 (blade) — fallback when not on a grove
 - **Role**: Conditional berserker. Devastating on a mushroom grove, average without one. Creates faction synergy — mushroom units spread groves, the Madcap consumes them for explosive burst damage. Does NOT spread groves passively (dwarf, no fungal_growth trait).
 - **Based on**: Dwarvish Ulfserker (15g, 32 HP, 5 mov, neutral, berserk; hammer 9×3 impact; 30% blade/pierce, 10% impact/fire/cold/arcane). Madcap matches chassis, trades neutral for chaotic and adds grove-bound condition.
 - **Sprite**: Dwarvish Ulfserker
@@ -144,7 +143,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 ### Built
 
 #### Oyster Vizier (from Oyster Squire) — 32g ✅ BUILT
-- **HP**: 52 | **Mov**: 4 | **Align**: Chaotic
+- **HP**: 46 | **Mov**: 4 | **Align**: Chaotic
 - **Melee**: Club 9×3 (impact) — **slow**
 - **Ranged**: Spore Puff 6×2 (impact) — **slow**
 - **Ability**: Spore Cloud — when this unit hits with its ranged attack, all enemy units adjacent to the **target** are also **slowed** (via `attacker_hits` event + dummy ability filter)
@@ -153,7 +152,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Sprite**: Custom (oystervizier.png)
 
 #### Oyster Knight (from Oyster Squire) — 32g ✅ BUILT
-- **HP**: 59 | **Mov**: 4 | **Align**: Neutral
+- **HP**: 53 | **Mov**: 4 | **Align**: Neutral
 - **Melee**: Club 8×3 (impact)
 - **Ranged**: Spore Puff 9×1 (impact)
 - **Ability**: Steadfast — halves damage when not moving, 70% blade/pierce, 80% impact, 100% fire/arcane resistance
@@ -166,7 +165,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 - **Race**: Dwarf
 - **HP**: 44 | **Mov**: 5 | **Align**: Chaotic
 - **Melee 1**: Mushroom Frenzy 7×4 (blade) — **berserk, grove bound**
-- **Melee 2**: Hand Axe 6×3 (blade)
+- **Melee 2**: Hand Axe 7×4 (blade)
 - **Ability**: Terror — adjacent enemies of lower level deal reduced damage (adapted from WoL Nightmares)
 - **Role**: Enhanced berserker. Frenzy matches the Dwarvish Berserker's 7×4 pattern but remains grove-bound. Radiates a terror aura from the fly agaric psychoactive toxins, debuffing nearby lower-level enemies. AMLA advancement.
 - **Based on**: Dwarvish Berserker (30g, 52 HP, 5 mov, neutral, berserk; hammer 7×4 impact). Mad Prince matches attack pattern exactly, trades neutral for chaotic and adds terror aura + grove-bound condition.
@@ -174,7 +173,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 #### Mad Lord (from Mad Prince) — 46g ✅ BUILT
 - **Race**: Dwarf
-- **HP**: 56 | **Mov**: 5 | **Align**: Chaotic
+- **HP**: 60 | **Mov**: 5 | **Align**: Chaotic
 - **Melee 1**: Mushroom Frenzy 9×4 (blade) — **berserk, grove bound, fungal plague**
 - **Melee 2**: Hand Axe 9×4 (blade) — **fungal plague**
 - **Ability**: Terror
@@ -185,8 +184,9 @@ Two core mechanics create a self-reinforcing territorial loop:
 #### Fungi (from Madcap) — 28g ✅ BUILT
 - **Race**: Dwarf
 - **HP**: 44 | **Mov**: 5 | **Align**: Neutral
-- **Melee 1**: Mushroom Frenzy 7×4 (blade) — **berserk, grove bound**
-- **Melee 2**: Hand Axe 7×4 (blade)
+- **Melee 1**: Mushroom Frenzy 6×4 (blade) — **berserk, grove bound**
+- **Melee 2**: Hand Axe 6×4 (blade)
+- **Ranged**: Spore Toss 4×3 (impact)
 - **Ability**: Leadership — adjacent allies of lower level deal more damage
 - **Role**: Guardian path. Where the Mad Prince descends deeper into madness, the Fungi channels mushroom visions into fierce protectiveness of the groves. Neutral alignment and leadership make it a support berserker that boosts the Mycelium's L1 units.
 - **Based on**: Dwarvish Berserker (30g, 52 HP, 5 mov, neutral, berserk; hammer 7×4 impact). Fungi matches attack pattern, swaps terror for leadership and chaos for neutral.
@@ -230,7 +230,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 #### Morel Dilemma (from Morel) — 34g ✅ BUILT
 - **HP**: 45 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Parasitic Touch 6×3 (blade) — **drain**
-- **Ranged**: Domination Spore 5×4 (arcane) — **plague, magical**
+- **Ranged**: Domination Spore 5×4 (arcane) — **plague**
 - **Ability**: Fungal Brood — adjacent allies' attacks spawn Spores from slain enemies (plague aura)
 - **XP**: 75
 - **Role**: Plague support. Turns every allied kill nearby into Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
@@ -287,14 +287,14 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Bear's Head | **Bleeding Tooth** | Enhanced AoE blight + melee blight | ✅ BUILT |
 | Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
 | Double Truffle | **Trufflemaker** | Enhanced overgrowth + strong melee | ✅ BUILT |
-| Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 7 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
+| Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 8 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
 | Earth Star | **Milky Way** | AoE lightning L3 | ✅ BUILT |
 | Black Hole | **Cosmic Shroom** | Enhanced arcane_focus void + obscure + feeding | ✅ BUILT |
 | Morel Dilemma | **False Morel** | Enhanced plague aura — spawns Puffballs instead of Spores | ✅ BUILT |
 | Morel Support | **Morel Authority** | Enhanced drain aura + Leadership | ✅ BUILT |
 
 #### King Oyster (from Oyster Knight) — 63g ✅ BUILT
-- **HP**: 68 | **Mov**: 4 | **Align**: Neutral
+- **HP**: 62 | **Mov**: 4 | **Align**: Neutral
 - **Melee**: Club 10×3 (impact)
 - **Ranged**: Spore Puff 12×1 (impact)
 - **Ability**: Steadfast — 70% blade/pierce, 80% impact, 90% fire/arcane resistance
