@@ -209,7 +209,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 |---------|---------|---------------|--------|
 | Deathcap | **Stinking Dapperling** | Poison Cloud: AoE poison attack (grove bound) | ✅ BUILT |
 | Deathcap | **Inkcap** | Venom Strike: double damage vs poisoned (offense only) | ✅ BUILT |
-| Lion's Mane | **Shaggy Mane** | Heals +8, Cures — pure healer path | ✅ BUILT |
+| Lion's Mane | **Shaggy Mane** | Heals +8, Cures, Slow ranged — pure healer path | ✅ BUILT |
 | Lion's Mane | **Bear's Head** | Blight (unhealable), AoE blight (grove bound) — offensive blight path | ✅ BUILT |
 | Truffle | **Double Truffle** | Overgrowth (adjacent grove spread), Ambush, Entangle (slow) | ✅ BUILT |
 | Truffle | **Portalbello** | Fungal Tunnel (personal teleport between grove/forest tiles), Disengage | ✅ BUILT |
@@ -283,7 +283,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 |---------|---------|-----------------|--------|
 | Oyster Vizier | **Oyster Chamberlain** | AoE slow (no grove required) | ✅ BUILT |
 | Stinking Dapperling | **Deadly Dapperling** | AoE poison + marksman, grove kills spawn 2 Spores | ✅ BUILT |
-| Shaggy Mane | **Lawyer's Wig** | Heals +8 + cures + self-regeneration | ✅ BUILT |
+| Shaggy Mane | **Lawyer's Wig** | Cures + slow ranged + regenerates | ✅ BUILT |
 | Bear's Head | **Bleeding Tooth** | Enhanced AoE blight + melee blight | ✅ BUILT |
 | Inkcap | **Nightcap** | Marksman + enhanced catalyst spore (8×3, 16×3 vs poisoned) | ✅ BUILT |
 | Double Truffle | **Trufflemaker** | Enhanced overgrowth + strong melee | ✅ BUILT |

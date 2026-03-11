@@ -418,7 +418,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
 | Staff | impact | melee | 5×3 | 15 | — |
-| Spore Puff | impact | ranged | 5×3 | 15 | — |
+| Spore Puff | impact | ranged | 6×2 | 12 | Slow |
 
 ---
 
@@ -466,7 +466,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
 | Staff | impact | melee | 7×3 | 21 | — |
-| Spore Puff | impact | ranged | 7×3 | 21 | — |
+| Spore Puff | impact | ranged | 8×2 | 16 | Slow |
 
 ---
 
