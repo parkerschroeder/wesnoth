@@ -227,7 +227,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
 | Club | impact | melee | 11×3 | 33 | Slow |
-| Spore Puff | impact | ranged | 8×2 | 16 | Slow |
+| Spore Puff | impact | ranged | 12×2 | 24 | Slow |
 | Spore Eruption | impact | ranged | 12×2 | 24 | Slow, AOE, Grove-Bound |
 
 <details>
@@ -293,8 +293,8 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
 | Toxic Touch | blade | melee | 6×2 | 12 | Poison |
-| Poison Dart | pierce | ranged | 7×2 | 14 | Poison |
-| Poison Cloud | impact | ranged | 5×3 | 15 | Poison, AOE, Grove-Bound |
+| Poison Dart | pierce | ranged | 6×3 | 18 | Poison |
+| Poison Cloud | impact | ranged | 6×3 | 18 | Poison, AOE, Grove-Bound |
 
 ---
 
@@ -341,8 +341,8 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
 | Toxic Touch | blade | melee | 8×3 | 24 | Poison |
-| Poison Dart | pierce | ranged | 9×2 | 18 | Poison |
-| Poison Cloud | impact | ranged | 7×3 | 21 | Poison, Marksman, AOE, Grove-Bound |
+| Poison Dart | pierce | ranged | 8×3 | 24 | Poison |
+| Poison Cloud | impact | ranged | 8×3 | 24 | Poison, Marksman, AOE, Grove-Bound |
 
 ---
 
@@ -442,7 +442,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
 | Staff | impact | melee | 5×3 | 15 | — |
-| Blight Spore | impact | ranged | 4×3 | 12 | Blight |
+| Blight Spore | impact | ranged | 6×3 | 18 | Blight |
 | Blighting Spores | impact | ranged | 6×3 | 18 | Blight, AOE, Grove-Bound |
 
 ---
@@ -489,7 +489,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
 | Staff | impact | melee | 7×3 | 21 | Blight |
-| Blight Spore | impact | ranged | 6×3 | 18 | Blight |
+| Blight Spore | impact | ranged | 9×3 | 27 | Blight |
 | Blighting Spores | impact | ranged | 9×3 | 27 | Blight, AOE, Grove-Bound |
 
 ---
@@ -709,7 +709,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 |--------|------|-------|------------|------:|----------|
 | Shock Touch | electric | melee | 7×3 | 21 | — |
 | Spark Bolt | electric | ranged | 12×3 | 36 | Magical |
-| Lightning Storm | electric | ranged | 14×3 | 42 | Magical, AOE, Grove-Bound |
+| Lightning Storm | electric | ranged | 12×3 | 36 | Magical, AOE, Grove-Bound |
 
 ---
 
@@ -774,15 +774,14 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | **Cost** | 34 |
 | **XP** | 75 |
 | **Alignment** | Chaotic |
-| **Usage** | Mixed Fighter |
+| **Usage** | Fighter |
 | **Advances To** | [False Morel](#false-morel) |
 | **Advances From** | [Morel](#morel) |
 | **Abilities** | Fungal Brood (adjacent allies' kills spawn Spores) |
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Parasitic Touch | blade | melee | 6×3 | 18 | Drain |
-| Domination Spore | arcane | ranged | 5×4 | 20 | Fungal Plague |
+| Parasitic Touch | blade | melee | 8×3 | 24 | Fungal Plague |
 
 ---
 
@@ -821,15 +820,14 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 | **HP** | 55 |
 | **Cost** | 52 |
 | **Alignment** | Chaotic |
-| **Usage** | Mixed Fighter |
+| **Usage** | Fighter |
 | **Advances To** | — |
 | **Advances From** | [Morel Dilemma](#morel-dilemma) |
 | **Abilities** | Enhanced Fungal Brood (adjacent allies' kills spawn Puffballs) |
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Parasitic Touch | blade | melee | 7×3 | 21 | Drain |
-| Domination Spore | arcane | ranged | 7×4 | 28 | Fungal Plague |
+| Parasitic Touch | blade | melee | 10×3 | 30 | Fungal Plague |
 
 ---
 

@@ -229,12 +229,11 @@ Two core mechanics create a self-reinforcing territorial loop:
 
 #### Morel Dilemma (from Morel) — 34g ✅ BUILT
 - **HP**: 45 | **Mov**: 5 | **Align**: Chaotic
-- **Melee**: Parasitic Touch 6×3 (blade) — **drain**
-- **Ranged**: Domination Spore 5×4 (arcane) — **plague**
+- **Melee**: Parasitic Touch 8×3 (blade) — **fungal plague** (kills spawn Spores)
 - **Ability**: Fungal Brood — adjacent allies' attacks spawn Spores from slain enemies (plague aura)
 - **XP**: 75
-- **Role**: Plague support. Turns every allied kill nearby into Spore reinforcements. Drain melee keeps it alive when cornered, magical ranged handles its own kills.
-- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Morel Dilemma trades 1 HP, 1 movement and raw damage for drain + plague aura at +3g.
+- **Role**: Melee plague fighter. Pure melee — no ranged. Gets into the thick of combat to proc plague spawns from its own kills and empower adjacent allies to do the same. Trades the Morel's drain sustain for army-generating plague.
+- **Based on**: Dune Explorer (31g, 46 HP, 6 mov, liminal; axe 6×4 blade, bow 8×3 pierce). Morel Dilemma trades 1 HP, 1 movement and ranged for plague aura at +3g.
 - **Sprite**: Custom (moreldilemma.png)
 - **Advances to**: False Morel (L3)
 
@@ -252,8 +251,8 @@ Two core mechanics create a self-reinforcing territorial loop:
 #### Stinking Dapperling (from Deathcap) — 32g ✅ BUILT
 - **HP**: 36 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Toxic Touch 6×2 (blade) — **poison**
-- **Ranged 1**: Poison Dart 7×2 (pierce) — **poison**
-- **Ranged 2**: Poison Cloud 5×3 (impact) — **poison, AoE poison (poison_cloud), grove bound**
+- **Ranged 1**: Poison Dart 6×3 (pierce) — **poison**
+- **Ranged 2**: Poison Cloud 6×3 (impact) — **poison, AoE poison (poison_cloud), grove bound**
 - **Role**: Glass cannon AoE poisoner. Still fragile for L2 but now poisons clusters of enemies by channeling the grove network. Three attack options: safe ranged poison, melee poison, or devastating grove-powered poison cloud that poisons both the target and all adjacent enemies.
 - **Based on**: Lich (fragile AoE caster, status effects)
 - **Sprite**: Custom (stinkingdapperling.png)
@@ -290,7 +289,7 @@ Two core mechanics create a self-reinforcing territorial loop:
 | Portalbello | **Fairy Ring** | Mycelial network aura — adjacent allies can teleport between any fungal terrain tiles (`*^Tf,*^Tff`). Upgrades the Portalbello's personal teleport into an aura that grants it to nearby allies. Pure disengage + teleport (no overgrowth). Based on Saurian Flanker (42g, 54 HP, 8 mov, chaotic, skirmisher; spear 8×4 pierce). Fairy Ring matches HP/XP exactly, trades skirmisher + ranged for disengage + teleport aura at +4g. | ✅ BUILT |
 | Earth Star | **Milky Way** | AoE lightning L3 | ✅ BUILT |
 | Black Hole | **Cosmic Shroom** | Enhanced arcane_focus void + obscure + feeding | ✅ BUILT |
-| Morel Dilemma | **False Morel** | Enhanced plague aura — spawns Puffballs instead of Spores | ✅ BUILT |
+| Morel Dilemma | **False Morel** | Enhanced plague aura — melee-only, spawns Puffballs instead of Spores, 7 mov | ✅ BUILT |
 | Morel Support | **Morel Authority** | Enhanced drain aura + Leadership | ✅ BUILT |
 
 #### King Oyster (from Oyster Knight) — 63g ✅ BUILT
@@ -394,7 +393,7 @@ All 28 mushroom-sprite units have single-image animations defined via macros in 
 - **Truffle line** (Truffle, Double Truffle, Trufflemaker, Portalbello, Fairy Ring): DEFEND + DEATH + MELEE lunge
 - **Oyster line** (Oyster Squire/Vizier/Chamberlain, Oyster Knight, King Oyster): DEFEND + DEATH_SINK + MELEE club + RANGED_MAGIC spore
 - **Glowcap line** (Glowcap, Earth Star, Milky Way, Black Hole, Cosmic Shroom): DEFEND_BLINK + DEATH + MELEE shock + RANGED_MAGIC lightning
-- **Morel line** (Morel, Morel Dilemma/Support, Morel Authority, False Morel): DEFEND + DEATH + MELEE drain + RANGED_MAGIC spore
+- **Morel line** (Morel, Morel Dilemma/Support, Morel Authority, False Morel): DEFEND + DEATH + MELEE drain/plague + RANGED_MAGIC spore (Support/Authority only)
 - **Poison line** (Deathcap, Stinking/Deadly Dapperling, Inkcap, Nightcap): DEFEND + DEATH + MELEE toxic + RANGED_MAGIC dart/cloud
 - **Healer line** (Lion's Mane, Shaggy Mane, Lawyer's Wig): DEFEND + DEATH + MELEE staff + RANGED_MAGIC spore
 - **Blight line** (Bear's Head, Bleeding Tooth): DEFEND + DEATH + MELEE staff + RANGED_MAGIC blight
