@@ -393,7 +393,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Staff | impact | melee | 3×2 | 6 | — |
+| Tendril | impact | melee | 3×2 | 6 | — |
 | Spore Puff | impact | ranged | 4×2 | 8 | Slow |
 
 ---
@@ -417,7 +417,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Staff | impact | melee | 5×3 | 15 | — |
+| Tendril | impact | melee | 5×3 | 15 | — |
 | Spore Puff | impact | ranged | 6×2 | 12 | Slow |
 
 ---
@@ -441,7 +441,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Staff | impact | melee | 5×3 | 15 | — |
+| Tendril | impact | melee | 5×3 | 15 | — |
 | Blight Spore | impact | ranged | 6×3 | 18 | Blight |
 | Blighting Spores | impact | ranged | 6×3 | 18 | Blight, AOE, Grove-Bound |
 
@@ -465,7 +465,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Staff | impact | melee | 7×3 | 21 | — |
+| Tendril | impact | melee | 7×3 | 21 | — |
 | Spore Puff | impact | ranged | 8×2 | 16 | Slow |
 
 ---
@@ -488,7 +488,7 @@ A mushroom faction for [Battle for Wesnoth](https://wesnoth.org) focused on stat
 
 | Attack | Type | Range | Dmg × Hits | Total | Specials |
 |--------|------|-------|------------|------:|----------|
-| Staff | impact | melee | 7×3 | 21 | Blight |
+| Tendril | impact | melee | 7×3 | 21 | Blight |
 | Blight Spore | impact | ranged | 9×3 | 27 | Blight |
 | Blighting Spores | impact | ranged | 9×3 | 27 | Blight, AOE, Grove-Bound |
 
