@@ -3,15 +3,15 @@
 ## Concept
 A werefolk-themed faction focused on aggressive melee combat and spreading lycanthropy through the enemy army. Fast, hard-hitting units that overwhelm through pack coordination and enemy conversion. Where the Mycelium controls territory, the Werefolk control the enemy army itself — turning fallen foes into new packmates.
 
-**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" mark enemies with a cursed status when they land a hit (offensive or defensive). Cursed enemy units transform into a Cursed wolf form at nightfall, fighting for the werefolk player's side. At dawn they revert to their original form. Lycanthropy persists across night/day cycles until cured by villages (on the unit's own turn) or healers with 'cures'.
+**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" inflict a festering curse on enemies when they land a hit (offensive or defensive). Festering units are unhealable and, if not cured before nightfall, the curse takes root permanently as lycanthropy. Permanently lycanthropic units transform into a Cursed wolf form at nightfall, fighting for the werefolk player's side, and revert at dawn — every night, forever. Festering can be cured by villages, healers with 'cures', or the unit's own regeneration ability. Permanent lycanthropy cannot be cured.
 
 ## Current State
 - Mycelium faction complete in Fractured_Realms add-on
 - Werefolk faction in progress:
   - Race (`werefolk`) and movement type (`wolfpaw`) defined in `units/werefolk.cfg`
   - Full lycanthropy event system implemented and tested (`macros/werefolk-events.cfg`)
-  - Helper macros: APPLY_CURSE, REMOVE_CURSE, APPLY_TRANSFORM, REMOVE_TRANSFORM, IF_TIME_OF_DAY
-  - Event macros: BITE (offensive+defensive), NIGHTFALL, DAWN, VILLAGE_CURE + EVENTS composer
+  - Helper macros: APPLY_FESTERING, REMOVE_FESTERING, APPLY_LYCANTHROPY, LYCANTHROPY_APPLY_TRANSFORM, LYCANTHROPY_REMOVE_TRANSFORM, IF_TIME_OF_DAY
+  - Event macros: BITE, NIGHTFALL, DAWN, FESTERING_VILLAGE_CURE, FESTERING_HEALER_CURE, FESTERING_REGENERATE_CURE + EVENTS composer
   - Werefolk_Cursed unit type (`units/werefolk/Cursed.cfg`) — hidden transformation target
   - Warg L1 unit (`units/werefolk/Warg.cfg`) — core fighter, first implemented unit
   - Lua status icon (`lua/theme.lua`) — curse indicator in unit status bar
@@ -37,31 +37,32 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 | Ranged | Decent | Weak (melee-focused) |
 | Status effects | Poison, slow, blight | Lycanthropy, fear |
 | Weakness | Fire | Fire, Arcane |
-| Spawn mechanic | Plague (instant on kill) | Lycanthropy (bite → nightfall transformation) |
+| Spawn mechanic | Plague (instant on kill) | Lycanthropy (bite → festering → nightfall transformation) |
 
 ## Lycanthropy Mechanic
 
 ### 1. Lycanthropic Bite (weapon special) — IMPLEMENTED
 - `[dummy]` special with `id=lycanthropic_bite` — a marker, no inherent damage effect
 - Two `attacker_hits`/`defender_hits` events detect when the bite lands (covers both offensive and defensive combat)
-- Applies a `lycanthropy` status via `[object]` with `apply_to=status add=lycanthropy`
-- Stores `lycanthropy_owner` variable on the cursed unit (the werefolk player's side number)
-- Skips undead, mechanical, and already-cursed units via `[filter_second]`/`[filter]` with `[not]` blocks
+- Applies `festering` status + `unhealable` via `APPLY_FESTERING` helper (object with two status effects)
+- Stores `festering_owner` (werefolk player's side) and `festering_target=lycanthropy` on the cursed unit
+- Skips undead, mechanical, and units already festering or lycanthropic via `[not]` blocks
 - Shows floating purple "lycanthropy" text on hit
 - Visual status icon displayed via Lua (`theme.lua` hooks `wesnoth.interface.game_display.unit_status`)
-- Implementation: `WEAPON_SPECIAL_LYCANTHROPIC_BITE`, `LYCANTHROPY_APPLY_CURSE`, `LYCANTHROPY_BITE_EVENT` in `macros/werefolk-events.cfg`
+- Implementation: `WEAPON_SPECIAL_LYCANTHROPIC_BITE`, `APPLY_FESTERING`, `LYCANTHROPY_BITE_EVENT` in `macros/werefolk-events.cfg`
 
 ### 2. Nightfall Transformation (turn refresh event) — IMPLEMENTED
-- Fires on `turn refresh` (every side's turn), checks if time of day is `first_watch` via `IF_TIME_OF_DAY` helper
-- Stores all units with `status=lycanthropy` that are NOT already `lycanthropy_transformed=yes`
+- Fires on `turn refresh`, scoped to `side=$side_number` (only on the unit's own turn), checks if time of day is `first_watch`
+- **Phase 1**: Converts all festering units with `festering_target=lycanthropy` to permanent lycanthropy via `APPLY_LYCANTHROPY` (removes festering + unhealable, applies `lycanthropy` status)
+- **Phase 2**: Transforms all units with `status=lycanthropy` that are NOT already `lycanthropy_transformed=yes`
 - For each: snapshots original HP/XP/max values, saves them as unit variables, then applies `[object]` with `apply_to=type name=Werefolk_Cursed`
 - After type change, restores original HP/XP/max (so stats carry over instead of using Cursed type defaults)
 - Switches unit to werefolk player's side (`lycanthropy_owner`)
 - `[redraw]` forces immediate visual refresh (team color orb update)
-- Implementation: `LYCANTHROPY_APPLY_TRANSFORM` helper + `LYCANTHROPY_NIGHTFALL_EVENT` in `macros/werefolk-events.cfg`
+- Implementation: `APPLY_LYCANTHROPY`, `LYCANTHROPY_APPLY_TRANSFORM` helpers + `LYCANTHROPY_NIGHTFALL_EVENT` in `macros/werefolk-events.cfg`
 
 ### 3. Dawn Reversion (turn refresh event) — IMPLEMENTED
-- Fires on `turn refresh`, checks if time of day is `dawn`
+- Fires on `turn refresh`, scoped to `side=$side_number` (werefolk player's turn, since transformed units are on their side), checks if time of day is `dawn`
 - Stores all units with `lycanthropy_transformed=yes`
 - For each: snapshots current HP/XP, then `[remove_object]` reverts the type change
 - Restores original side, carries over current HP (damage taken during night persists), restores original max HP/XP from stored variables
@@ -69,12 +70,16 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - If the cursed form dies during the night, the unit is simply dead (no special handler needed — the original unit IS the cursed form, just type-changed)
 - Implementation: `LYCANTHROPY_REMOVE_TRANSFORM` helper + `LYCANTHROPY_DAWN_EVENT` in `macros/werefolk-events.cfg`
 
-### 4. Curing Lycanthropy — IMPLEMENTED
-- Village cure: `turn refresh` event checks for cursed (non-transformed) units on village terrain (`*^V*`)
-- Restricted to `side=$side_number` — only cures units on their own side's turn (prevents enemy units being cured during your turn)
-- Removes the curse object, explicitly clears `lycanthropy=no` status (since `apply_to=status add=` is not reversible by `[remove_object]`), and cleans up all tracking variables
-- Healer "cures" ability: not yet implemented (planned for Pack Shaman L2)
-- Implementation: `LYCANTHROPY_REMOVE_CURSE` helper + `LYCANTHROPY_VILLAGE_CURE_EVENT` in `macros/werefolk-events.cfg`
+### 4. Curing Festering — IMPLEMENTED
+- **Two-phase curse model**: Bite inflicts `festering` (curable). If uncured by nightfall, converts to permanent `lycanthropy` (incurable).
+- **Festering phase**: Unit has `festering` + `unhealable` status. Cannot receive any healing (village, rest, healer HP, regeneration HP). Can be cured by:
+  - **Village cure** (`FESTERING_VILLAGE_CURE_EVENT`): `turn refresh` checks for festering units on village terrain (`*^V*`), restricted to `side=$side_number`
+  - **Healer cure** (`FESTERING_HEALER_CURE_EVENT`): `turn refresh` checks for festering units adjacent to a friendly unit with the `cures` ability
+  - **Regenerate cure** (`FESTERING_REGENERATE_CURE_EVENT`): `turn refresh` checks for festering units with the `regenerates` ability — parallels how the base engine clears poison for regenerators
+- All cure events fire before nightfall in the composer ordering, ensuring the player gets a fair chance to cure
+- Curing uses `REMOVE_FESTERING` helper: removes the festering object, clears `festering` + `unhealable` statuses, cleans up tracking variables
+- **Permanent lycanthropy**: Once the curse takes root at nightfall, `lycanthropy` status is set directly (no object needed). Cannot be cured by any means. Unit transforms every night forever.
+- Implementation: `REMOVE_FESTERING` helper + `FESTERING_VILLAGE_CURE_EVENT`, `FESTERING_HEALER_CURE_EVENT`, `FESTERING_REGENERATE_CURE_EVENT` in `macros/werefolk-events.cfg`
 
 ### 5. Cursed Unit Type (Werefolk_Cursed) — IMPLEMENTED
 - Defined in `units/werefolk/Cursed.cfg` — `do_not_list=yes` (hidden from help/recruit)
@@ -87,17 +92,21 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 ### 6. Lua Status Icon — IMPLEMENTED
 - `lua/theme.lua` hooks `wesnoth.interface.game_display.unit_status` to show a curse icon in the unit status bar
 - Uses `images/misc/curse-status-icon.png` (copied from Wings of Liberty add-on)
-- Shows tooltip "Lycanthropy — This unit is cursed with lycanthropy..."
+- Shows different tooltips for each phase:
+  - **Festering**: "This unit has a festering curse. If not cured before nightfall, it will take root permanently."
+  - **Lycanthropy**: "This unit is permanently cursed with lycanthropy. It transforms into a werefolk at nightfall and reverts at dawn."
 - Loaded via `wesnoth.require` in a `preload` event in `fr-resource-tags.cfg`
 - Persists through fog reveal (unlike overlay/halo approaches that disappeared)
 
 ### 7. Strategic Depth
-- **Ticking clock**: Every bite starts a countdown to nightfall. The enemy must cure before dusk or lose control of that unit for the entire night phase.
-- **Night chaos**: During night, the Werefolk player gets a swarm of bonus Thralls fighting alongside their army. The enemy's own units are turned against them.
-- **Dawn recovery**: Cursed units return at dawn, but weakened by any damage the Thrall took. A rough night can leave the enemy's army crippled even after reversion.
-- **Permanent death risk**: If the enemy (or anyone) kills the Thrall form at night, the original unit is gone forever. The enemy must be careful not to kill their own transformed allies.
-- **Counterplay**: Cure before nightfall (villages, healers). Kill the biters before they spread the curse. Undead/mechanical are immune. Fight primarily during the day to minimize transformation windows.
-- **Snowball potential**: More bites → more Thralls at night → more biters → more bites. Balanced by the fact that Thralls revert at dawn and curing is accessible.
+- **Festering window**: Every bite starts a festering phase — the enemy must cure before nightfall or the curse becomes permanent. Creates urgency: rush to a village, stay near healers, or rely on regeneration.
+- **Permanent commitment**: Once a unit transforms for the first time, the lycanthropy is locked in forever. No more curing. The enemy must live with a unit that switches sides every night.
+- **Night chaos**: During night, the Werefolk player gets a swarm of bonus Cursed wolves fighting alongside their army. The enemy's own units are turned against them.
+- **Dawn recovery**: Permanently cursed units return at dawn, but weakened by any damage taken in wolf form. A rough night can leave the enemy's army crippled even after reversion.
+- **Permanent death risk**: If the enemy (or anyone) kills the Cursed form at night, the original unit is gone forever. The enemy must be careful not to kill their own transformed allies.
+- **Counterplay**: Cure festering before nightfall (villages, healers with cures, regeneration). Kill the biters before they spread the curse. Undead/mechanical are immune. Fight primarily during the day to minimize transformation windows.
+- **Snowball potential**: More bites → more Cursed wolves at night → more biters → more bites. Balanced by the fact that Cursed wolves revert at dawn and festering is accessible to cure.
+- **Unhealable pressure**: Festering units can't be healed at all — no village HP, no rest healing, no healer HP, no regeneration HP. The curse actively degrades the enemy's army even before transformation.
 
 ## Pack Tactics Mechanic
 - L2+ alpha-tier units gain "Pack Leader" (leadership variant) — adjacent lower-level allies deal more damage
