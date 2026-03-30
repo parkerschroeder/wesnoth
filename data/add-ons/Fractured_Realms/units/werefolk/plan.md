@@ -3,11 +3,20 @@
 ## Concept
 A werefolk-themed faction focused on aggressive melee combat and spreading lycanthropy through the enemy army. Fast, hard-hitting units that overwhelm through pack coordination and enemy conversion. Where the Mycelium controls territory, the Werefolk control the enemy army itself — turning fallen foes into new packmates.
 
-**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" mark enemies with a cursed status when they land a hit. If any Werefolk unit kills a cursed enemy, it rises as a Thrall (L0 werefolk). This two-step plague rewards coordinated pack hunting — one unit bites, another finishes the kill, and the pack grows.
+**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" mark enemies with a cursed status when they land a hit (offensive or defensive). Cursed enemy units transform into a Cursed wolf form at nightfall, fighting for the werefolk player's side. At dawn they revert to their original form. Lycanthropy persists across night/day cycles until cured by villages (on the unit's own turn) or healers with 'cures'.
 
 ## Current State
 - Mycelium faction complete in Fractured_Realms add-on
-- Next: Build the Werefolk as a second custom faction in the same era
+- Werefolk faction in progress:
+  - Race (`werefolk`) and movement type (`wolfpaw`) defined in `units/werefolk.cfg`
+  - Full lycanthropy event system implemented and tested (`macros/werefolk-events.cfg`)
+  - Helper macros: APPLY_CURSE, REMOVE_CURSE, APPLY_TRANSFORM, REMOVE_TRANSFORM, IF_TIME_OF_DAY
+  - Event macros: BITE (offensive+defensive), NIGHTFALL, DAWN, VILLAGE_CURE + EVENTS composer
+  - Werefolk_Cursed unit type (`units/werefolk/Cursed.cfg`) — hidden transformation target
+  - Warg L1 unit (`units/werefolk/Warg.cfg`) — core fighter, first implemented unit
+  - Lua status icon (`lua/theme.lua`) — curse indicator in unit status bar
+  - Resource wiring (`fr-resource-tags.cfg`) — preload event + LYCANTHROPY_EVENTS
+  - Remaining: 7 more L1 units, faction .cfg, era integration
 
 ## Faction Identity
 - **Name**: The Werefolk
@@ -32,35 +41,57 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ## Lycanthropy Mechanic
 
-### 1. Lycanthropic Bite (weapon special)
-- Applied as a weapon special on specific melee attacks (like poison)
-- When the attack hits, marks the enemy with "lycanthropy" status
-- Visual indicator on the cursed unit (like the poison vial but wolf-themed)
-- Does NOT deal damage over time like poison — it's a strategic marker
-- Implementation: custom WML weapon special that sets a unit variable (`lycanthropy_cursed=yes`) via `attacker_hits` event
-- Does NOT work on: undead, mechanical (same restrictions as plague)
+### 1. Lycanthropic Bite (weapon special) — IMPLEMENTED
+- `[dummy]` special with `id=lycanthropic_bite` — a marker, no inherent damage effect
+- Two `attacker_hits`/`defender_hits` events detect when the bite lands (covers both offensive and defensive combat)
+- Applies a `lycanthropy` status via `[object]` with `apply_to=status add=lycanthropy`
+- Stores `lycanthropy_owner` variable on the cursed unit (the werefolk player's side number)
+- Skips undead, mechanical, and already-cursed units via `[filter_second]`/`[filter]` with `[not]` blocks
+- Shows floating purple "lycanthropy" text on hit
+- Visual status icon displayed via Lua (`theme.lua` hooks `wesnoth.interface.game_display.unit_status`)
+- Implementation: `WEAPON_SPECIAL_LYCANTHROPIC_BITE`, `LYCANTHROPY_APPLY_CURSE`, `LYCANTHROPY_BITE_EVENT` in `macros/werefolk-events.cfg`
 
-### 2. Nightfall Transformation (time of day event)
-- At dusk (transition to night), ALL cursed enemy units temporarily transform into Thralls
-- The original unit is stored in a WML variable (full state: HP, XP, status effects, etc.)
-- The Thrall spawns on the same hex, loyal to the Werefolk player's side
-- The Thrall is a fixed L0 body — no XP gain or advancement while transformed
-- Implementation: `time_of_day` event (or `turn_refresh` checking ToD) stores cursed units via `[store_unit]`, replaces them with Thralls via `[unstore_unit]`
+### 2. Nightfall Transformation (turn refresh event) — IMPLEMENTED
+- Fires on `turn refresh` (every side's turn), checks if time of day is `first_watch` via `IF_TIME_OF_DAY` helper
+- Stores all units with `status=lycanthropy` that are NOT already `lycanthropy_transformed=yes`
+- For each: snapshots original HP/XP/max values, saves them as unit variables, then applies `[object]` with `apply_to=type name=Werefolk_Cursed`
+- After type change, restores original HP/XP/max (so stats carry over instead of using Cursed type defaults)
+- Switches unit to werefolk player's side (`lycanthropy_owner`)
+- `[redraw]` forces immediate visual refresh (team color orb update)
+- Implementation: `LYCANTHROPY_APPLY_TRANSFORM` helper + `LYCANTHROPY_NIGHTFALL_EVENT` in `macros/werefolk-events.cfg`
 
-### 3. Dawn Reversion (time of day event)
-- At dawn (transition to day), ALL transformed Thralls revert to their original units
-- The original unit is restored from the WML variable on the same hex, still cursed
-- HP damage carries over proportionally — if the Thrall took 50% of its HP in damage, the original reverts at 50% HP
-- If the Thrall dies during the night → the original unit is permanently dead (the curse consumed them)
-- Implementation: `time_of_day` event restores stored units via `[unstore_unit]`, kills any Thralls that were transformed
+### 3. Dawn Reversion (turn refresh event) — IMPLEMENTED
+- Fires on `turn refresh`, checks if time of day is `dawn`
+- Stores all units with `lycanthropy_transformed=yes`
+- For each: snapshots current HP/XP, then `[remove_object]` reverts the type change
+- Restores original side, carries over current HP (damage taken during night persists), restores original max HP/XP from stored variables
+- `[redraw]` forces immediate visual refresh
+- If the cursed form dies during the night, the unit is simply dead (no special handler needed — the original unit IS the cursed form, just type-changed)
+- Implementation: `LYCANTHROPY_REMOVE_TRANSFORM` helper + `LYCANTHROPY_DAWN_EVENT` in `macros/werefolk-events.cfg`
 
-### 4. Curing Lycanthropy
-- Village healing removes the curse (like poison) — must happen during daytime before nightfall
-- Healer units with "cures" ability (L2+) remove the curse
-- This provides clear counterplay — White Mage, Elvish Druid, etc. hard-counter the mechanic
-- The curse persists across night/day cycles until cured — a unit will keep transforming every night
+### 4. Curing Lycanthropy — IMPLEMENTED
+- Village cure: `turn refresh` event checks for cursed (non-transformed) units on village terrain (`*^V*`)
+- Restricted to `side=$side_number` — only cures units on their own side's turn (prevents enemy units being cured during your turn)
+- Removes the curse object, explicitly clears `lycanthropy=no` status (since `apply_to=status add=` is not reversible by `[remove_object]`), and cleans up all tracking variables
+- Healer "cures" ability: not yet implemented (planned for Pack Shaman L2)
+- Implementation: `LYCANTHROPY_REMOVE_CURSE` helper + `LYCANTHROPY_VILLAGE_CURE_EVENT` in `macros/werefolk-events.cfg`
 
-### 5. Strategic Depth
+### 5. Cursed Unit Type (Werefolk_Cursed) — IMPLEMENTED
+- Defined in `units/werefolk/Cursed.cfg` — `do_not_list=yes` (hidden from help/recruit)
+- `id=Werefolk_Cursed`, race=werefolk, movement_type=wolfpaw, 24 HP, 7 mov, level 1, chaotic
+- Uses wolf sprite (`units/monsters/wolf.png`)
+- Attack: Claws 5×3 blade with lycanthropic bite (cursed wolves can spread the curse further at night)
+- `advances_to=null` — cannot level up while transformed
+- The original unit's HP/XP is preserved through the transform via `[modify_unit]` overrides
+
+### 6. Lua Status Icon — IMPLEMENTED
+- `lua/theme.lua` hooks `wesnoth.interface.game_display.unit_status` to show a curse icon in the unit status bar
+- Uses `images/misc/curse-status-icon.png` (copied from Wings of Liberty add-on)
+- Shows tooltip "Lycanthropy — This unit is cursed with lycanthropy..."
+- Loaded via `wesnoth.require` in a `preload` event in `fr-resource-tags.cfg`
+- Persists through fog reveal (unlike overlay/halo approaches that disappeared)
+
+### 7. Strategic Depth
 - **Ticking clock**: Every bite starts a countdown to nightfall. The enemy must cure before dusk or lose control of that unit for the entire night phase.
 - **Night chaos**: During night, the Werefolk player gets a swarm of bonus Thralls fighting alongside their army. The enemy's own units are turned against them.
 - **Dawn recovery**: Cursed units return at dawn, but weakened by any damage the Thrall took. A rough night can leave the enemy's army crippled even after reversion.
@@ -97,7 +128,11 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ## L1 Recruits
 
-### 1. Warg (Fighter) — 15g
+### ~~0. Thrall (L0)~~ — REMOVED
+- Replaced by `Werefolk_Cursed` unit type. Transformation now uses `apply_to=type` which changes the original unit's type directly (preserving HP/XP/traits) rather than replacing with a separate Thrall unit.
+- The recruitable Thrall concept may be revisited later as a separate L0 recruit that advances to Feral.
+
+### 1. Warg (Fighter) — 15g — IMPLEMENTED
 - **Concept**: Massive wolf, the pack's warhound. Not a rider — the wolf IS the unit.
 - **HP**: 34 | **Mov**: 7 | **XP**: 38 | **Align**: Chaotic
 - **Melee**: Fangs 6×3 (blade) — **lycanthropic bite**
@@ -343,18 +378,24 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 ---
 
 ## Implementation Todos (Phase 1 — L1 units only)
-1. [ ] Define `werefolk` race in WML (race definition, name generators, traits)
-2. [ ] Define `wolfpaw` movement type (movement costs, defense, resistances)
-3. [ ] Create lycanthropy events macro file:
-   - [ ] `WEAPON_SPECIAL_LYCANTHROPIC_BITE` — weapon special that marks enemies via `attacker_hits` event
-   - [ ] Nightfall transformation event — `time_of_day` event at dusk stores cursed enemy units, replaces with Thralls loyal to Werefolk player
-   - [ ] Dawn reversion event — `time_of_day` event at dawn restores original units from stored variables, applies proportional HP damage
-   - [ ] Thrall death handler — if Thrall (transformed) dies at night, permanently kill the stored original
-   - [ ] Lycanthropy cure event — villages and healers with "cures" remove the curse during daytime
-   - [ ] Visual indicator for cursed status
-4. [ ] Create L1 unit type .cfg files (8 units + Thrall):
-   - [ ] Thrall (L0 — dual-purpose: transformed form at night + recruitable unit)
-   - [ ] Warg (Fighter)
+1. [x] Define `werefolk` race in WML (race definition, name generators, traits)
+2. [x] Define `wolfpaw` movement type (movement costs, defense, resistances)
+3. [x] Create lycanthropy events macro file (`macros/werefolk-events.cfg`):
+   - [x] `WEAPON_SPECIAL_LYCANTHROPIC_BITE` — dummy special with id for event filtering
+   - [x] `LYCANTHROPY_APPLY_CURSE` / `LYCANTHROPY_REMOVE_CURSE` — helper macros for curse status
+   - [x] `LYCANTHROPY_APPLY_TRANSFORM` / `LYCANTHROPY_REMOVE_TRANSFORM` — helper macros for type change with HP/XP preservation
+   - [x] `IF_TIME_OF_DAY` — helper macro (store_time_of_day + conditional)
+   - [x] `LYCANTHROPY_BITE_EVENT` — attacker_hits + defender_hits events (both offensive and defensive bites)
+   - [x] `LYCANTHROPY_NIGHTFALL_EVENT` — turn refresh at first_watch, transforms cursed units to Werefolk_Cursed
+   - [x] `LYCANTHROPY_DAWN_EVENT` — turn refresh at dawn, reverts transformed units to original form
+   - [x] `LYCANTHROPY_VILLAGE_CURE_EVENT` — turn refresh, cures cursed units on villages (own side's turn only)
+   - [x] `LYCANTHROPY_EVENTS` — composer macro that wires all events
+   - [x] Visual indicator: Lua status icon via `theme.lua` (persists through fog)
+   - [x] `[redraw]` after transform/revert loops for immediate team color update
+   - [x] `[status] lycanthropy=no` in REMOVE_CURSE (status add= not reversible by remove_object)
+4. [x] Create Werefolk_Cursed unit type (`units/werefolk/Cursed.cfg`) — transformation target
+5. [x] Create Warg L1 unit type (`units/werefolk/Warg.cfg`)
+6. [ ] Create remaining L1 unit type .cfg files (7 units):
    - [ ] Howler (Debuffer)
    - [ ] Herbalist (Healer)
    - [ ] Shadow Wolf (Scout)
@@ -362,9 +403,17 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
    - [ ] Moon Priest (Mage)
    - [ ] Blood Fang (Drain)
    - [ ] Ravager (Berserker)
-5. [ ] Create faction .cfg file (leader list, recruit list, AI recruitment pattern)
-6. [ ] Add faction to Fractured_Realms era definition
-7. [ ] Playtest L1 balance — especially lycanthropy transformation timing and Thrall strength
+7. [ ] Create faction .cfg file (leader list, recruit list, AI recruitment pattern)
+8. [ ] Add faction to Fractured_Realms era definition
+9. [ ] Playtest L1 balance — especially lycanthropy transformation timing and Cursed form strength
+
+### Known Issues / Technical Notes
+- `apply_to=status add=` is NOT reversible by `[remove_object]` — must explicitly set `[status] lycanthropy=no`
+- `apply_to=type` changes max HP/XP to the new type's values — must `[modify_unit]` to restore originals
+- `[modify_unit] image=` is read-only (image comes from unit type) — use `apply_to=type` to change appearance
+- WML preprocessor splits macro args on whitespace: `$unit.x,$unit.y` = 1 arg, need `$unit.x $unit.y` = 2 args
+- `special_id=` (flat) works in weapon event filters; `[specials][has_special]` does not
+- Thrall concept removed — replaced by Werefolk_Cursed (a single hidden unit type for all transformed units)
 
 ## Implementation Todos (Phase 2 — L2 units)
 8. [ ] Create L2 unit type .cfg files (14 units)
