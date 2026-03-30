@@ -7,9 +7,13 @@ function wesnoth.interface.game_display.unit_status()
 	if not u then return {} end
 	local s = old_unit_status()
 
-	if u.status.lycanthropy then
+	if u.status.festering then
 		table.insert(s, { "element", { image = "misc/curse-status-icon.png~CROP_TRANSPARENCY()",
-			tooltip = _ "lycanthropy: This unit is cursed with lycanthropy. It will transform into a werefolk at nightfall and revert at dawn. Stand on a village to cure it."
+			tooltip = _ "festering: This unit has a festering curse. If not cured before nightfall, it will take root permanently. Stand on a village or next to a healer to cure it."
+		} } )
+	elseif u.status.lycanthropy then
+		table.insert(s, { "element", { image = "misc/curse-status-icon.png~CROP_TRANSPARENCY()",
+			tooltip = _ "lycanthropy: This unit is permanently cursed with lycanthropy. It transforms into a werefolk at nightfall and reverts at dawn."
 		} } )
 	end
 
