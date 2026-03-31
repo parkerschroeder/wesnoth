@@ -3,7 +3,9 @@
 ## Concept
 A werefolk-themed faction focused on aggressive melee combat and spreading lycanthropy through the enemy army. Fast, hard-hitting units that overwhelm through pack coordination and enemy conversion. Where the Mycelium controls territory, the Werefolk control the enemy army itself — turning fallen foes into new packmates.
 
-**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" inflict a festering curse on enemies when they land a hit (offensive or defensive). Festering units are unhealable and, if not cured before nightfall, the curse takes root permanently as lycanthropy. Permanently lycanthropic units transform into a Cursed wolf form at nightfall, fighting for the werefolk player's side, and revert at dawn — every night, forever. Festering can be cured by villages, healers with 'cures', or the unit's own regeneration ability. Permanent lycanthropy cannot be cured.
+**Faction form — Permanent hybrids:** Werefolk units are permanently stuck between human and beast. They don't transform at nightfall — this IS their form. Humans with wolf features, claws, fangs, fur. The curse has stabilized in them. They benefit from chaotic alignment at night but don't mechanically change type. At L2, each unit chooses a path: the **beast path** (leaning further into the animal, more feral and powerful) or the **human path** (retaining intellect and control, gaining utility and technique). Both remain permanent hybrid forms — just different points on the spectrum.
+
+**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" inflict a festering curse on *enemy* units when they land a hit (offensive or defensive). Festering units are unhealable and, if not cured before nightfall, the curse takes root permanently as lycanthropy. Permanently lycanthropic enemies transform into a Cursed wolf form at nightfall, fighting for the werefolk player's side, and revert at dawn — every night, forever. Festering can be cured by villages, healers with 'cures', or the unit's own regeneration ability. Permanent lycanthropy cannot be cured. The transformation mechanic is something the werefolk *inflict* on enemies — not something they experience themselves.
 
 ## Current State
 - Mycelium faction complete in Fractured_Realms add-on
@@ -22,7 +24,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Name**: The Werefolk
 - **Alignment**: Chaotic (creatures of the night, strongest in darkness)
 - **Terrain affinity**: Forest, Hills, Cave (terrain_liked = Ww, Hh, Uu — wolves are woodland/highland predators)
-- **Playstyle**: Aggressive melee swarm with enemy conversion. Fast units close distance quickly and spread lycanthropy through combat. Strong at night, vulnerable to fire and arcane. Rewards aggressive play, punishes passive opponents who let cursed units die.
+- **Playstyle**: Aggressive melee swarm with enemy conversion. Fast units close distance quickly and spread lycanthropy through combat. Strong at night (chaotic alignment), vulnerable to fire and arcane. Rewards aggressive play, punishes passive opponents who let cursed units die. Werefolk units are permanent hybrids — no self-transform complexity. The nightfall transform mechanic only affects cursed enemies.
 - **Racial weaknesses**: Fire 130%, Arcane 110% (silver/holy — classic werefolk vulnerability)
 - **Racial immunities**: None (unlike Mycelium's poison immunity — werefolk are flesh and blood)
 
@@ -37,7 +39,9 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 | Ranged | Decent | Weak (melee-focused) |
 | Status effects | Poison, slow, blight | Lycanthropy, fear |
 | Weakness | Fire | Fire, Arcane |
-| Spawn mechanic | Plague (instant on kill) | Lycanthropy (bite → festering → nightfall transformation) |
+| Spawn mechanic | Plague (instant on kill) | Lycanthropy (bite → festering → nightfall transformation of *enemies*) |
+| Unit form | Single form (mushroom) | Permanent hybrid (half-human, half-beast); cursed enemies transform |
+| L2 split | Role specialization | Beast path vs. human path (spectrum of curse control) |
 
 ## Lycanthropy Mechanic
 
@@ -123,6 +127,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ## Race: Werefolk
 - Custom race with themed name generator
+- Permanent hybrids — half-human, half-beast. They don't transform; this is their stable form
 - Traits: Strong, Quick, Resilient, Dextrous (standard pool)
 - Not undead, not mechanical — fully living (susceptible to poison, plague)
 
@@ -142,7 +147,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - The recruitable Thrall concept may be revisited later as a separate L0 recruit that advances to Feral.
 
 ### 1. Warg (Fighter) — 15g — IMPLEMENTED
-- **Concept**: Massive wolf, the pack's warhound. Not a rider — the wolf IS the unit.
+- **Concept**: A hulking hybrid — more beast than human, with a wolf's body and a predator's cunning. The pack's warhound.
 - **HP**: 34 | **Mov**: 7 | **XP**: 38 | **Align**: Chaotic
 - **Melee**: Fangs 6×3 (blade) — **lycanthropic bite**
 - **Role**: Core fighter. Fast, tough, spreads lycanthropy. The backbone of the faction — gets in, bites, holds the line. High movement lets it reach enemies that other factions' fighters can't.
@@ -150,7 +155,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Dire Warg (L2, tankier + first strike), Alpha Warg (L2, leadership + howl)
 
 ### 2. Howler (Debuffer/Support) — 15g
-- **Concept**: A gaunt, grey wolf that weaponizes its howl as a supernatural ranged attack.
+- **Concept**: A gaunt, grey-furred hybrid that weaponizes its howl as a supernatural ranged attack.
 - **HP**: 28 | **Mov**: 6 | **XP**: 34 | **Align**: Chaotic
 - **Melee**: Claws 4×2 (blade)
 - **Ranged**: Howl 5×2 (cold) — **slow**
@@ -159,7 +164,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Dread Howler (L2, AoE slow), Wailing Wolf (L2, cold damage specialist)
 
 ### 3. Herbalist (Healer) — 14g
-- **Concept**: A human herb-woman who lives among the werefolk. Not a werefolk herself — she chose this life, tending the pack's wounds with forest remedies and earning their trust.
+- **Concept**: A human herb-woman who lives among the werefolk. Not a werefolk herself — she chose this life, tending the pack's wounds with forest remedies and earning their trust. The one fully human member of the roster.
 - **Race**: Human (not Werefolk — uses human names, traits, movement type)
 - **HP**: 24 | **Mov**: 5 | **XP**: 32 | **Align**: Neutral
 - **Melee**: Staff 4×2 (impact)
@@ -170,7 +175,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Pack Shaman (L2, heals +8 + cures), Wolfsbane Witch (L2, offensive poison/blight)
 
 ### 4. Shadow Wolf (Scout) — 14g
-- **Concept**: A sleek, dark-furred wolf that moves like smoke through the trees. Invisible at night.
+- **Concept**: A sleek, dark-furred hybrid that moves like smoke through the trees. Invisible at night.
 - **HP**: 26 | **Mov**: 8 | **XP**: 30 | **Align**: Chaotic
 - **Melee**: Fangs 5×3 (blade) — **backstab**
 - **Ability**: Nightstalk (invisible at night unless adjacent to enemy)
@@ -179,7 +184,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Phantom Wolf (L2, teleport + nightstalk), Dire Stalker (L2, backstab + ambush specialist)
 
 ### 5. Feral (Skirmisher) — 13g
-- **Concept**: A young, impulsive werefolk — recently turned and still wild. Advancement from Thrall, also recruitable.
+- **Concept**: A young, impulsive werefolk — recently turned and still wild. Closer to the beast end of the hybrid spectrum, barely holding on to human thought.
 - **HP**: 22 | **Mov**: 7 | **XP**: 28 | **Align**: Chaotic
 - **Melee**: Savage Claws 4×4 (blade) — **lycanthropic bite**
 - **Ability**: Skirmisher (ignores ZoC)
@@ -188,7 +193,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: (dead-end L1 — already an advancement from Thrall)
 
 ### 6. Moon Priest (Mage) — 16g
-- **Concept**: A robed figure who channels the moon's cold light into destructive beams. Half-wolf, half-scholar — the pack's connection to the supernatural.
+- **Concept**: A robed hybrid who channels the moon's cold light into destructive beams. More human than beast — the pack's connection to the supernatural, retaining enough intellect for arcane study.
 - **HP**: 24 | **Mov**: 5 | **XP**: 36 | **Align**: Chaotic
 - **Melee**: Moonblade 4×2 (cold)
 - **Ranged**: Moonbeam 7×2 (cold) — **magical**
@@ -197,7 +202,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Lunar Oracle (L2, illumination control + AoE), Eclipse Seer (L2, obscure + feeding)
 
 ### 7. Blood Fang (Drain Fighter) — 16g
-- **Concept**: A massive scarred werefolk that feeds on the lifeforce of its prey. The faction's most feared hunter.
+- **Concept**: A massive, scarred hybrid that feeds on the lifeforce of its prey. Deep into the beast — more wolf than human, sustained by a predator's hunger.
 - **HP**: 32 | **Mov**: 6 | **XP**: 38 | **Align**: Chaotic
 - **Melee**: Draining Bite 6×3 (blade) — **drain**
 - **Ranged**: —
@@ -206,7 +211,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Bloodlord (L2, drain + lycanthropic bite), Packbound (L2, drain aura for allies)
 
 ### 8. Ravager (Berserker) — 19g
-- **Concept**: A werefolk consumed by bloodlust — permanently stuck mid-transformation, a towering horror of fur and fury. The faction's most dangerous weapon, and its most unpredictable.
+- **Concept**: A werefolk consumed by bloodlust — the furthest gone of any hybrid, a towering horror of fur and fury that has nearly lost all human thought. The faction's most dangerous weapon, and its most unpredictable.
 - **HP**: 36 | **Mov**: 5 | **XP**: 44 | **Align**: Chaotic
 - **Melee**: Rend 7×3 (blade) — **berserk**
 - **Role**: High-risk melee powerhouse. Berserk fights until one combatant drops — devastating against low-HP targets, suicidal against tanks. The faction's burst damage option. Expensive but worth it when it connects.
@@ -217,32 +222,38 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ## L2 Advancements
 
+Each L1 has two advancement paths representing the hybrid spectrum:
+- **Beast path** (listed first) — the werefolk leans further into the animal. More feral, stronger raw combat stats, more aggressive abilities.
+- **Human path** (listed second) — the werefolk retains intellect and control. Gains utility, technique, leadership, or magical refinement.
+
+Neither path transforms at night — both are permanent hybrid forms. The choice reflects where the unit falls on the human↔beast spectrum.
+
 ### From Warg
 
-#### Dire Warg — ~32g
+#### Dire Warg — ~32g *(beast path)*
 - **HP**: 48 | **Mov**: 7 | **Align**: Chaotic
 - **Melee**: Fangs 8×3 (blade) — **lycanthropic bite, first strike**
 - **Role**: Enhanced fighter. Tankier, hits harder, strikes first. A massive wolf that can bite and kill in the same engagement. First strike makes it dangerous to engage in melee.
 - **Advances to**: Fenrir (L3)
 
-#### Alpha Warg — ~32g
+#### Alpha Warg — ~32g *(human path)*
 - **HP**: 44 | **Mov**: 7 | **Align**: Chaotic
 - **Melee**: Fangs 7×3 (blade) — **lycanthropic bite**
 - **Ranged**: Rallying Howl 5×2 (cold)
 - **Ability**: Leadership (adjacent lower-level allies deal bonus damage)
-- **Role**: Alpha leader. Trades raw combat power for army-wide buff. Positions in the center of the group to maximize leadership radius. The faction's force multiplier.
+- **Role**: Alpha leader. Retains tactical intelligence — trades raw combat power for army-wide buff. Positions in the center of the group to maximize leadership radius. The faction's force multiplier.
 - **Advances to**: Pack Lord (L3)
 
 ### From Howler
 
-#### Dread Howler — ~30g
+#### Dread Howler — ~30g *(human path)*
 - **HP**: 38 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Claws 6×2 (blade)
 - **Ranged**: Dread Howl 7×2 (cold) — **slow, AoE slow** (slows adjacent enemies on hit, similar to Oyster Vizier's Spore Cloud)
 - **Role**: AoE crowd control. The howl reverberates, slowing multiple enemies. Makes the faction's melee rush devastating — a slowed enemy can't escape.
 - **Advances to**: Howl of Doom (L3)
 
-#### Wailing Wolf — ~30g
+#### Wailing Wolf — ~30g *(beast path)*
 - **HP**: 36 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Frost Claws 5×3 (cold)
 - **Ranged**: Wail 9×3 (cold) — **magical**
@@ -251,7 +262,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ### From Herbalist
 
-#### Pack Shaman — ~28g
+#### Pack Shaman — ~28g *(human path)*
 - **Race**: Human
 - **HP**: 36 | **Mov**: 5 | **Align**: Neutral
 - **Melee**: Staff 5×2 (impact)
@@ -260,24 +271,24 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Role**: Upgraded healer. Cures is critical — both for removing poison from your own units and as a flavor element (the Shaman understands the curse well enough to manage it). Essential support.
 - **Advances to**: Elder Shaman (L3)
 
-#### Wolfsbane Witch — ~28g
+#### Wolfsbane Witch — ~28g *(beast path)*
 - **Race**: Human
 - **HP**: 34 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Toxic Touch 5×2 (blade) — **poison**
 - **Ranged**: Hex Bolt 7×3 (arcane)
-- **Role**: Offensive caster path. The herbalist who delved too deep into the faction's dark magic. Poison melee + arcane ranged provides damage types the pack otherwise lacks. Chaotic alignment (unlike the neutral Pack Shaman) — she's fully embraced the darkness.
+- **Role**: Offensive caster path. The herbalist who delved too deep into the faction's dark magic — embraced the darkness. Poison melee + arcane ranged provides damage types the pack otherwise lacks. Chaotic alignment (unlike the neutral Pack Shaman) — she's fully embraced the darkness.
 - **Advances to**: Crone (L3)
 
 ### From Shadow Wolf
 
-#### Phantom Wolf — ~30g
+#### Phantom Wolf — ~30g *(beast path)*
 - **HP**: 34 | **Mov**: 8 | **Align**: Chaotic
 - **Melee**: Fangs 7×3 (blade) — **backstab, lycanthropic bite**
 - **Abilities**: Nightstalk, Teleport (between forest tiles at night — WML event on move, similar to Portalbello's Fungal Tunnel but restricted to nighttime)
 - **Role**: Nighttime assassin. Teleports between forests at night to strike deep behind enemy lines, biting high-value targets. Terrifying during night phases, manageable during day.
 - **Advances to**: Specter Wolf (L3)
 
-#### Dire Stalker — ~30g
+#### Dire Stalker — ~30g *(human path)*
 - **HP**: 38 | **Mov**: 7 | **Align**: Chaotic
 - **Melee**: Fangs 8×3 (blade) — **backstab**
 - **Ability**: Nightstalk, Ambush (hides in forest)
@@ -286,7 +297,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ### From Moon Priest
 
-#### Lunar Oracle — ~34g
+#### Lunar Oracle — ~34g *(human path)*
 - **HP**: 34 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Moonblade 6×2 (cold)
 - **Ranged**: Lunar Cascade 9×3 (cold) — **magical**
@@ -294,7 +305,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Role**: Darkness manipulator. Shifts the local time of day one step darker, boosting the entire chaotic pack while hindering lawful enemies. A walking eclipse.
 - **Advances to**: Blood Moon (L3)
 
-#### Eclipse Seer — ~34g
+#### Eclipse Seer — ~34g *(beast path)*
 - **HP**: 32 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Void Claw 6×2 (arcane)
 - **Ranged**: Eclipse Bolt 8×3 (arcane) — **magical**
@@ -304,13 +315,13 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ### From Blood Fang
 
-#### Bloodlord — ~34g
+#### Bloodlord — ~34g *(beast path)*
 - **HP**: 46 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Draining Bite 8×3 (blade) — **drain, lycanthropic bite**
-- **Role**: Ultimate individual fighter. Drain keeps it alive, lycanthropic bite ensures kills generate Thralls. A self-sustaining conversion engine. No ranged — must be in melee to function.
+- **Role**: Ultimate individual fighter. Drain keeps it alive, lycanthropic bite ensures kills spread the curse. A self-sustaining conversion engine. No ranged — must be in melee to function.
 - **Advances to**: Lycan King (L3)
 
-#### Packbound — ~32g
+#### Packbound — ~32g *(human path)*
 - **HP**: 42 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Parasitic Bite 6×3 (blade) — **drain**
 - **Ranged**: Blood Howl 5×2 (cold)
@@ -320,14 +331,14 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ### From Ravager
 
-#### Abomination — ~36g
+#### Abomination — ~36g *(beast path)*
 - **HP**: 52 | **Mov**: 5 | **Align**: Chaotic
 - **Melee**: Rend 9×3 (blade) — **berserk**
 - **Ability**: Regeneration (+8 HP per turn)
 - **Role**: Unstoppable horror. Berserk + regeneration means it can fight recklessly and heal between engagements. A relentless meat grinder that's nearly impossible to trade efficiently against.
 - **Advances to**: Lycanthrope (L3)
 
-#### Primal Alpha — ~36g
+#### Primal Alpha — ~36g *(human path)*
 - **HP**: 48 | **Mov**: 6 | **Align**: Chaotic
 - **Melee**: Rend 8×3 (blade) — **berserk, lycanthropic bite**
 - **Ability**: Leadership
