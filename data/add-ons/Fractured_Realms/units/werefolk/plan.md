@@ -1,11 +1,11 @@
 # Plan: Werefolk Faction for Wesnoth
 
 ## Concept
-A werefolk-themed faction focused on aggressive melee combat and spreading lycanthropy through the enemy army. Fast, hard-hitting units that overwhelm through pack coordination and enemy conversion. Where the Mycelium controls territory, the Werefolk control the enemy army itself — turning fallen foes into new packmates.
+A lycanthropy cult that has deliberately transformed its members into werefolk hybrids. They worship the moon and view the curse as a gift — a transcendence beyond the weakness of human flesh. Where the Mycelium controls territory, the Werefolk control the enemy army itself — forcibly converting foes into new followers through the sacrament of the bite.
 
-**Faction form — Permanent hybrids:** Werefolk units are permanently stuck between human and beast. They don't transform at nightfall — this IS their form. Humans with wolf features, claws, fangs, fur. The curse has stabilized in them. They benefit from chaotic alignment at night but don't mechanically change type. At L2, each unit chooses a path: the **beast path** (leaning further into the animal, more feral and powerful) or the **human path** (retaining intellect and control, gaining utility and technique). Both remain permanent hybrid forms — just different points on the spectrum.
+**Faction form — Permanent hybrids:** Werefolk units chose this. They underwent ritual transformation and now exist permanently between human and beast — claws, fangs, fur, but still upright, still thinking. They don't transform at nightfall; the ritual stabilized their forms. They benefit from chaotic alignment at night but don't mechanically change type. At L2, each cultist chooses a path: the **beast path** (surrendering more of their humanity to the wolf, gaining feral power) or the **human path** (mastering the curse through discipline, gaining technique and leadership). Both remain permanent hybrid forms — just different doctrines within the cult.
 
-**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" inflict a festering curse on *enemy* units when they land a hit (offensive or defensive). Festering units are unhealable and, if not cured before nightfall, the curse takes root permanently as lycanthropy. Permanently lycanthropic enemies transform into a Cursed wolf form at nightfall, fighting for the werefolk player's side, and revert at dawn — every night, forever. Festering can be cured by villages, healers with 'cures', or the unit's own regeneration ability. Permanent lycanthropy cannot be cured. The transformation mechanic is something the werefolk *inflict* on enemies — not something they experience themselves.
+**Core mechanic — Lycanthropy:** Werefolk units with "Lycanthropic Bite" inflict a festering curse on *enemy* units when they land a hit (offensive or defensive) — a forcible initiation. Festering units are unhealable and, if not cured before nightfall, the curse takes root permanently as lycanthropy. Permanently lycanthropic enemies transform into a Cursed wolf form at nightfall, fighting for the werefolk player's side, and revert at dawn — every night, forever. Unlike the cult's controlled transformation, the forced conversion is unstable — victims lose themselves entirely when the moon rises. Festering can be cured by villages, healers with 'cures', or the unit's own regeneration ability. Permanent lycanthropy cannot be cured.
 
 ## Current State
 - Mycelium faction complete in Fractured_Realms add-on
@@ -22,11 +22,11 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ## Faction Identity
 - **Name**: The Werefolk
-- **Alignment**: Chaotic (creatures of the night, strongest in darkness)
-- **Terrain affinity**: Forest, Hills, Cave (terrain_liked = Ww, Hh, Uu — wolves are woodland/highland predators)
-- **Playstyle**: Aggressive melee swarm with enemy conversion. Fast units close distance quickly and spread lycanthropy through combat. Strong at night (chaotic alignment), vulnerable to fire and arcane. Rewards aggressive play, punishes passive opponents who let cursed units die. Werefolk units are permanent hybrids — no self-transform complexity. The nightfall transform mechanic only affects cursed enemies.
-- **Racial weaknesses**: Fire 130%, Arcane 110% (silver/holy — classic werefolk vulnerability)
-- **Racial immunities**: None (unlike Mycelium's poison immunity — werefolk are flesh and blood)
+- **Alignment**: Chaotic (creatures of the night, moon-worshippers, strongest in darkness)
+- **Terrain affinity**: Forest, Hills, Cave (terrain_liked = Ww, Hh, Uu — hidden groves, highland shrines, underground lairs)
+- **Playstyle**: Aggressive melee cult with forced conversion. Fast units close distance quickly and spread lycanthropy through combat — the sacrament of the bite. Strong at night (chaotic alignment), vulnerable to fire and arcane. Rewards aggressive play, punishes passive opponents who let cursed units die. The cult's members are stable hybrids — the nightfall transform only affects their unwilling converts.
+- **Racial weaknesses**: Fire 130%, Arcane 110% (fire purifies, holy magic opposes the cult's dark rituals)
+- **Racial immunities**: None (unlike Mycelium's poison immunity — werefolk are flesh and blood, however transformed)
 
 ## Faction Contrast: Mycelium vs Werefolk
 | Dimension | Mycelium | Werefolk |
@@ -37,11 +37,12 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 | Speed | Slow (4-5 mov) | Fast (6-8 mov) |
 | HP | Low (~25 avg L1) | Medium (~28 avg L1) |
 | Ranged | Decent | Weak (melee-focused) |
-| Status effects | Poison, slow, blight | Lycanthropy, fear |
+| Status effects | Poison, slow, blight | Lycanthropy (forced conversion), fear |
 | Weakness | Fire | Fire, Arcane |
 | Spawn mechanic | Plague (instant on kill) | Lycanthropy (bite → festering → nightfall transformation of *enemies*) |
-| Unit form | Single form (mushroom) | Permanent hybrid (half-human, half-beast); cursed enemies transform |
-| L2 split | Role specialization | Beast path vs. human path (spectrum of curse control) |
+| Unit form | Single form (mushroom) | Permanent hybrid (ritual transformation); cursed enemies transform uncontrollably |
+| L2 split | Role specialization | Beast path (surrender to the wolf) vs. human path (master the curse) |
+| Faction theme | Alien ecosystem | Moon-worshipping lycanthropy cult |
 
 ## Lycanthropy Mechanic
 
@@ -103,19 +104,19 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - Persists through fog reveal (unlike overlay/halo approaches that disappeared)
 
 ### 7. Strategic Depth
-- **Festering window**: Every bite starts a festering phase — the enemy must cure before nightfall or the curse becomes permanent. Creates urgency: rush to a village, stay near healers, or rely on regeneration.
+- **Festering window**: Every bite is a forced initiation — the enemy must cure before nightfall or the conversion becomes permanent. Creates urgency: rush to a village, stay near healers, or rely on regeneration.
 - **Permanent commitment**: Once a unit transforms for the first time, the lycanthropy is locked in forever. No more curing. The enemy must live with a unit that switches sides every night.
-- **Night chaos**: During night, the Werefolk player gets a swarm of bonus Cursed wolves fighting alongside their army. The enemy's own units are turned against them.
+- **Night chaos**: During night, the Werefolk player gets a swarm of bonus Cursed wolves fighting alongside their cult. The enemy's own units are turned against them — unwilling converts serving the moon.
 - **Dawn recovery**: Permanently cursed units return at dawn, but weakened by any damage taken in wolf form. A rough night can leave the enemy's army crippled even after reversion.
 - **Permanent death risk**: If the enemy (or anyone) kills the Cursed form at night, the original unit is gone forever. The enemy must be careful not to kill their own transformed allies.
-- **Counterplay**: Cure festering before nightfall (villages, healers with cures, regeneration). Kill the biters before they spread the curse. Undead/mechanical are immune. Fight primarily during the day to minimize transformation windows.
-- **Snowball potential**: More bites → more Cursed wolves at night → more biters → more bites. Balanced by the fact that Cursed wolves revert at dawn and festering is accessible to cure.
+- **Counterplay**: Cure festering before nightfall (villages, healers with cures, regeneration). Kill the cultists before they spread the bite. Undead/mechanical are immune to conversion. Fight primarily during the day to minimize transformation windows.
+- **Snowball potential**: More bites → more converts at night → more biters → more bites. The cult grows. Balanced by the fact that Cursed wolves revert at dawn and festering is accessible to cure.
 - **Unhealable pressure**: Festering units can't be healed at all — no village HP, no rest healing, no healer HP, no regeneration HP. The curse actively degrades the enemy's army even before transformation.
 
 ## Pack Tactics Mechanic
-- L2+ alpha-tier units gain "Pack Leader" (leadership variant) — adjacent lower-level allies deal more damage
-- This replaces the Mycelium's territorial buff with a positional buff — the pack must stay clustered
-- Creates tension: spread out to bite more enemies vs. cluster for pack leader bonuses
+- L2+ alpha-tier cultists gain "Pack Leader" (leadership variant) — adjacent lower-level allies deal more damage
+- This replaces the Mycelium's territorial buff with a positional buff — the cult must stay clustered
+- Creates tension: spread out to convert more enemies vs. cluster for leadership bonuses
 
 ## Movement Type: wolfpaw
 - Fast on flat terrain (1 MP), forest (1 MP), hills (2 MP)
@@ -127,7 +128,8 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ## Race: Werefolk
 - Custom race with themed name generator
-- Permanent hybrids — half-human, half-beast. They don't transform; this is their stable form
+- Permanent hybrids — humans who underwent ritual lycanthropic transformation. They chose this form and view it as ascension
+- Stable form (unlike their cursed victims who transform uncontrollably)
 - Traits: Strong, Quick, Resilient, Dextrous (standard pool)
 - Not undead, not mechanical — fully living (susceptible to poison, plague)
 
@@ -147,7 +149,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - The recruitable Thrall concept may be revisited later as a separate L0 recruit that advances to Feral.
 
 ### 1. Warg (Fighter) — 15g — IMPLEMENTED
-- **Concept**: A hulking hybrid — more beast than human, with a wolf's body and a predator's cunning. The pack's warhound.
+- **Concept**: The cult's front-line enforcer — a hulking hybrid who embraced the beast willingly. More wolf than human, built to close distance and deliver the sacrament of the bite.
 - **HP**: 34 | **Mov**: 7 | **XP**: 38 | **Align**: Chaotic
 - **Melee**: Fangs 6×3 (blade) — **lycanthropic bite**
 - **Role**: Core fighter. Fast, tough, spreads lycanthropy. The backbone of the faction — gets in, bites, holds the line. High movement lets it reach enemies that other factions' fighters can't.
@@ -155,7 +157,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Dire Warg (L2, tankier + first strike), Alpha Warg (L2, leadership + howl)
 
 ### 2. Howler (Debuffer/Support) — 15g
-- **Concept**: A gaunt, grey-furred hybrid that weaponizes its howl as a supernatural ranged attack.
+- **Concept**: A gaunt cultist whose transformation twisted their voice into a supernatural weapon. Their howl carries the cold of the moon itself, chilling and slowing all who hear it.
 - **HP**: 28 | **Mov**: 6 | **XP**: 34 | **Align**: Chaotic
 - **Melee**: Claws 4×2 (blade)
 - **Ranged**: Howl 5×2 (cold) — **slow**
@@ -164,18 +166,18 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Dread Howler (L2, AoE slow), Wailing Wolf (L2, cold damage specialist)
 
 ### 3. Herbalist (Healer) — 14g
-- **Concept**: A human herb-woman who lives among the werefolk. Not a werefolk herself — she chose this life, tending the pack's wounds with forest remedies and earning their trust. The one fully human member of the roster.
+- **Concept**: The cult's apothecary — a human healer who tends to the pack's wounds with herbal remedies. She brews the tinctures used in transformation rituals and knows the curse intimately, though she has not taken it herself.
 - **Race**: Human (not Werefolk — uses human names, traits, movement type)
 - **HP**: 24 | **Mov**: 5 | **XP**: 32 | **Align**: Neutral
 - **Melee**: Staff 4×2 (impact)
 - **Ranged**: Herb Poultice 3×2 (impact) — **slow**
 - **Ability**: Heals +4 (adjacent allies)
-- **Role**: Faction healer. Like the Mycelium's Lion's Mane — essential support. Neutral alignment means she's consistent across day/night, unlike the rest of the chaotic pack. Human among wolves, similar to the Madcap's dwarf-among-mushrooms niche.
+- **Role**: Faction healer. Like the Mycelium's Lion's Mane — essential support. Neutral alignment means she's consistent across day/night, unlike the rest of the chaotic cult. A human among the transformed — the one who chose to serve without taking the sacrament.
 - **Based on**: Elvish Shaman (L1 healer, 15g, 26 HP, 5 mov), Village Healer. Herbalist trades 2 HP for -1g cost.
 - **Advances to**: Pack Shaman (L2, heals +8 + cures), Wolfsbane Witch (L2, offensive poison/blight)
 
 ### 4. Shadow Wolf (Scout) — 14g
-- **Concept**: A sleek, dark-furred hybrid that moves like smoke through the trees. Invisible at night.
+- **Concept**: The cult's spy — a sleek, dark-furred hybrid trained in stealth and infiltration. Slips unseen through enemy territory at night to identify targets for conversion.
 - **HP**: 26 | **Mov**: 8 | **XP**: 30 | **Align**: Chaotic
 - **Melee**: Fangs 5×3 (blade) — **backstab**
 - **Ability**: Nightstalk (invisible at night unless adjacent to enemy)
@@ -184,7 +186,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Phantom Wolf (L2, teleport + nightstalk), Dire Stalker (L2, backstab + ambush specialist)
 
 ### 5. Feral (Skirmisher) — 13g
-- **Concept**: A young, impulsive werefolk — recently turned and still wild. Closer to the beast end of the hybrid spectrum, barely holding on to human thought.
+- **Concept**: A new initiate — recently transformed and still wild with the thrill of it. Zealous and reckless, eager to prove their devotion by spreading the bite to as many unbelievers as possible.
 - **HP**: 22 | **Mov**: 7 | **XP**: 28 | **Align**: Chaotic
 - **Melee**: Savage Claws 4×4 (blade) — **lycanthropic bite**
 - **Ability**: Skirmisher (ignores ZoC)
@@ -193,7 +195,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: (dead-end L1 — already an advancement from Thrall)
 
 ### 6. Moon Priest (Mage) — 16g
-- **Concept**: A robed hybrid who channels the moon's cold light into destructive beams. More human than beast — the pack's connection to the supernatural, retaining enough intellect for arcane study.
+- **Concept**: The cult's clergy — a robed hybrid who channels the moon's cold light into destructive beams. They lead the transformation rituals and interpret the moon's will. More scholar than beast, retaining enough humanity for arcane study.
 - **HP**: 24 | **Mov**: 5 | **XP**: 36 | **Align**: Chaotic
 - **Melee**: Moonblade 4×2 (cold)
 - **Ranged**: Moonbeam 7×2 (cold) — **magical**
@@ -202,7 +204,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Lunar Oracle (L2, illumination control + AoE), Eclipse Seer (L2, obscure + feeding)
 
 ### 7. Blood Fang (Drain Fighter) — 16g
-- **Concept**: A massive, scarred hybrid that feeds on the lifeforce of its prey. Deep into the beast — more wolf than human, sustained by a predator's hunger.
+- **Concept**: An elder cultist who has given themselves fully to the predator's hunger. They feed on the lifeforce of their prey — a living sacrament, sustained by devotion to the hunt.
 - **HP**: 32 | **Mov**: 6 | **XP**: 38 | **Align**: Chaotic
 - **Melee**: Draining Bite 6×3 (blade) — **drain**
 - **Ranged**: —
@@ -211,7 +213,7 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 - **Advances to**: Bloodlord (L2, drain + lycanthropic bite), Packbound (L2, drain aura for allies)
 
 ### 8. Ravager (Berserker) — 19g
-- **Concept**: A werefolk consumed by bloodlust — the furthest gone of any hybrid, a towering horror of fur and fury that has nearly lost all human thought. The faction's most dangerous weapon, and its most unpredictable.
+- **Concept**: A cultist who surrendered completely to the beast — consumed by bloodlust, barely recognizable as having once been human. The cult reveres them as holy berserkers, touched by the moon's madness. The faction's most dangerous weapon, and its most unpredictable.
 - **HP**: 36 | **Mov**: 5 | **XP**: 44 | **Align**: Chaotic
 - **Melee**: Rend 7×3 (blade) — **berserk**
 - **Role**: High-risk melee powerhouse. Berserk fights until one combatant drops — devastating against low-HP targets, suicidal against tanks. The faction's burst damage option. Expensive but worth it when it connects.
@@ -222,11 +224,11 @@ A werefolk-themed faction focused on aggressive melee combat and spreading lycan
 
 ## L2 Advancements
 
-Each L1 has two advancement paths representing the hybrid spectrum:
-- **Beast path** (listed first) — the werefolk leans further into the animal. More feral, stronger raw combat stats, more aggressive abilities.
-- **Human path** (listed second) — the werefolk retains intellect and control. Gains utility, technique, leadership, or magical refinement.
+Each L1 has two advancement paths representing different doctrines within the cult:
+- **Beast path** (listed first) — the cultist surrenders more humanity to the wolf. More feral, stronger raw combat stats, more aggressive abilities. Viewed within the cult as deeper devotion.
+- **Human path** (listed second) — the cultist masters the curse through discipline and intellect. Gains utility, technique, leadership, or magical refinement. Viewed within the cult as enlightened control.
 
-Neither path transforms at night — both are permanent hybrid forms. The choice reflects where the unit falls on the human↔beast spectrum.
+Neither path transforms at night — both are stable hybrid forms achieved through ritual. The choice reflects the cultist's doctrine: abandon yourself to the beast, or harness it.
 
 ### From Warg
 
